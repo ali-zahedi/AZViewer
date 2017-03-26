@@ -14,7 +14,7 @@ open class AZCheckBoxDataSource {
     var title: String
     var isActive: Bool
     
-    init(id: AnyObject, title: String, isActive: Bool = false) {
+    public init(id: AnyObject, title: String, isActive: Bool = false) {
         self.id = id
         self.title = title
         self.isActive = isActive
@@ -25,11 +25,11 @@ open class AZCheckBoxDataSection {
 
     var value: [AZCheckBoxDataSource]
     
-    init() {
+    public init() {
         self.value = []
     }
     
-    init(value: [AZCheckBoxDataSource]) {
+    public init(value: [AZCheckBoxDataSource]) {
         
         self.value = value
     }
