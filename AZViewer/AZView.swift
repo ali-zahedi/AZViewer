@@ -11,7 +11,7 @@ import Foundation
 open class AZView: UIView {
     
     internal static let bundle = Bundle(for: AZView.self)
-    override init(frame: CGRect){
+    override public init(frame: CGRect){
         
         super.init(frame: frame)
         self.defaultInit()
@@ -36,10 +36,10 @@ open class AZView: UIView {
 extension AZView{
     
     fileprivate func prepareThisView(){
-        self.frame.size = CGSize(width: 300, height: 600)
-        self.frame.origin = CGPoint(x: 50, y: 10)
-        self.layer.cornerRadius = 30
-        self.backgroundColor = UIColor.black
+//        self.frame.size = CGSize(width: 300, height: 600)
+//        self.frame.origin = CGPoint(x: 50, y: 10)
+//        self.layer.cornerRadius = 30
+//        self.backgroundColor = UIColor.black
     }
 }
 

@@ -26,7 +26,7 @@ public class AZCheckBox: AZView {
     fileprivate var tableView: UITableView!
     fileprivate static let cellReuseIdentifier: String = "CheckBoxTableViewCell"
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
     }

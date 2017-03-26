@@ -23,6 +23,9 @@
 		41E098811E86C5BD0017A53B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E0987F1E86C5BD0017A53B /* LaunchScreen.storyboard */; };
 		41E098861E86C62C0017A53B /* AZViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415486431E86BDA800FAA8FA /* AZViewer.framework */; };
 		41E098871E86C62C0017A53B /* AZViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 415486431E86BDA800FAA8FA /* AZViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41E098C01E87B2A30017A53B /* AZPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098BF1E87B2A30017A53B /* AZPickerView.swift */; };
+		41E098C21E87B46D0017A53B /* AZPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */; };
+		41E098C41E87C6080017A53B /* AZPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C31E87C6080017A53B /* AZPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		41E0987D1E86C5BD0017A53B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41E098801E86C5BD0017A53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41E098821E86C5BD0017A53B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41E098BF1E87B2A30017A53B /* AZPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerView.swift; sourceTree = "<group>"; };
+		41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerViewDelegate.swift; sourceTree = "<group>"; };
+		41E098C31E87C6080017A53B /* AZPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 				4154864E1E86BDD900FAA8FA /* Assets.xcassets */,
 				415486551E86BDD900FAA8FA /* AZView.swift */,
 				4154865E1E86C27700FAA8FA /* AZCheckBox */,
+				41E098BE1E87B2880017A53B /* AZPickerView */,
 				415486541E86BDD900FAA8FA /* AZPopup.swift */,
 				4154864F1E86BDD900FAA8FA /* AZButton.swift */,
 				415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */,
@@ -143,6 +150,16 @@
 				41E098821E86C5BD0017A53B /* Info.plist */,
 			);
 			path = "AZViewer Example";
+			sourceTree = "<group>";
+		};
+		41E098BE1E87B2880017A53B /* AZPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				41E098C31E87C6080017A53B /* AZPicker.swift */,
+				41E098BF1E87B2A30017A53B /* AZPickerView.swift */,
+				41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */,
+			);
+			name = AZPickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,11 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				415486571E86BDD900FAA8FA /* AZButton.swift in Sources */,
+				41E098C01E87B2A30017A53B /* AZPickerView.swift in Sources */,
 				4154865C1E86BDD900FAA8FA /* AZPopup.swift in Sources */,
 				4154865A1E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift in Sources */,
 				4154865D1E86BDD900FAA8FA /* AZView.swift in Sources */,
 				4154865B1E86BDD900FAA8FA /* AZIndicatorShape.swift in Sources */,
+				41E098C41E87C6080017A53B /* AZPicker.swift in Sources */,
 				415486581E86BDD900FAA8FA /* AZCheckBox.swift in Sources */,
+				41E098C21E87B46D0017A53B /* AZPickerViewDelegate.swift in Sources */,
 				415486591E86BDD900FAA8FA /* AZCheckBoxDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

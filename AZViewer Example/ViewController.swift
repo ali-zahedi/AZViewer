@@ -13,13 +13,16 @@ class ViewController: UIViewController {
 
     var popupView: AZPopupView = AZPopupView()
     var checkBoxView: AZCheckBox = AZCheckBox()
+    var pickerView: AZPickerView = AZPickerView(frame: CGRect(x: 0, y: 0, width: 100, height: 200))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        self.view.addSubview(self.popupView)
-        self.view.addSubview(self.checkBoxView)
+//        self.view.addSubview(self.checkBoxView)
     
+        self.view.addSubview(self.pickerView)
+        self.pickerView.pickerData = ["Ali", "Jafar", "Hasa"]
     }
     
     override func didReceiveMemoryWarning() {
