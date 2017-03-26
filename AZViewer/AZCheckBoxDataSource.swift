@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AZCheckBoxDataSource {
+open class AZCheckBoxDataSource {
     
     var id: AnyObject
     var title: String
@@ -21,7 +21,7 @@ class AZCheckBoxDataSource {
     }
 }
 
-class AZCheckBoxDataSection {
+open class AZCheckBoxDataSection {
 
     var value: [AZCheckBoxDataSource]
     
