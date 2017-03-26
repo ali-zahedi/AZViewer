@@ -10,9 +10,9 @@ import Foundation
 
 open class AZCheckBoxDataSource {
     
-    var id: AnyObject
-    var title: String
-    var isActive: Bool
+    public var id: AnyObject
+    public var title: String
+    public var isActive: Bool
     
     public init(id: AnyObject, title: String, isActive: Bool = false) {
         self.id = id
@@ -23,7 +23,7 @@ open class AZCheckBoxDataSource {
 
 open class AZCheckBoxDataSection {
 
-    var value: [AZCheckBoxDataSource]
+    public var value: [AZCheckBoxDataSource]
     
     public init() {
         self.value = []
