@@ -10,7 +10,7 @@ import Foundation
 
 public class AZCheckBox: AZView {
     
-    var data: AZCheckBoxDataSection = AZCheckBoxDataSection() {
+    public var data: AZCheckBoxDataSection = AZCheckBoxDataSection() {
         didSet{
             self.tableView.reloadData()
         }
