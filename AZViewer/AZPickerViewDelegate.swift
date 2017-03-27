@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol AZPickerViewDelegate {
-    func AZPickerView(didSelectRow row: Int, inComponent component: Int)
+    func aZPickerView(didSelectRow row: Int, inComponent component: Int)
 }

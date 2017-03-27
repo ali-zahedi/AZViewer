@@ -11,7 +11,7 @@ import Foundation
 class AZCheckBoxTableViewCell: UITableViewCell {
     
     // public
-    static var font: UIFont = UIFont.systemFont(ofSize: 13)
+    static var font: UIFont = AZStyle.sectionTableRow
     
     var dataSource: AZCheckBoxDataSource! {
         didSet{

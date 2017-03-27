@@ -26,6 +26,16 @@
 		41E098C01E87B2A30017A53B /* AZPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098BF1E87B2A30017A53B /* AZPickerView.swift */; };
 		41E098C21E87B46D0017A53B /* AZPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */; };
 		41E098C41E87C6080017A53B /* AZPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C31E87C6080017A53B /* AZPicker.swift */; };
+		41E098C61E88D34E0017A53B /* AZHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C51E88D34E0017A53B /* AZHeaderSection.swift */; };
+		41E098C81E88D9C30017A53B /* AZLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C71E88D9C30017A53B /* AZLabel.swift */; };
+		41E098CA1E88ED390017A53B /* AZStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C91E88ED390017A53B /* AZStyle.swift */; };
+		41E098D91E892D530017A53B /* AZViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098D81E892D530017A53B /* AZViewDelegate.swift */; };
+		41E098DB1E8955040017A53B /* UIFont+LoadFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098DA1E8955030017A53B /* UIFont+LoadFont.swift */; };
+		41E098EB1E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E61E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf */; };
+		41E098EC1E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E71E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf */; };
+		41E098ED1E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E81E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf */; };
+		41E098EE1E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E91E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf */; };
+		41E098EF1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098EA1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +84,16 @@
 		41E098BF1E87B2A30017A53B /* AZPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerView.swift; sourceTree = "<group>"; };
 		41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerViewDelegate.swift; sourceTree = "<group>"; };
 		41E098C31E87C6080017A53B /* AZPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPicker.swift; sourceTree = "<group>"; };
+		41E098C51E88D34E0017A53B /* AZHeaderSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZHeaderSection.swift; sourceTree = "<group>"; };
+		41E098C71E88D9C30017A53B /* AZLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLabel.swift; sourceTree = "<group>"; };
+		41E098C91E88ED390017A53B /* AZStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStyle.swift; sourceTree = "<group>"; };
+		41E098D81E892D530017A53B /* AZViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZViewDelegate.swift; sourceTree = "<group>"; };
+		41E098DA1E8955030017A53B /* UIFont+LoadFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+LoadFont.swift"; sourceTree = "<group>"; };
+		41E098E61E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Bold.ttf"; path = "fonts/IRANSansMobile(FaNum)_Bold.ttf"; sourceTree = "<group>"; };
+		41E098E71E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Light.ttf"; path = "fonts/IRANSansMobile(FaNum)_Light.ttf"; sourceTree = "<group>"; };
+		41E098E81E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Medium.ttf"; path = "fonts/IRANSansMobile(FaNum)_Medium.ttf"; sourceTree = "<group>"; };
+		41E098E91E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_UltraLight.ttf"; path = "fonts/IRANSansMobile(FaNum)_UltraLight.ttf"; sourceTree = "<group>"; };
+		41E098EA1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum).ttf"; path = "fonts/IRANSansMobile(FaNum).ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +138,9 @@
 			children = (
 				4154864E1E86BDD900FAA8FA /* Assets.xcassets */,
 				415486551E86BDD900FAA8FA /* AZView.swift */,
+				41E098D81E892D530017A53B /* AZViewDelegate.swift */,
+				41E098C71E88D9C30017A53B /* AZLabel.swift */,
+				41E098C51E88D34E0017A53B /* AZHeaderSection.swift */,
 				4154865E1E86C27700FAA8FA /* AZCheckBox */,
 				41E098BE1E87B2880017A53B /* AZPickerView */,
 				415486541E86BDD900FAA8FA /* AZPopup.swift */,
@@ -125,6 +148,9 @@
 				415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */,
 				415486461E86BDA800FAA8FA /* AZViewer.h */,
 				415486471E86BDA800FAA8FA /* Info.plist */,
+				41E098C91E88ED390017A53B /* AZStyle.swift */,
+				41E098DA1E8955030017A53B /* UIFont+LoadFont.swift */,
+				41E098CB1E88EFE20017A53B /* Font */,
 			);
 			path = AZViewer;
 			sourceTree = "<group>";
@@ -160,6 +186,18 @@
 				41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */,
 			);
 			name = AZPickerView;
+			sourceTree = "<group>";
+		};
+		41E098CB1E88EFE20017A53B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				41E098E61E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf */,
+				41E098E71E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf */,
+				41E098E81E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf */,
+				41E098E91E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf */,
+				41E098EA1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				415486561E86BDD900FAA8FA /* Assets.xcassets in Resources */,
+				41E098EC1E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf in Resources */,
+				41E098ED1E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf in Resources */,
+				41E098EB1E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf in Resources */,
+				41E098EF1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf in Resources */,
+				41E098EE1E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,15 +323,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				415486571E86BDD900FAA8FA /* AZButton.swift in Sources */,
+				41E098CA1E88ED390017A53B /* AZStyle.swift in Sources */,
 				41E098C01E87B2A30017A53B /* AZPickerView.swift in Sources */,
 				4154865C1E86BDD900FAA8FA /* AZPopup.swift in Sources */,
+				41E098D91E892D530017A53B /* AZViewDelegate.swift in Sources */,
 				4154865A1E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift in Sources */,
+				41E098DB1E8955040017A53B /* UIFont+LoadFont.swift in Sources */,
 				4154865D1E86BDD900FAA8FA /* AZView.swift in Sources */,
 				4154865B1E86BDD900FAA8FA /* AZIndicatorShape.swift in Sources */,
 				41E098C41E87C6080017A53B /* AZPicker.swift in Sources */,
 				415486581E86BDD900FAA8FA /* AZCheckBox.swift in Sources */,
+				41E098C61E88D34E0017A53B /* AZHeaderSection.swift in Sources */,
 				41E098C21E87B46D0017A53B /* AZPickerViewDelegate.swift in Sources */,
 				415486591E86BDD900FAA8FA /* AZCheckBoxDataSource.swift in Sources */,
+				41E098C81E88D9C30017A53B /* AZLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
