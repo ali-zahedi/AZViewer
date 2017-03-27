@@ -9,8 +9,15 @@
 import Foundation
 
 public class AZCheckBox: AZView {
+    public var font: UIFont! {
+        didSet{
+            AZCheckBoxTableViewCell.font = self.font
+        }
+    }
     
-    var data: AZCheckBoxDataSection = AZCheckBoxDataSection() {
+    public var hiddenEndSeparator: Bool = false
+    
+    public var data: AZCheckBoxDataSection = AZCheckBoxDataSection() {
         didSet{
             self.tableView.reloadData()
         }
@@ -19,7 +26,7 @@ public class AZCheckBox: AZView {
     fileprivate var tableView: UITableView!
     fileprivate static let cellReuseIdentifier: String = "CheckBoxTableViewCell"
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
     }
@@ -73,7 +80,7 @@ extension AZCheckBox: UITableViewDataSource {
         cell.dataSource = self.data.value[indexPath.row]
         
         // hidden last row seperator
-        if indexPath.row == self.data.value.count - 1 {
+        if indexPath.row == self.data.value.count - 1 && self.hiddenEndSeparator{
             
             cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, tableView.bounds.width);
         }

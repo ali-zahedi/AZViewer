@@ -8,28 +8,28 @@
 
 import Foundation
 
-class AZCheckBoxDataSource {
+open class AZCheckBoxDataSource {
     
-    var id: AnyObject
-    var title: String
-    var isActive: Bool
+    public var id: AnyObject
+    public var title: String
+    public var isActive: Bool
     
-    init(id: AnyObject, title: String, isActive: Bool = false) {
+    public init(id: AnyObject, title: String, isActive: Bool = false) {
         self.id = id
         self.title = title
         self.isActive = isActive
     }
 }
 
-class AZCheckBoxDataSection {
+open class AZCheckBoxDataSection {
 
-    var value: [AZCheckBoxDataSource]
+    public var value: [AZCheckBoxDataSource]
     
-    init() {
+    public init() {
         self.value = []
     }
     
-    init(value: [AZCheckBoxDataSource]) {
+    public init(value: [AZCheckBoxDataSource]) {
         
         self.value = value
     }
