@@ -20,5 +20,13 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>IRANSansMobile(FaNum).ttf</string>
+		<string>IRANSansMobile(FaNum)_Bold.ttf</string>
+		<string>IRANSansMobile(FaNum)_Light.ttf</string>
+		<string>IRANSansMobile(FaNum)_UltraLight.ttf</string>
+		<string>IRANSansMobile(FaNum)_Medium.ttf</string>
+	</array>
 </dict>
 </plist>
