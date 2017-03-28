@@ -23,6 +23,7 @@ public class AZPickerView: AZView{
             self.pickerView.data = self.data
             self._index = [:]
             for (i, _) in self.data.enumerated(){
+                // check out of range
                 if self.data[i].count > 0{
                     self.selected(indexPath: IndexPath(row: 0, section: i))
                 }
