@@ -22,8 +22,10 @@ public class AZPickerView: AZView{
         didSet{
             self.pickerView.data = self.data
             self._index = [:]
-            for (index, _) in self.data.enumerated(){
-                self.selected(indexPath: IndexPath(row: 0, section: index))
+            for (i, _) in self.data.enumerated(){
+                if self.data[i].count > 0{
+                    self.selected(indexPath: IndexPath(row: 0, section: i))
+                }
             }
         }
     }
