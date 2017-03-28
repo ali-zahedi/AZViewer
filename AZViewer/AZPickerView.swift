@@ -109,7 +109,10 @@ extension AZPickerView: AZPickerViewDelegate {
         var string = ""
         
         for i in 0...(self.data.count - 1){
-            if let row = self.index[i] {
+            
+            // check array range
+            if let row = self.index[i],  self.data[i].count > row{
+                
                 string += self.data[i][row] + self.separatorSection
             }
         }
