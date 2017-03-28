@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     fileprivate func preparePickerView(){
         self.view.addSubview(self.pickerView)
         self.pickerView.delegate = self
-        self.pickerView.data = [["Item 1", "Item 2", "Item 3"], ["Item4", "Item 5"], ["Section 3", "Item 6"]]
+        self.pickerView.data = [[(12 as AnyObject, "Item 1"), (13 as AnyObject, "Item 2"), (14 as AnyObject, "Item 3")],[(1  as AnyObject, "Item4"), (2 as AnyObject, "Item 5")], [(3 as AnyObject, "Section 3"), (6 as AnyObject, "Item 6")]]
         self.pickerView.separatorSection = " - - "
         self.pickerView.selected(indexPath: IndexPath(row: 2, section: 0))
         print("selected index: \(self.pickerView.index)")

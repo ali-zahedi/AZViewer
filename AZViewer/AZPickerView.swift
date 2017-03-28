@@ -18,7 +18,7 @@ public class AZPickerView: AZView{
         }
     }
     
-    public var data: [[String]] = [[]] {
+    public var data: [[(AnyObject, String)]] = [[]] {
         didSet{
             self.pickerView.data = self.data
             self._index = [:]
@@ -113,7 +113,7 @@ extension AZPickerView: AZPickerViewDelegate {
             // check array range
             if let row = self.index[i],  self.data[i].count > row{
                 
-                string += self.data[i][row] + self.separatorSection
+                string += self.data[i][row].1 + self.separatorSection
             }
         }
         

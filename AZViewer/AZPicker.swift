@@ -11,7 +11,7 @@ import Foundation
 class AZPicker: AZView{
     
     // public
-    var data: [[String]] = [[]] {
+    var data: [[(AnyObject, String)]] = [[]] {
         didSet{
             self.pickerView.reloadAllComponents()
         }
@@ -74,7 +74,7 @@ extension AZPicker: UIPickerViewDelegate{
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return self.data[component][row]
+        return self.data[component][row].1
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
