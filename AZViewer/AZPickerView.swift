@@ -91,15 +91,20 @@ public class AZPickerView: AZView{
     // tap on input
     func inputPickerViewAction(){
         
-        var view: UIView = self
-        while let v =  view.superview{
-            view = v
+        // check for load all data and then show
+        if self.index.count == self.data.count {
+            var view: UIView = self
+            while let v =  view.superview{
+                view = v
+            }
+            
+            view.addSubview(self.pickerView)
+        }else{
+            NSLog("AZPicker View data doesn't load ")
         }
         
-        view.addSubview(self.pickerView)
-        
     }
-
+    
 }
 
 extension AZPickerView: AZPickerViewDelegate {
