@@ -8,13 +8,13 @@
 
 import Foundation
 
-class AZButton: UIButton{
+open class AZButton: UIButton{
     
-    var loader: Bool = false
+    public var loader: Bool = false
     
     fileprivate var loaderMask: UIView = UIView()
     
-    override var frame: CGRect {
+    override open var frame: CGRect {
         didSet{
             super.frame = frame
             self.layer.cornerRadius = self.frame.height / 2
@@ -23,20 +23,20 @@ class AZButton: UIButton{
         }
     }
     
-    override var backgroundColor: UIColor?{
+    override open var backgroundColor: UIColor?{
         didSet{
             super.backgroundColor = backgroundColor
             self.loaderMask.backgroundColor = self.backgroundColor
         }
     }
     
-    override init(frame: CGRect){
+    override public init(frame: CGRect){
         
         super.init(frame: frame)
         self.defaultInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
         self.defaultInit()

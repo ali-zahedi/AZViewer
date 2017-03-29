@@ -12,7 +12,7 @@ public class AZPopupView: AZView{
     
     var button: AZButton!
     
-    override init(frame: CGRect){
+    override public init(frame: CGRect){
         
         super.init(frame: frame)
         self.defaultInit()
@@ -41,7 +41,7 @@ extension AZPopupView{
         self.button = AZButton()
         button.frame.size.width = self.frame.width
         button.frame.size.height = 50
-        button.frame.origin.y = self.frame.midY
+        button.frame.origin.y = 0
         
         button.backgroundColor = UIColor.orange
         

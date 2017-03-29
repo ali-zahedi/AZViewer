@@ -11,9 +11,10 @@ import AZViewer
 
 class ViewController: UIViewController {
 
-    var popupView: AZPopupView = AZPopupView()
+//    var popupView: AZPopupView = AZPopupView(frame: CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: 30))
     var checkBoxView: AZCheckBox = AZCheckBox()
     var pickerView: AZPickerView = AZPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 30))
+    var button: AZButton = AZButton(frame: CGRect(x: 0, y: 70, width: UIScreen.main.bounds.width, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
 //        self.view.addSubview(self.checkBoxView)
     
         self.preparePickerView()
+        self.prepareButton()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +43,16 @@ class ViewController: UIViewController {
         self.pickerView.separatorSection = " - - "
         self.pickerView.selected(indexPath: IndexPath(row: 2, section: 0))
         print("selected index: \(self.pickerView.index)")
+    }
+    
+    fileprivate func prepareButton(){
+        
+        self.button.backgroundColor = UIColor.orange
+        
+        self.button.setTitle("Button", for: .normal)
+        //        button.addTarget(self, action: #selector(self.tapButton), for: .touchUpInside)
+        self.view.addSubview(self.button)
+        self.button.loader = true
     }
 }
 
