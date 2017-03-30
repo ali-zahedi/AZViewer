@@ -10,8 +10,15 @@ import Foundation
 
 open class AZButton: UIButton{
     
+    // MARK: Public
     public var loader: Bool = false
     
+    // MARK: Private
+    fileprivate var loaderStatus: Bool = false {
+        didSet{
+            self.resetFrameLoaderMask()
+        }
+    }
     fileprivate var loaderMask: UIView = UIView()
     
     override open var frame: CGRect {
@@ -48,6 +55,7 @@ open class AZButton: UIButton{
         
         self.addTarget(self, action: #selector(self.tapButton), for: .touchUpInside)
     }
+
 }
 
 extension AZButton {
@@ -55,8 +63,9 @@ extension AZButton {
     // small and loader animation
     func tapButton(){
         
-        if self.loader && self.frame.size == self.loaderMask.frame.size{
+        if self.loader && !self.loaderStatus{
             
+            self.loaderStatus = true
             self.addAnimationLoader()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
@@ -104,10 +113,10 @@ extension AZButton{
         self.frame = self.loaderMask.frame
         self.loaderMask.superview?.addSubview(self)
         self.loaderMask.removeFromSuperview()
-        
+
         // todo: get animation loader view and then process on the view
         self.animationLoader(width: width, center: center, view: self)
-        self.resetFrameLoaderMask()
+        self.loaderStatus = false
     }
     
     fileprivate func animationLoader(width: CGFloat, center: CGFloat, view: UIView? = nil){
