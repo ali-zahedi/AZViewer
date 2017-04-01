@@ -16,6 +16,7 @@
 		4154865B1E86BDD900FAA8FA /* AZIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */; };
 		4154865C1E86BDD900FAA8FA /* AZPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486541E86BDD900FAA8FA /* AZPopup.swift */; };
 		4154865D1E86BDD900FAA8FA /* AZView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486551E86BDD900FAA8FA /* AZView.swift */; };
+		418532121E8E6EF9009E416D /* AZStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418532111E8E6EF9009E416D /* AZStepper.swift */; };
 		41E098771E86C5BD0017A53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098761E86C5BD0017A53B /* AppDelegate.swift */; };
 		41E098791E86C5BD0017A53B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098781E86C5BD0017A53B /* ViewController.swift */; };
 		41E0987C1E86C5BD0017A53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E0987A1E86C5BD0017A53B /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZIndicatorShape.swift; sourceTree = "<group>"; };
 		415486541E86BDD900FAA8FA /* AZPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopup.swift; sourceTree = "<group>"; };
 		415486551E86BDD900FAA8FA /* AZView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZView.swift; sourceTree = "<group>"; };
+		418532111E8E6EF9009E416D /* AZStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStepper.swift; sourceTree = "<group>"; };
 		41E098741E86C5BD0017A53B /* AZViewer Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AZViewer Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E098761E86C5BD0017A53B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41E098781E86C5BD0017A53B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				415486541E86BDD900FAA8FA /* AZPopup.swift */,
 				4154864F1E86BDD900FAA8FA /* AZButton.swift */,
 				415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */,
+				418532131E8E6F3D009E416D /* Stepper */,
 				415486461E86BDA800FAA8FA /* AZViewer.h */,
 				415486471E86BDA800FAA8FA /* Info.plist */,
 				41E098C91E88ED390017A53B /* AZStyle.swift */,
@@ -160,6 +163,14 @@
 				415486521E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift */,
 			);
 			name = AZCheckBox;
+			sourceTree = "<group>";
+		};
+		418532131E8E6F3D009E416D /* Stepper */ = {
+			isa = PBXGroup;
+			children = (
+				418532111E8E6EF9009E416D /* AZStepper.swift */,
+			);
+			name = Stepper;
 			sourceTree = "<group>";
 		};
 		41E098751E86C5BD0017A53B /* AZViewer Example */ = {
@@ -319,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				418532121E8E6EF9009E416D /* AZStepper.swift in Sources */,
 				415486571E86BDD900FAA8FA /* AZButton.swift in Sources */,
 				41E098CA1E88ED390017A53B /* AZStyle.swift in Sources */,
 				41E098C01E87B2A30017A53B /* AZPickerView.swift in Sources */,

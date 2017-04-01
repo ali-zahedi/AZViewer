@@ -16,14 +16,17 @@ class ViewController: UIViewController {
     var pickerView: AZPickerView = AZPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 30))
     var button: AZButton = AZButton(frame: CGRect(x: 0, y: 70, width: UIScreen.main.bounds.width, height: 50))
     
+    var stepper: AZStepper = AZStepper(frame: CGRect(x: 0, y: 130, width: UIScreen.main.bounds.width / 3, height: 30))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor.lightGray
 //        self.view.addSubview(self.popupView)
 //        self.view.addSubview(self.checkBoxView)
     
         self.preparePickerView()
         self.prepareButton()
+        self.prepareStepper()
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +56,15 @@ class ViewController: UIViewController {
         //        button.addTarget(self, action: #selector(self.tapButton), for: .touchUpInside)
         self.view.addSubview(self.button)
         self.button.loader = true
+    }
+    
+    fileprivate func prepareStepper(){
+        self.view.addSubview(self.stepper)
+//        self.stepper.minusBackgroundColor
+//        self.stepper.minusIcon
+//        self.stepper.minusIconColor
+//        self.stepper.plusBackgroundColor
+//        and so on...
     }
 }
 
