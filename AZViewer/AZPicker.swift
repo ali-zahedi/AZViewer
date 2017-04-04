@@ -8,9 +8,9 @@
 
 import Foundation
 
-class AZPicker: AZView{
+class AZPicker: AZPopupView{
     
-    // public
+    // MARK: Var
     var data: [[(AnyObject, String)]] = [[]] {
         didSet{
             self.pickerView.reloadAllComponents()
@@ -18,11 +18,11 @@ class AZPicker: AZView{
     }
     
     var delegate: AZPickerViewDelegate?
+    var pickerView: AZPickerView = AZPickerView()
     
     // private
-    var pickerView: UIPickerView = UIPickerView()
     
-    // override
+    // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
@@ -33,28 +33,32 @@ class AZPicker: AZView{
         self.defaultInit()
     }
     
+    // MARK: Function
     fileprivate func defaultInit(){
         
-        self.prepareHeaderSection(title: "")
+        for v in [pickerView] as [UIView] {
+            v.translatesAutoresizingMaskIntoConstraints = false
+            self.addSubview(v)
+        }
         
         self.preparePickerView()
+        self.title = "عنوان اول"
     }
     
-    // prepare pickerview
+}
+
+// Prepare
+extension AZPicker{
+    
+    // pickerview
     fileprivate func preparePickerView(){
         
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         self.pickerView.showsSelectionIndicator = true
-        
-        self.addSubview(self.pickerView)
-        self.pickerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint(item: self.pickerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: AZStyle.sectionHeaderHeight).isActive = true
-        NSLayoutConstraint(item: self.pickerView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.pickerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.pickerView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        _ = self.pickerView.aZConstraints.parent(parent: self).top(to: self.headerSection, toAttribute: .bottom).right(to: self).left(to: self).bottom(to: self)
     }
+    
 }
 
 extension AZPicker: UIPickerViewDataSource{
@@ -72,22 +76,30 @@ extension AZPicker: UIPickerViewDataSource{
 
 extension AZPicker: UIPickerViewDelegate{
     
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return self.data[component][row].1
-    }
-    
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         self.delegate?.aZPickerView(didSelectRow: row, inComponent: component)
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label = view as! UILabel!
+        if label == nil {
+            label = UILabel()
+        }
+        
+        label?.font = self.style.sectionPickerViewItemFont
+        label?.textColor = self.style.sectionPickerViewItemColor
+        label?.textAlignment = .center
+        label?.text = self.data[component][row].1
+        return label!
     }
 }
 
 extension AZPicker{
     
-    override func closeView() {
-        
-        super.closeView()
-        self.removeFromSuperview()
-    }
+//    override func closeView() {
+//        
+//        super.closeView()
+//        self.removeFromSuperview()
+//    }
 }

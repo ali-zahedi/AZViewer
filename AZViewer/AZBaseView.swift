@@ -1,5 +1,5 @@
 //
-//  AZView.swift
+//  AZBaseView.swift
 //  AZViewer
 //
 //  Created by Ali Zahedi on 1/14/1396 AP.
@@ -8,11 +8,15 @@
 
 import Foundation
 
-public class AZView: AZBaseView{
+public class AZBaseView: UIView{
     
     // MARK: Public
     
     // MARK: Internal
+    internal var aZConstraints: AZConstraint!
+    internal var style: AZStyle {
+        return AZStyle.shared
+    }
     
     // MARK: Private
     
@@ -29,16 +33,6 @@ public class AZView: AZBaseView{
     
     // MARK: Function
     fileprivate func defaultInit(){
-        
-        for v in [] as [UIView] {
-            v.translatesAutoresizingMaskIntoConstraints = false
-            self.addSubview(v)
-        }
+        self.aZConstraints = AZConstraint(view: self)
     }
-}
-
-// prepare
-extension AZView{
-    
-    
 }
