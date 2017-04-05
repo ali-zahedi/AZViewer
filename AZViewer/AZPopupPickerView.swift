@@ -102,6 +102,7 @@ extension AZPopupPickerView{
         self.input.tintColor = UIColor.clear
         
         _ = self.input.aZConstraints.parent(parent: self).top(to: self).right(to: self).left(to: self).bottom(to: self)
+        self.input.leftIcon = AZAssets.expandImage
     }
     
     // tap on input

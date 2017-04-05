@@ -38,6 +38,7 @@ open class AZAssets: NSObject {
     open class var plusImage: UIImage { return AZAssets.bundledImage(named: "plus") }
     open class var minusImage: UIImage { return AZAssets.bundledImage(named: "minus") }
     open class var tickImage: UIImage { return AZAssets.bundledImage(named: "tick") }
+    open class var expandImage: UIImage { return AZAssets.bundledImage(named: "expand") }
     
     internal class func bundledImage(named name: String) -> UIImage {
         let bundle = Bundle(for: AZAssets.self)
