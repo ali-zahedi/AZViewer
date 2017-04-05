@@ -44,8 +44,8 @@ public class AZPopupPickerView: AZView{
     public var delegate: AZPopupViewDelegate?
     
     // private
-    fileprivate var _index: [Int: Int]!
-    fileprivate var _indexTemp: [Int: Int]!
+    fileprivate var _index: [Int: Int] = [:]
+    fileprivate var _indexTemp: [Int: Int] = [:]
     fileprivate var pickerView: AZPicker = AZPicker()
     fileprivate var input: AZTextField = AZTextField()
     
