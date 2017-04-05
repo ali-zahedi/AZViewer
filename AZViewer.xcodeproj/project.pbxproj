@@ -31,6 +31,9 @@
 		41258CA71E93D09D00F35AC9 /* AZLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA61E93D09D00F35AC9 /* AZLabel.swift */; };
 		41258CA91E93D85400F35AC9 /* AZPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA81E93D85400F35AC9 /* AZPickerViewDelegate.swift */; };
 		41258CAB1E93D87900F35AC9 /* AZPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CAA1E93D87900F35AC9 /* AZPicker.swift */; };
+		413402BE1E948F6200F74175 /* AZCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BB1E948F6200F74175 /* AZCheckBox.swift */; };
+		413402BF1E948F6200F74175 /* AZCheckBoxDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */; };
+		413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */; };
 		4184C3A41E93DA6A00B46E9D /* AZPopupPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A31E93DA6A00B46E9D /* AZPopupPickerView.swift */; };
 		4184C3A61E93DA8F00B46E9D /* AZPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */; };
 		4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */; };
@@ -89,6 +92,9 @@
 		41258CA61E93D09D00F35AC9 /* AZLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLabel.swift; sourceTree = "<group>"; };
 		41258CA81E93D85400F35AC9 /* AZPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerViewDelegate.swift; sourceTree = "<group>"; };
 		41258CAA1E93D87900F35AC9 /* AZPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPicker.swift; sourceTree = "<group>"; };
+		413402BB1E948F6200F74175 /* AZCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBox.swift; sourceTree = "<group>"; };
+		413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxDataSource.swift; sourceTree = "<group>"; };
+		413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxTableViewCell.swift; sourceTree = "<group>"; };
 		4184C3A31E93DA6A00B46E9D /* AZPopupPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupPickerView.swift; sourceTree = "<group>"; };
 		4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerView.swift; sourceTree = "<group>"; };
 		4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupView.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 				41258CA31E93D05800F35AC9 /* Extension Master Class */,
 				41258CA21E93D02A00F35AC9 /* Element */,
 				41258C9F1E93C9A500F35AC9 /* Assets & Style */,
+				413402BA1E948F5500F74175 /* AZCheckBox */,
 				411233D41E92A5EB004064FA /* AZPickerView */,
 				411233C81E92A064004064FA /* fonts */,
 			);
@@ -214,6 +221,16 @@
 				41258CA01E93CC9F00F35AC9 /* UIColor+hex.swift */,
 			);
 			name = "Extension Master Class";
+			sourceTree = "<group>";
+		};
+		413402BA1E948F5500F74175 /* AZCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				413402BB1E948F6200F74175 /* AZCheckBox.swift */,
+				413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */,
+				413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */,
+			);
+			name = AZCheckBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,10 +367,13 @@
 				4184C3A41E93DA6A00B46E9D /* AZPopupPickerView.swift in Sources */,
 				4184C3B01E942E7600B46E9D /* AZButton.swift in Sources */,
 				41258CA91E93D85400F35AC9 /* AZPickerViewDelegate.swift in Sources */,
+				413402BF1E948F6200F74175 /* AZCheckBoxDataSource.swift in Sources */,
 				411233D31E92A2B8004064FA /* AZView.swift in Sources */,
 				41258C9E1E93C84500F35AC9 /* AZAssets.swift in Sources */,
+				413402BE1E948F6200F74175 /* AZCheckBox.swift in Sources */,
 				41258CAB1E93D87900F35AC9 /* AZPicker.swift in Sources */,
 				4184C3AA1E941BC000B46E9D /* AZPopupViewDelegate.swift in Sources */,
+				413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

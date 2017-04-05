@@ -33,6 +33,14 @@ class AZStyle{
     var sectionHeaderAlpha: CGFloat = 1.0
     
     // MARK: Section Table
+    var sectionTableHeightImage: CGFloat {
+        return self.sectionGeneralHeight
+    }
+    var sectionTableDeactiveCornerColor: UIColor = UIColor(hex: "e4e4e4")
+    var sectionTableDeactiveColor: UIColor = UIColor(hex: "c3c3c3")
+    var sectionTableActiveCornerColor: UIColor = UIColor(hex: "04970a")
+    var sectionTableActiveColor: UIColor = UIColor(hex: "ffffff")
+    var sectionTableFontRow: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
     
     // MARK: Section View
     var sectionViewBackgroundColor: UIColor = UIColor(hex: "f8f7f4")
