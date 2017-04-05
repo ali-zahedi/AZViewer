@@ -62,6 +62,7 @@ extension AZPicker{
     
 }
 
+// pickerview
 extension AZPicker: UIPickerViewDataSource{
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -94,13 +95,4 @@ extension AZPicker: UIPickerViewDelegate{
         label?.text = self.data[component][row].1
         return label!
     }
-}
-
-extension AZPicker{
-    
-//    override func closeView() {
-//        
-//        super.closeView()
-//        self.removeFromSuperview()
-//    }
 }

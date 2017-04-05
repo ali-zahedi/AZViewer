@@ -10,8 +10,12 @@ import Foundation
 
 public class AZPopupPickerView: AZView{
     
-    // public
-    public var separatorSection: String = "/"
+    // MARK: Public
+    public var separatorSection: String = "/" {
+        didSet{
+            self.submitPopupView()
+        }
+    }
     public var index: [Int: Int]{
         get{
             return self._index
@@ -22,6 +26,7 @@ public class AZPopupPickerView: AZView{
         didSet{
             self.pickerView.data = self.data
             self._index = [:]
+            self._indexTemp = [:]
             for (i, _) in self.data.enumerated(){
                 // check out of range
                 if self.data[i].count > 0{
@@ -30,12 +35,11 @@ public class AZPopupPickerView: AZView{
             }
         }
     }
-    
-    public var delegate: AZPickerViewDelegate?
-    
+    public var delegate: AZPopupViewDelegate?
     
     // private
     fileprivate var _index: [Int: Int]!
+    fileprivate var _indexTemp: [Int: Int]!
     fileprivate var pickerView: AZPicker = AZPicker()
     fileprivate var input: UITextField = UITextField()
     
@@ -72,6 +76,7 @@ extension AZPopupPickerView{
     fileprivate func preparePickerView(){
         
         self.pickerView.delegate = self
+        self.pickerView.delegatePopupView = self
         self.pickerView.translatesAutoresizingMaskIntoConstraints = true
         
         let width: CGFloat = UIScreen.main.bounds.width
@@ -115,10 +120,31 @@ extension AZPopupPickerView{
 extension AZPopupPickerView: AZPickerViewDelegate {
     
     public func aZPickerView(didSelectRow row: Int, inComponent component: Int) {
-        self.delegate?.aZPickerView(didSelectRow: row, inComponent: component)
-        self._index[component] = row
+        self._indexTemp[component] = row
+    }
+    
+    public func selected(indexPath: IndexPath){
+        self.selectedWithoutSubmit(indexPath: indexPath)
+        self.submitPopupView()
+    }
+    
+    fileprivate func selectedWithoutSubmit(indexPath: IndexPath){
+        self.pickerView.pickerView.selectRow(indexPath.row, inComponent: indexPath.section, animated: true)
+        self.pickerView.pickerView(self.pickerView.pickerView, didSelectRow: indexPath.row, inComponent: indexPath.section)
+    }
+    
+}
+
+// popupview
+extension AZPopupPickerView: AZPopupViewDelegate{
+    
+    // submit
+    public func submitPopupView() {
+    
+        // set index
+        self._index = self._indexTemp
         
-        
+        // show on input
         var string = ""
         
         for i in (0...(self.data.count - 1)).reversed(){
@@ -132,11 +158,30 @@ extension AZPopupPickerView: AZPickerViewDelegate {
         
         string = string.trimmingCharacters(in: CharacterSet(charactersIn: self.separatorSection))
         self.input.text = string
+        
+        // call delegate
+        self.delegate?.submitPopupView()
     }
     
-    public func selected(indexPath: IndexPath){
-        self.pickerView.pickerView.selectRow(indexPath.row, inComponent: indexPath.section, animated: true)
-        self.pickerView.pickerView(self.pickerView.pickerView, didSelectRow: indexPath.row, inComponent: indexPath.section)
+    // cancel
+    public func cancelPopupView() {
+        
+        // reset index
+        if self._index == self._indexTemp{
+            
+            return
+        }
+        self._indexTemp = self._index
+        
+        for (i, _) in self.data.enumerated(){
+            // check array range
+            if let row = self.index[i],  self.data[i].count > row{
+                
+                self.selectedWithoutSubmit(indexPath: IndexPath(row: row, section: i))
+            }
+        }
+        
+        // call delegate
+        self.delegate?.cancelPopupView()
     }
-    
 }

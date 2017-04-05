@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AZPopupViewDelegate {
+public protocol AZPopupViewDelegate {
     
     func cancelPopupView()
     

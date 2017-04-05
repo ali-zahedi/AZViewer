@@ -137,12 +137,12 @@ extension AZPopupView{
 
 // delegate header
 extension AZPopupView: AZPopupViewDelegate{
-    func cancelPopupView() {
+    public func cancelPopupView() {
         
         self.cancelPopup(self)
     }
     
-    func submitPopupView() {
+    public func submitPopupView() {
         self.submitPopup(self)
     }
 }
