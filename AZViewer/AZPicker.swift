@@ -43,6 +43,7 @@ class AZPicker: AZPopupView{
         
         self.preparePickerView()
         self.title = "عنوان اول"
+        self.headerSection.type = .success
     }
     
 }
