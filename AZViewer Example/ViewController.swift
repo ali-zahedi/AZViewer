@@ -13,12 +13,15 @@ class ViewController: UIViewController {
 
     var pickerView: AZPopupPickerView = AZPopupPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 30))
     
+    var datePickerView: AZPopupDatePickerView = AZPopupDatePickerView(frame: CGRect(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 30))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.lightGray
         
         self.preparePickerView()
+        self.prepareDatePickerView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +39,25 @@ class ViewController: UIViewController {
         self.pickerView.selected(indexPath: IndexPath(row: 2, section: 0))
 //        self.pickerView.icon = UIImage(named: "calender")
         print("selected index: \(self.pickerView.index)")
+    }
+    
+    // prepare date picker view
+    fileprivate func prepareDatePickerView(){
+        self.view.addSubview(self.datePickerView)
+//        self.pickerView.delegate = self
+        
+        self.datePickerView.separatorSection = " / "
+        self.datePickerView.selected(indexPath: IndexPath(row: 2, section: 0))
+        
+        // date
+        let formatter = DateFormatter()
+        formatter.dateFormat = AZStyle.shared.sectionDatePickerViewFormatDate
+        formatter.calendar = Calendar(identifier: .gregorian)
+        self.datePickerView.minimumDateTime = formatter.date(from: "1990/12/10")!
+        self.datePickerView.maximumDateTime = formatter.date(from: "2017/12/31")!
+//        self.datePickerView.minimumDateTime = Date(
+        //        self.pickerView.icon = UIImage(named: "calender")
+//        print("selected index: \(self.datePickerView.index)")
     }
 
 }
