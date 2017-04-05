@@ -55,6 +55,8 @@ class AZStyle{
     
     // MARK: Section Input
     var sectionInputFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize)!
+    var sectionInputIconColor: UIColor = UIColor(hex: "04970a")
+    var sectionInputLeftPadding: CGFloat = CGFloat(3)
     
     // MARK: Section Picker View
     var sectionPickerViewItemFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!

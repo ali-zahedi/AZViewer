@@ -34,6 +34,8 @@
 		413402BE1E948F6200F74175 /* AZCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BB1E948F6200F74175 /* AZCheckBox.swift */; };
 		413402BF1E948F6200F74175 /* AZCheckBoxDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */; };
 		413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */; };
+		417168D21E9505F500E30160 /* AZTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417168D11E9505F500E30160 /* AZTextField.swift */; };
+		417168D41E95089000E30160 /* AZImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417168D31E95089000E30160 /* AZImageView.swift */; };
 		4184C3A41E93DA6A00B46E9D /* AZPopupPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A31E93DA6A00B46E9D /* AZPopupPickerView.swift */; };
 		4184C3A61E93DA8F00B46E9D /* AZPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */; };
 		4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */; };
@@ -95,6 +97,8 @@
 		413402BB1E948F6200F74175 /* AZCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBox.swift; sourceTree = "<group>"; };
 		413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxDataSource.swift; sourceTree = "<group>"; };
 		413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxTableViewCell.swift; sourceTree = "<group>"; };
+		417168D11E9505F500E30160 /* AZTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTextField.swift; sourceTree = "<group>"; };
+		417168D31E95089000E30160 /* AZImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZImageView.swift; sourceTree = "<group>"; };
 		4184C3A31E93DA6A00B46E9D /* AZPopupPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupPickerView.swift; sourceTree = "<group>"; };
 		4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerView.swift; sourceTree = "<group>"; };
 		4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupView.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 				41258CA61E93D09D00F35AC9 /* AZLabel.swift */,
 				4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */,
 				4184C3AF1E942E7600B46E9D /* AZButton.swift */,
+				417168D11E9505F500E30160 /* AZTextField.swift */,
+				417168D31E95089000E30160 /* AZImageView.swift */,
 				411233D91E92B9F6004064FA /* AZHeader.swift */,
 			);
 			name = Element;
@@ -361,6 +367,7 @@
 				411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */,
 				41258C9C1E93C77C00F35AC9 /* AZStyle.swift in Sources */,
 				4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */,
+				417168D41E95089000E30160 /* AZImageView.swift in Sources */,
 				411233DC1E92BB3C004064FA /* AZConstraint.swift in Sources */,
 				4184C3A61E93DA8F00B46E9D /* AZPickerView.swift in Sources */,
 				41258CA71E93D09D00F35AC9 /* AZLabel.swift in Sources */,
@@ -374,6 +381,7 @@
 				41258CAB1E93D87900F35AC9 /* AZPicker.swift in Sources */,
 				4184C3AA1E941BC000B46E9D /* AZPopupViewDelegate.swift in Sources */,
 				413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */,
+				417168D21E9505F500E30160 /* AZTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

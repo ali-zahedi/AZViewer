@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AZLabel: UILabel {
+public class AZLabel: UILabel {
     
     // MARK: var
     
@@ -25,12 +25,12 @@ class AZLabel: UILabel {
     */
     
     // MARK: Init
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.defaultInit()
     }

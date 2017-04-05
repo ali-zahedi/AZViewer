@@ -35,16 +35,21 @@ public class AZPopupPickerView: AZView{
             }
         }
     }
+    public var icon: UIImage! {
+        didSet{
+            self.input.leftIcon = icon
+        }
+    }
+    
     public var delegate: AZPopupViewDelegate?
     
     // private
     fileprivate var _index: [Int: Int]!
     fileprivate var _indexTemp: [Int: Int]!
     fileprivate var pickerView: AZPicker = AZPicker()
-    fileprivate var input: UITextField = UITextField()
+    fileprivate var input: AZTextField = AZTextField()
     
     // override
-    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
@@ -96,11 +101,7 @@ extension AZPopupPickerView{
         self.input.textAlignment = .center
         self.input.tintColor = UIColor.clear
         
-        // TODO: Replace with AZConstraint
-        NSLayoutConstraint(item: self.input, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.input, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.input, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.input, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        _ = self.input.aZConstraints.parent(parent: self).top(to: self).right(to: self).left(to: self).bottom(to: self)
     }
     
     // tap on input
