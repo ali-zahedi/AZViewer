@@ -25,12 +25,22 @@ public class AZPopupPickerView: AZView{
     public var data: [[(AnyObject, String)]] = [[]] {
         didSet{
             self.pickerView.data = self.data
+            // for restor after load dynamic another component
+            let index = self._indexTemp
             self._index = [:]
             self._indexTemp = [:]
             for (i, _) in self.data.enumerated(){
                 // check out of range
                 if self.data[i].count > 0{
-                    self.selected(indexPath: IndexPath(row: 0, section: i))
+                    
+                    // restore last position
+                    if index.count > i, self.data[i].count > index[i]! {
+                        
+                        self.selected(indexPath: IndexPath(row: index[i]!, section: i))
+                    }else{
+                       
+                        self.selected(indexPath: IndexPath(row: 0, section: i))
+                    }
                 }
             }
         }
