@@ -1,5 +1,5 @@
 //
-//  AZButton.swift
+//  AZImageView.swift
 //  AZViewer
 //
 //  Created by Ali Zahedi on 1/16/1396 AP.
@@ -8,12 +8,16 @@
 
 import UIKit
 
-public class AZButton: UIButton {
-
+public class AZImageView: UIImageView {
+    
+    // MARK: Public
+    
     // MARK: var
     
     // MARK: Internal
     internal var aZConstraints: AZConstraint!
+    
+    // MARK: Private
     
     /*
      // Only override draw() if you perform custom drawing.
@@ -24,6 +28,16 @@ public class AZButton: UIButton {
      */
     
     // MARK: Init
+    override public init(image: UIImage?) {
+        super.init(image: image)
+        self.defaultInit()
+    }
+    
+    override public init(image: UIImage?, highlightedImage: UIImage?) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        self.defaultInit()
+    }
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
@@ -39,5 +53,5 @@ public class AZButton: UIButton {
         self.aZConstraints = AZConstraint(view: self)
     }
     
-
+    
 }

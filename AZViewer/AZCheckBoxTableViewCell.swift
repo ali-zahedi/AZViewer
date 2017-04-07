@@ -10,9 +10,9 @@ import Foundation
 
 class AZCheckBoxTableViewCell: UITableViewCell {
     
-    // public
-    static var font: UIFont = AZStyle.sectionTableRow
+    // MARK: Public
     
+    // MARK: Internal
     var dataSource: AZCheckBoxDataSource! {
         didSet{
             self.updateUI()
@@ -22,12 +22,8 @@ class AZCheckBoxTableViewCell: UITableViewCell {
     var checkBoxImageView: UIImageView = UIImageView()
     var title: UILabel = UILabel()
     
-    // private 
-    fileprivate static let heightOfCheckBoxImageView: CGFloat = CGFloat(25)
-    fileprivate static let deactiveCornerColor: UIColor = AZView.hexStringToUIColor(hex: "e4e4e4")
-    fileprivate static let deactiveColor: UIColor = AZView.hexStringToUIColor(hex: "c3c3c3")
-    fileprivate static let activeCornerColor: UIColor = AZView.hexStringToUIColor(hex: "04970a")
-    fileprivate static let activeColor: UIColor = AZView.hexStringToUIColor(hex: "ffffff")
+    // MARK: Private
+    fileprivate var style: AZStyle = AZStyle.shared
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -68,12 +64,12 @@ class AZCheckBoxTableViewCell: UITableViewCell {
         
         NSLayoutConstraint(item: self.checkBoxImageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -8).isActive = true
         NSLayoutConstraint(item: self.checkBoxImageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.checkBoxImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: AZCheckBoxTableViewCell.heightOfCheckBoxImageView).isActive = true
+        NSLayoutConstraint(item: self.checkBoxImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: self.style.sectionTableHeightImage).isActive = true
         NSLayoutConstraint(item: self.checkBoxImageView, attribute: .width, relatedBy: .equal, toItem: self.checkBoxImageView, attribute: .height, multiplier: 1, constant: 0).isActive = true
         
         self.checkBoxImageView.contentMode = .scaleAspectFit
-        self.checkBoxImageView.layer.cornerRadius = AZCheckBoxTableViewCell.heightOfCheckBoxImageView / 2
-        self.checkBoxImageView.image = UIImage(named: "tick", in: AZView.bundle, compatibleWith: nil)
+        self.checkBoxImageView.layer.cornerRadius = self.style.sectionTableHeightImage / 2
+        self.checkBoxImageView.image = AZAssets.tickImage
         
     }
     
@@ -86,7 +82,7 @@ class AZCheckBoxTableViewCell: UITableViewCell {
         NSLayoutConstraint(item: self.title, attribute: .height, relatedBy: .equal, toItem: self.checkBoxImageView, attribute: .height, multiplier: 5, constant: 0).isActive = true
         
         self.title.textAlignment = .right
-        self.title.font = AZCheckBoxTableViewCell.font
+        self.title.font = self.style.sectionTableFontRow
         self.title.numberOfLines = 0
         
     }
@@ -99,13 +95,13 @@ class AZCheckBoxTableViewCell: UITableViewCell {
     
     public func setupAnimationActive(){
         
-        var color1: UIColor = AZCheckBoxTableViewCell.deactiveCornerColor
-        var color2: UIColor = AZCheckBoxTableViewCell.deactiveColor
+        var color1: UIColor = self.style.sectionTableDeactiveCornerColor
+        var color2: UIColor = self.style.sectionTableDeactiveColor
         
         if dataSource.isActive {
         
-            color1 = AZCheckBoxTableViewCell.activeCornerColor
-            color2 = AZCheckBoxTableViewCell.activeColor
+            color1 = self.style.sectionTableActiveCornerColor
+            color2 = self.style.sectionTableActiveColor
         }
         
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: { 

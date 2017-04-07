@@ -9,11 +9,6 @@
 import Foundation
 
 public class AZCheckBox: AZView {
-    public var font: UIFont! {
-        didSet{
-            AZCheckBoxTableViewCell.font = self.font
-        }
-    }
     
     public var hiddenEndSeparator: Bool = false
     

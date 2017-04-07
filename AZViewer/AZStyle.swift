@@ -2,54 +2,74 @@
 //  AZStyle.swift
 //  AZViewer
 //
-//  Created by Ali Zahedi on 1/7/1396 AP.
+//  Created by Ali Zahedi on 1/15/1396 AP.
 //  Copyright © 1396 AP Ali Zahedi. All rights reserved.
 //
 
 import Foundation
 
-enum AZFontString: String {
+public class AZStyle{
     
-    /*
-     case ultraLight = "IRANSansMobile-UltraLight"
-     case light = "IRANSansMobile-Light"
-     case regular = "IRANSansMobile"
-     case medium = "IRANSansMobile-Medium"
-     case bold = "IRANSansMobile-Bold"
-     */
-    case ultraLight = "IRANSansMobileFaNum-UltraLight"
-    case light = "IRANSansMobileFaNum-Light"
-    case regular = "IRANSansMobileFaNum"
-    case medium = "IRANSansMobileFaNum-Medium"
-    case bold = "IRANSansMobileFaNum-Bold"
+    fileprivate struct Style {
+        static let shared = AZStyle()
+    }
     
-}
-
-struct AZStyle{
+    // MARK: Public
+    public static let shared = AZStyle()
+    private init() {} //This prevents others from using the default '()' initializer for this class.
     
-    static var loadFont: Bool = AZLoadFont.loadFont()
+    
+    // MARK: General
+    public var sectionGeneralHeight: CGFloat = CGFloat(30)
+    public var sectionGeneralConstant: CGFloat = CGFloat(8)
     
     // MARK: Section Headers
-    static var sectionHeaderHeight: CGFloat = CGFloat(30)
-    static var sectionHeaderTitleFont = UIFont(name: AZFontString.bold.rawValue, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize)!
-    static var sectionHeaderTitleColor = UIColor.black
-    static var sectionHeaderAlpha: CGFloat = 1.0
+    public var sectionHeaderHeight: CGFloat {
+        return sectionGeneralHeight
+    }
+    public var sectionHeaderTitleFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote).pointSize)!
+    public var sectionHeaderTitleColor = UIColor.white
+    public var sectionHeaderBackgroundColor = UIColor(hex: "FF5E3A")
+    public var sectionHeaderAlpha: CGFloat = 1.0
     
     // MARK: Section Table
-    static var sectionTableRow: UIFont = UIFont(name: AZFontString.regular.rawValue, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize)!
+    public var sectionTableHeightImage: CGFloat {
+        return self.sectionGeneralHeight
+    }
+    public var sectionTableDeactiveCornerColor: UIColor = UIColor(hex: "e4e4e4")
+    public var sectionTableDeactiveColor: UIColor = UIColor(hex: "c3c3c3")
+    public var sectionTableActiveCornerColor: UIColor = UIColor(hex: "04970a")
+    public var sectionTableActiveColor: UIColor = UIColor(hex: "ffffff")
+    public var sectionTableFontRow: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
     
     // MARK: Section View
-    static var sectionViewBackgroundColor: UIColor = AZView.hexStringToUIColor(hex: "f8f7f4")
-    static var sectionViewSeperatorColor: UIColor = AZView.hexStringToUIColor(hex: "e8e6e1")
+    public var sectionViewBackgroundColor: UIColor = UIColor(hex: "f8f7f4")
+    public var sectionViewSeperatorColor: UIColor = UIColor(hex: "e8e6e1")
+    
+    // MARK: Section Popup
+    public var sectionPopupBlurAlpha: CGFloat = CGFloat(0.75)
+    public var sectionPopupBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+    public var sectionPopupCornerRadius: CGFloat = CGFloat(5)
+    public var sectionPopupMarginMultiplier: CGFloat = CGFloat(0.10)
+    public var sectionPopupBackgroundColor: UIColor = UIColor.white
     
     // MARK: Section Input
-    static var sectionInputFont: UIFont = UIFont(name: AZFontString.regular.rawValue, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize)!
+    public var sectionInputFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize)!
+    public var sectionInputIconColor: UIColor = UIColor(hex: "e4e4e4")
+    public var sectionInputLeftPadding: CGFloat = CGFloat(3)
     
-    static let availableThemes = ["apple", "lightGray"]
+    // MARK: Section Picker View
+    public var sectionPickerViewItemFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
+    public var sectionPickerViewItemColor: UIColor = UIColor.black
     
-    static func loadTheme(){
-        _ = AZLoadFont.loadFont()
-
+    // MARK: Section Date Pickerview
+    public var sectionDatePickerViewFormatDate: String = "yyyy/MM/dd"
+    public var sectionDatePickerViewFormatTime: String = "HH:mm:ss"
+    
+    public let availableThemes = ["apple", "lightGray"]
+    
+    public func loadTheme(){
+        
         let defaults = UserDefaults.standard
         if let name = defaults.string(forKey: "AZTheme"){
             // Select the Theme
@@ -60,71 +80,19 @@ struct AZStyle{
                 themeMaster()
             }
         }else{
-            defaults.set("Apple", forKey: "AZTheme")
+            defaults.set("apple", forKey: "AZTheme")
             themeMaster()
         }
     }
     
     // MARK: Blue Color Schemes
-    static func themeMaster(){
-        // MARK: ToDo Table Section Headers
-//        sectionHeaderTitleFont = UIFont(name: "Helvetica-Bold", size: 20)
-//        sectionHeaderTitleColor = UIColor.white
-//        sectionHeaderBackgroundColor = UIColor.blue
-//        sectionHeaderAlpha = 0.8
+    func themeMaster(){
+        // MARK: TODO Table Section Headers
+        
     }
     
     // MARK: Light Gray Color Schemes
-    static func themeLightGray(){
-        
-    }
-    
-    
-    static func printAllFont(){
-        for familyName in UIFont.familyNames {
-            print("\n-- \(familyName) \n")
-            for fontName in UIFont.fontNames(forFamilyName: familyName) {
-                print(fontName)
-            }
-        }
-    }
-}
-
-struct AZLoadFont{
-    static var load: Bool = false
-    
-    static func loadFont() -> Bool{
-    
-        if !load {
-            load  = true
-            loadFontProgress()
-        }
-        
-        return load
-    }
-    
-    fileprivate static func loadFontProgress(){
-        
-        // Load bundle which hosts the font files. Bundle has various ways of locating bundles.
-        // This one uses the bundle's identifier
-        let bundle = AZView.bundle
-        // List the fonts by name and extension, relative to the bundle
-        let fonts = [
-            bundle.url(forResource: "IRANSansMobile(FaNum)_Bold", withExtension: "ttf"),
-            bundle.url(forResource: "IRANSansMobile(FaNum)_Light", withExtension: "ttf"),
-            bundle.url(forResource: "IRANSansMobile(FaNum)_Medium", withExtension: "ttf"),
-            bundle.url(forResource: "IRANSansMobile(FaNum)_UltraLight", withExtension: "ttf"),
-            bundle.url(forResource: "IRANSansMobile(FaNum)", withExtension: "ttf"),
-            ]
-        // Iterate over the urls, filtering out nil-values with .flatMap()
-        for url in fonts.flatMap({ $0 }) {
-            // Create a CGDataPRovider and a CGFont from the URL.
-            // Register the font with the system.
-            if let dataProvider = CGDataProvider(url: url as CFURL) {
-                let font = CGFont(dataProvider)
-                CTFontManagerRegisterGraphicsFont(font, nil)
-            }
-        }
+    func themeLightGray(){
         
     }
 }

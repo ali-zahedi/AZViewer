@@ -1,30 +1,27 @@
 //
-//  AZButton.swift
+//  AZBaseView.swift
 //  AZViewer
 //
-//  Created by Ali Zahedi on 1/16/1396 AP.
+//  Created by Ali Zahedi on 1/14/1396 AP.
 //  Copyright © 1396 AP Ali Zahedi. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class AZButton: UIButton {
-
-    // MARK: var
+public class AZBaseView: UIView{
+    
+    // MARK: Public
     
     // MARK: Internal
     internal var aZConstraints: AZConstraint!
+    internal var style: AZStyle {
+        return AZStyle.shared
+    }
     
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
+    // MARK: Private
     
-    // MARK: Init
-    override public init(frame: CGRect) {
+    // MARK: Override
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
     }
@@ -38,6 +35,4 @@ public class AZButton: UIButton {
     fileprivate func defaultInit(){
         self.aZConstraints = AZConstraint(view: self)
     }
-    
-
 }

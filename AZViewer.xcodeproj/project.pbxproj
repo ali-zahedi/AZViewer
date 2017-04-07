@@ -7,54 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		415486481E86BDA800FAA8FA /* AZViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 415486461E86BDA800FAA8FA /* AZViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		415486561E86BDD900FAA8FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4154864E1E86BDD900FAA8FA /* Assets.xcassets */; };
-		415486571E86BDD900FAA8FA /* AZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4154864F1E86BDD900FAA8FA /* AZButton.swift */; };
-		415486581E86BDD900FAA8FA /* AZCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486501E86BDD900FAA8FA /* AZCheckBox.swift */; };
-		415486591E86BDD900FAA8FA /* AZCheckBoxDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486511E86BDD900FAA8FA /* AZCheckBoxDataSource.swift */; };
-		4154865A1E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486521E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift */; };
-		4154865B1E86BDD900FAA8FA /* AZIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */; };
-		4154865C1E86BDD900FAA8FA /* AZPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486541E86BDD900FAA8FA /* AZPopup.swift */; };
-		4154865D1E86BDD900FAA8FA /* AZView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415486551E86BDD900FAA8FA /* AZView.swift */; };
-		41E098771E86C5BD0017A53B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098761E86C5BD0017A53B /* AppDelegate.swift */; };
-		41E098791E86C5BD0017A53B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098781E86C5BD0017A53B /* ViewController.swift */; };
-		41E0987C1E86C5BD0017A53B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E0987A1E86C5BD0017A53B /* Main.storyboard */; };
-		41E0987E1E86C5BD0017A53B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E0987D1E86C5BD0017A53B /* Assets.xcassets */; };
-		41E098811E86C5BD0017A53B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E0987F1E86C5BD0017A53B /* LaunchScreen.storyboard */; };
-		41E098861E86C62C0017A53B /* AZViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415486431E86BDA800FAA8FA /* AZViewer.framework */; };
-		41E098871E86C62C0017A53B /* AZViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 415486431E86BDA800FAA8FA /* AZViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		41E098C01E87B2A30017A53B /* AZPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098BF1E87B2A30017A53B /* AZPickerView.swift */; };
-		41E098C21E87B46D0017A53B /* AZPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */; };
-		41E098C41E87C6080017A53B /* AZPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C31E87C6080017A53B /* AZPicker.swift */; };
-		41E098C61E88D34E0017A53B /* AZHeaderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C51E88D34E0017A53B /* AZHeaderSection.swift */; };
-		41E098C81E88D9C30017A53B /* AZLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C71E88D9C30017A53B /* AZLabel.swift */; };
-		41E098CA1E88ED390017A53B /* AZStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098C91E88ED390017A53B /* AZStyle.swift */; };
-		41E098D91E892D530017A53B /* AZViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E098D81E892D530017A53B /* AZViewDelegate.swift */; };
-		41E098EB1E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E61E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf */; };
-		41E098EC1E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E71E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf */; };
-		41E098ED1E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E81E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf */; };
-		41E098EE1E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098E91E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf */; };
-		41E098EF1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41E098EA1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf */; };
+		411233A01E929FA8004064FA /* AZViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4112339E1E929FA8004064FA /* AZViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		411233AD1E929FD9004064FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233AC1E929FD9004064FA /* AppDelegate.swift */; };
+		411233AF1E929FD9004064FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233AE1E929FD9004064FA /* ViewController.swift */; };
+		411233B21E929FD9004064FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411233B01E929FD9004064FA /* Main.storyboard */; };
+		411233B41E929FD9004064FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411233B31E929FD9004064FA /* Assets.xcassets */; };
+		411233B71E929FD9004064FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411233B51E929FD9004064FA /* LaunchScreen.storyboard */; };
+		411233BD1E92A04C004064FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411233BC1E92A04C004064FA /* Assets.xcassets */; };
+		411233C31E92A05C004064FA /* IRANSansMobile(FaNum)_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411233BE1E92A05C004064FA /* IRANSansMobile(FaNum)_Bold.ttf */; };
+		411233C41E92A05C004064FA /* IRANSansMobile(FaNum)_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411233BF1E92A05C004064FA /* IRANSansMobile(FaNum)_Light.ttf */; };
+		411233C51E92A05C004064FA /* IRANSansMobile(FaNum)_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411233C01E92A05C004064FA /* IRANSansMobile(FaNum)_Medium.ttf */; };
+		411233C61E92A05C004064FA /* IRANSansMobile(FaNum)_UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411233C11E92A05C004064FA /* IRANSansMobile(FaNum)_UltraLight.ttf */; };
+		411233C71E92A05C004064FA /* IRANSansMobile(FaNum).ttf in Resources */ = {isa = PBXBuildFile; fileRef = 411233C21E92A05C004064FA /* IRANSansMobile(FaNum).ttf */; };
+		411233C91E92A098004064FA /* AZViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4112339B1E929FA8004064FA /* AZViewer.framework */; };
+		411233CA1E92A098004064FA /* AZViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4112339B1E929FA8004064FA /* AZViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		411233D11E92A29D004064FA /* AZBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233D01E92A29D004064FA /* AZBaseView.swift */; };
+		411233D31E92A2B8004064FA /* AZView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233D21E92A2B8004064FA /* AZView.swift */; };
+		411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233D91E92B9F6004064FA /* AZHeader.swift */; };
+		411233DC1E92BB3C004064FA /* AZConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233DB1E92BB3C004064FA /* AZConstraint.swift */; };
+		41258C9C1E93C77C00F35AC9 /* AZStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258C9B1E93C77C00F35AC9 /* AZStyle.swift */; };
+		41258C9E1E93C84500F35AC9 /* AZAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258C9D1E93C84500F35AC9 /* AZAssets.swift */; };
+		41258CA11E93CC9F00F35AC9 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA01E93CC9F00F35AC9 /* UIColor+hex.swift */; };
+		41258CA71E93D09D00F35AC9 /* AZLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA61E93D09D00F35AC9 /* AZLabel.swift */; };
+		41258CA91E93D85400F35AC9 /* AZPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA81E93D85400F35AC9 /* AZPickerViewDelegate.swift */; };
+		41258CAB1E93D87900F35AC9 /* AZPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CAA1E93D87900F35AC9 /* AZPicker.swift */; };
+		413402BE1E948F6200F74175 /* AZCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BB1E948F6200F74175 /* AZCheckBox.swift */; };
+		413402BF1E948F6200F74175 /* AZCheckBoxDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */; };
+		413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */; };
+		417168D21E9505F500E30160 /* AZTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417168D11E9505F500E30160 /* AZTextField.swift */; };
+		417168D41E95089000E30160 /* AZImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417168D31E95089000E30160 /* AZImageView.swift */; };
+		417168E01E951FF400E30160 /* AZPopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417168DF1E951FF400E30160 /* AZPopupDatePickerView.swift */; };
+		4184C3A41E93DA6A00B46E9D /* AZPopupPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A31E93DA6A00B46E9D /* AZPopupPickerView.swift */; };
+		4184C3A61E93DA8F00B46E9D /* AZPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */; };
+		4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */; };
+		4184C3AA1E941BC000B46E9D /* AZPopupViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A91E941BC000B46E9D /* AZPopupViewDelegate.swift */; };
+		4184C3B01E942E7600B46E9D /* AZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3AF1E942E7600B46E9D /* AZButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		41E098881E86C62C0017A53B /* PBXContainerItemProxy */ = {
+		411233CB1E92A098004064FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4154863A1E86BDA800FAA8FA /* Project object */;
+			containerPortal = 411233921E929FA8004064FA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 415486421E86BDA800FAA8FA;
+			remoteGlobalIDString = 4112339A1E929FA8004064FA;
 			remoteInfo = AZViewer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		41E0988A1E86C62C0017A53B /* Embed Frameworks */ = {
+		411233CD1E92A098004064FA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				41E098871E86C62C0017A53B /* AZViewer.framework in Embed Frameworks */,
+				411233CA1E92A098004064FA /* AZViewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,163 +69,201 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		415486431E86BDA800FAA8FA /* AZViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AZViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		415486461E86BDA800FAA8FA /* AZViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZViewer.h; sourceTree = "<group>"; };
-		415486471E86BDA800FAA8FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4154864E1E86BDD900FAA8FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4154864F1E86BDD900FAA8FA /* AZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZButton.swift; sourceTree = "<group>"; };
-		415486501E86BDD900FAA8FA /* AZCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBox.swift; sourceTree = "<group>"; };
-		415486511E86BDD900FAA8FA /* AZCheckBoxDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxDataSource.swift; sourceTree = "<group>"; };
-		415486521E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxTableViewCell.swift; sourceTree = "<group>"; };
-		415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZIndicatorShape.swift; sourceTree = "<group>"; };
-		415486541E86BDD900FAA8FA /* AZPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopup.swift; sourceTree = "<group>"; };
-		415486551E86BDD900FAA8FA /* AZView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZView.swift; sourceTree = "<group>"; };
-		41E098741E86C5BD0017A53B /* AZViewer Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AZViewer Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		41E098761E86C5BD0017A53B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		41E098781E86C5BD0017A53B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		41E0987B1E86C5BD0017A53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		41E0987D1E86C5BD0017A53B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		41E098801E86C5BD0017A53B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		41E098821E86C5BD0017A53B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41E098BF1E87B2A30017A53B /* AZPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerView.swift; sourceTree = "<group>"; };
-		41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerViewDelegate.swift; sourceTree = "<group>"; };
-		41E098C31E87C6080017A53B /* AZPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPicker.swift; sourceTree = "<group>"; };
-		41E098C51E88D34E0017A53B /* AZHeaderSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZHeaderSection.swift; sourceTree = "<group>"; };
-		41E098C71E88D9C30017A53B /* AZLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLabel.swift; sourceTree = "<group>"; };
-		41E098C91E88ED390017A53B /* AZStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStyle.swift; sourceTree = "<group>"; };
-		41E098D81E892D530017A53B /* AZViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZViewDelegate.swift; sourceTree = "<group>"; };
-		41E098E61E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Bold.ttf"; path = "fonts/IRANSansMobile(FaNum)_Bold.ttf"; sourceTree = "<group>"; };
-		41E098E71E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Light.ttf"; path = "fonts/IRANSansMobile(FaNum)_Light.ttf"; sourceTree = "<group>"; };
-		41E098E81E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Medium.ttf"; path = "fonts/IRANSansMobile(FaNum)_Medium.ttf"; sourceTree = "<group>"; };
-		41E098E91E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_UltraLight.ttf"; path = "fonts/IRANSansMobile(FaNum)_UltraLight.ttf"; sourceTree = "<group>"; };
-		41E098EA1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum).ttf"; path = "fonts/IRANSansMobile(FaNum).ttf"; sourceTree = "<group>"; };
+		4112339B1E929FA8004064FA /* AZViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AZViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4112339E1E929FA8004064FA /* AZViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AZViewer.h; sourceTree = "<group>"; };
+		4112339F1E929FA8004064FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		411233AA1E929FD8004064FA /* AZViewer Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AZViewer Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		411233AC1E929FD9004064FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		411233AE1E929FD9004064FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		411233B11E929FD9004064FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		411233B31E929FD9004064FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		411233B61E929FD9004064FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		411233B81E929FD9004064FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		411233BC1E92A04C004064FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		411233BE1E92A05C004064FA /* IRANSansMobile(FaNum)_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Bold.ttf"; path = "fonts/IRANSansMobile(FaNum)_Bold.ttf"; sourceTree = "<group>"; };
+		411233BF1E92A05C004064FA /* IRANSansMobile(FaNum)_Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Light.ttf"; path = "fonts/IRANSansMobile(FaNum)_Light.ttf"; sourceTree = "<group>"; };
+		411233C01E92A05C004064FA /* IRANSansMobile(FaNum)_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_Medium.ttf"; path = "fonts/IRANSansMobile(FaNum)_Medium.ttf"; sourceTree = "<group>"; };
+		411233C11E92A05C004064FA /* IRANSansMobile(FaNum)_UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum)_UltraLight.ttf"; path = "fonts/IRANSansMobile(FaNum)_UltraLight.ttf"; sourceTree = "<group>"; };
+		411233C21E92A05C004064FA /* IRANSansMobile(FaNum).ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "IRANSansMobile(FaNum).ttf"; path = "fonts/IRANSansMobile(FaNum).ttf"; sourceTree = "<group>"; };
+		411233D01E92A29D004064FA /* AZBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZBaseView.swift; sourceTree = "<group>"; };
+		411233D21E92A2B8004064FA /* AZView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZView.swift; sourceTree = "<group>"; };
+		411233D91E92B9F6004064FA /* AZHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZHeader.swift; sourceTree = "<group>"; };
+		411233DB1E92BB3C004064FA /* AZConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZConstraint.swift; sourceTree = "<group>"; };
+		41258C9B1E93C77C00F35AC9 /* AZStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStyle.swift; sourceTree = "<group>"; };
+		41258C9D1E93C84500F35AC9 /* AZAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZAssets.swift; sourceTree = "<group>"; };
+		41258CA01E93CC9F00F35AC9 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		41258CA61E93D09D00F35AC9 /* AZLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLabel.swift; sourceTree = "<group>"; };
+		41258CA81E93D85400F35AC9 /* AZPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerViewDelegate.swift; sourceTree = "<group>"; };
+		41258CAA1E93D87900F35AC9 /* AZPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPicker.swift; sourceTree = "<group>"; };
+		413402BB1E948F6200F74175 /* AZCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBox.swift; sourceTree = "<group>"; };
+		413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxDataSource.swift; sourceTree = "<group>"; };
+		413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxTableViewCell.swift; sourceTree = "<group>"; };
+		417168D11E9505F500E30160 /* AZTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTextField.swift; sourceTree = "<group>"; };
+		417168D31E95089000E30160 /* AZImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZImageView.swift; sourceTree = "<group>"; };
+		417168DF1E951FF400E30160 /* AZPopupDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupDatePickerView.swift; sourceTree = "<group>"; };
+		4184C3A31E93DA6A00B46E9D /* AZPopupPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupPickerView.swift; sourceTree = "<group>"; };
+		4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerView.swift; sourceTree = "<group>"; };
+		4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupView.swift; sourceTree = "<group>"; };
+		4184C3A91E941BC000B46E9D /* AZPopupViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupViewDelegate.swift; sourceTree = "<group>"; };
+		4184C3AF1E942E7600B46E9D /* AZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4154863F1E86BDA800FAA8FA /* Frameworks */ = {
+		411233971E929FA8004064FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41E098711E86C5BD0017A53B /* Frameworks */ = {
+		411233A71E929FD8004064FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41E098861E86C62C0017A53B /* AZViewer.framework in Frameworks */,
+				411233C91E92A098004064FA /* AZViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		415486391E86BDA800FAA8FA = {
+		411233911E929FA8004064FA = {
 			isa = PBXGroup;
 			children = (
-				415486451E86BDA800FAA8FA /* AZViewer */,
-				41E098751E86C5BD0017A53B /* AZViewer Example */,
-				415486441E86BDA800FAA8FA /* Products */,
+				4112339D1E929FA8004064FA /* AZViewer */,
+				411233AB1E929FD9004064FA /* AZViewer Example */,
+				4112339C1E929FA8004064FA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		415486441E86BDA800FAA8FA /* Products */ = {
+		4112339C1E929FA8004064FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				415486431E86BDA800FAA8FA /* AZViewer.framework */,
-				41E098741E86C5BD0017A53B /* AZViewer Example.app */,
+				4112339B1E929FA8004064FA /* AZViewer.framework */,
+				411233AA1E929FD8004064FA /* AZViewer Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		415486451E86BDA800FAA8FA /* AZViewer */ = {
+		4112339D1E929FA8004064FA /* AZViewer */ = {
 			isa = PBXGroup;
 			children = (
-				4154864E1E86BDD900FAA8FA /* Assets.xcassets */,
-				415486551E86BDD900FAA8FA /* AZView.swift */,
-				41E098D81E892D530017A53B /* AZViewDelegate.swift */,
-				41E098C71E88D9C30017A53B /* AZLabel.swift */,
-				41E098C51E88D34E0017A53B /* AZHeaderSection.swift */,
-				4154865E1E86C27700FAA8FA /* AZCheckBox */,
-				41E098BE1E87B2880017A53B /* AZPickerView */,
-				415486541E86BDD900FAA8FA /* AZPopup.swift */,
-				4154864F1E86BDD900FAA8FA /* AZButton.swift */,
-				415486531E86BDD900FAA8FA /* AZIndicatorShape.swift */,
-				415486461E86BDA800FAA8FA /* AZViewer.h */,
-				415486471E86BDA800FAA8FA /* Info.plist */,
-				41E098C91E88ED390017A53B /* AZStyle.swift */,
-				41E098CB1E88EFE20017A53B /* Font */,
+				411233BC1E92A04C004064FA /* Assets.xcassets */,
+				4112339E1E929FA8004064FA /* AZViewer.h */,
+				4112339F1E929FA8004064FA /* Info.plist */,
+				411233D01E92A29D004064FA /* AZBaseView.swift */,
+				411233D21E92A2B8004064FA /* AZView.swift */,
+				4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */,
+				4184C3A91E941BC000B46E9D /* AZPopupViewDelegate.swift */,
+				411233DB1E92BB3C004064FA /* AZConstraint.swift */,
+				41258CA31E93D05800F35AC9 /* Extension Master Class */,
+				41258CA21E93D02A00F35AC9 /* Element */,
+				41258C9F1E93C9A500F35AC9 /* Assets & Style */,
+				413402BA1E948F5500F74175 /* AZCheckBox */,
+				411233D41E92A5EB004064FA /* AZPickerView */,
+				411233C81E92A064004064FA /* fonts */,
 			);
 			path = AZViewer;
 			sourceTree = "<group>";
 		};
-		4154865E1E86C27700FAA8FA /* AZCheckBox */ = {
+		411233AB1E929FD9004064FA /* AZViewer Example */ = {
 			isa = PBXGroup;
 			children = (
-				415486501E86BDD900FAA8FA /* AZCheckBox.swift */,
-				415486511E86BDD900FAA8FA /* AZCheckBoxDataSource.swift */,
-				415486521E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift */,
-			);
-			name = AZCheckBox;
-			sourceTree = "<group>";
-		};
-		41E098751E86C5BD0017A53B /* AZViewer Example */ = {
-			isa = PBXGroup;
-			children = (
-				41E098761E86C5BD0017A53B /* AppDelegate.swift */,
-				41E098781E86C5BD0017A53B /* ViewController.swift */,
-				41E0987A1E86C5BD0017A53B /* Main.storyboard */,
-				41E0987D1E86C5BD0017A53B /* Assets.xcassets */,
-				41E0987F1E86C5BD0017A53B /* LaunchScreen.storyboard */,
-				41E098821E86C5BD0017A53B /* Info.plist */,
+				411233AC1E929FD9004064FA /* AppDelegate.swift */,
+				411233AE1E929FD9004064FA /* ViewController.swift */,
+				411233B01E929FD9004064FA /* Main.storyboard */,
+				411233B31E929FD9004064FA /* Assets.xcassets */,
+				411233B51E929FD9004064FA /* LaunchScreen.storyboard */,
+				411233B81E929FD9004064FA /* Info.plist */,
 			);
 			path = "AZViewer Example";
 			sourceTree = "<group>";
 		};
-		41E098BE1E87B2880017A53B /* AZPickerView */ = {
+		411233C81E92A064004064FA /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				41E098C31E87C6080017A53B /* AZPicker.swift */,
-				41E098BF1E87B2A30017A53B /* AZPickerView.swift */,
-				41E098C11E87B46D0017A53B /* AZPickerViewDelegate.swift */,
+				411233BE1E92A05C004064FA /* IRANSansMobile(FaNum)_Bold.ttf */,
+				411233BF1E92A05C004064FA /* IRANSansMobile(FaNum)_Light.ttf */,
+				411233C01E92A05C004064FA /* IRANSansMobile(FaNum)_Medium.ttf */,
+				411233C11E92A05C004064FA /* IRANSansMobile(FaNum)_UltraLight.ttf */,
+				411233C21E92A05C004064FA /* IRANSansMobile(FaNum).ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		411233D41E92A5EB004064FA /* AZPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				41258CAA1E93D87900F35AC9 /* AZPicker.swift */,
+				4184C3A31E93DA6A00B46E9D /* AZPopupPickerView.swift */,
+				41258CA81E93D85400F35AC9 /* AZPickerViewDelegate.swift */,
+				417168DF1E951FF400E30160 /* AZPopupDatePickerView.swift */,
 			);
 			name = AZPickerView;
 			sourceTree = "<group>";
 		};
-		41E098CB1E88EFE20017A53B /* Font */ = {
+		41258C9F1E93C9A500F35AC9 /* Assets & Style */ = {
 			isa = PBXGroup;
 			children = (
-				41E098E61E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf */,
-				41E098E71E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf */,
-				41E098E81E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf */,
-				41E098E91E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf */,
-				41E098EA1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf */,
+				41258C9D1E93C84500F35AC9 /* AZAssets.swift */,
+				41258C9B1E93C77C00F35AC9 /* AZStyle.swift */,
 			);
-			name = Font;
+			name = "Assets & Style";
+			sourceTree = "<group>";
+		};
+		41258CA21E93D02A00F35AC9 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				41258CA61E93D09D00F35AC9 /* AZLabel.swift */,
+				4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */,
+				4184C3AF1E942E7600B46E9D /* AZButton.swift */,
+				417168D11E9505F500E30160 /* AZTextField.swift */,
+				417168D31E95089000E30160 /* AZImageView.swift */,
+				411233D91E92B9F6004064FA /* AZHeader.swift */,
+			);
+			name = Element;
+			sourceTree = "<group>";
+		};
+		41258CA31E93D05800F35AC9 /* Extension Master Class */ = {
+			isa = PBXGroup;
+			children = (
+				41258CA01E93CC9F00F35AC9 /* UIColor+hex.swift */,
+			);
+			name = "Extension Master Class";
+			sourceTree = "<group>";
+		};
+		413402BA1E948F5500F74175 /* AZCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				413402BB1E948F6200F74175 /* AZCheckBox.swift */,
+				413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */,
+				413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */,
+			);
+			name = AZCheckBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		415486401E86BDA800FAA8FA /* Headers */ = {
+		411233981E929FA8004064FA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				415486481E86BDA800FAA8FA /* AZViewer.h in Headers */,
+				411233A01E929FA8004064FA /* AZViewer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		415486421E86BDA800FAA8FA /* AZViewer */ = {
+		4112339A1E929FA8004064FA /* AZViewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4154864B1E86BDA800FAA8FA /* Build configuration list for PBXNativeTarget "AZViewer" */;
+			buildConfigurationList = 411233A31E929FA8004064FA /* Build configuration list for PBXNativeTarget "AZViewer" */;
 			buildPhases = (
-				4154863E1E86BDA800FAA8FA /* Sources */,
-				4154863F1E86BDA800FAA8FA /* Frameworks */,
-				415486401E86BDA800FAA8FA /* Headers */,
-				415486411E86BDA800FAA8FA /* Resources */,
+				411233961E929FA8004064FA /* Sources */,
+				411233971E929FA8004064FA /* Frameworks */,
+				411233981E929FA8004064FA /* Headers */,
+				411233991E929FA8004064FA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -226,50 +271,51 @@
 			);
 			name = AZViewer;
 			productName = AZViewer;
-			productReference = 415486431E86BDA800FAA8FA /* AZViewer.framework */;
+			productReference = 4112339B1E929FA8004064FA /* AZViewer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		41E098731E86C5BD0017A53B /* AZViewer Example */ = {
+		411233A91E929FD8004064FA /* AZViewer Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41E098831E86C5BD0017A53B /* Build configuration list for PBXNativeTarget "AZViewer Example" */;
+			buildConfigurationList = 411233B91E929FD9004064FA /* Build configuration list for PBXNativeTarget "AZViewer Example" */;
 			buildPhases = (
-				41E098701E86C5BD0017A53B /* Sources */,
-				41E098711E86C5BD0017A53B /* Frameworks */,
-				41E098721E86C5BD0017A53B /* Resources */,
-				41E0988A1E86C62C0017A53B /* Embed Frameworks */,
+				411233A61E929FD8004064FA /* Sources */,
+				411233A71E929FD8004064FA /* Frameworks */,
+				411233A81E929FD8004064FA /* Resources */,
+				411233CD1E92A098004064FA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				41E098891E86C62C0017A53B /* PBXTargetDependency */,
+				411233CC1E92A098004064FA /* PBXTargetDependency */,
 			);
 			name = "AZViewer Example";
 			productName = "AZViewer Example";
-			productReference = 41E098741E86C5BD0017A53B /* AZViewer Example.app */;
+			productReference = 411233AA1E929FD8004064FA /* AZViewer Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4154863A1E86BDA800FAA8FA /* Project object */ = {
+		411233921E929FA8004064FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Ali Zahedi";
 				TargetAttributes = {
-					415486421E86BDA800FAA8FA = {
+					4112339A1E929FA8004064FA = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 					};
-					41E098731E86C5BD0017A53B = {
+					411233A91E929FD8004064FA = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = X3XK83SQUW;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 4154863D1E86BDA800FAA8FA /* Build configuration list for PBXProject "AZViewer" */;
+			buildConfigurationList = 411233951E929FA8004064FA /* Build configuration list for PBXProject "AZViewer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -277,97 +323,104 @@
 				en,
 				Base,
 			);
-			mainGroup = 415486391E86BDA800FAA8FA;
-			productRefGroup = 415486441E86BDA800FAA8FA /* Products */;
+			mainGroup = 411233911E929FA8004064FA;
+			productRefGroup = 4112339C1E929FA8004064FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				415486421E86BDA800FAA8FA /* AZViewer */,
-				41E098731E86C5BD0017A53B /* AZViewer Example */,
+				4112339A1E929FA8004064FA /* AZViewer */,
+				411233A91E929FD8004064FA /* AZViewer Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		415486411E86BDA800FAA8FA /* Resources */ = {
+		411233991E929FA8004064FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				415486561E86BDD900FAA8FA /* Assets.xcassets in Resources */,
-				41E098EC1E895B9D0017A53B /* IRANSansMobile(FaNum)_Light.ttf in Resources */,
-				41E098ED1E895B9D0017A53B /* IRANSansMobile(FaNum)_Medium.ttf in Resources */,
-				41E098EB1E895B9D0017A53B /* IRANSansMobile(FaNum)_Bold.ttf in Resources */,
-				41E098EF1E895B9D0017A53B /* IRANSansMobile(FaNum).ttf in Resources */,
-				41E098EE1E895B9D0017A53B /* IRANSansMobile(FaNum)_UltraLight.ttf in Resources */,
+				411233BD1E92A04C004064FA /* Assets.xcassets in Resources */,
+				411233C41E92A05C004064FA /* IRANSansMobile(FaNum)_Light.ttf in Resources */,
+				411233C51E92A05C004064FA /* IRANSansMobile(FaNum)_Medium.ttf in Resources */,
+				411233C31E92A05C004064FA /* IRANSansMobile(FaNum)_Bold.ttf in Resources */,
+				411233C71E92A05C004064FA /* IRANSansMobile(FaNum).ttf in Resources */,
+				411233C61E92A05C004064FA /* IRANSansMobile(FaNum)_UltraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41E098721E86C5BD0017A53B /* Resources */ = {
+		411233A81E929FD8004064FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41E098811E86C5BD0017A53B /* LaunchScreen.storyboard in Resources */,
-				41E0987E1E86C5BD0017A53B /* Assets.xcassets in Resources */,
-				41E0987C1E86C5BD0017A53B /* Main.storyboard in Resources */,
+				411233B71E929FD9004064FA /* LaunchScreen.storyboard in Resources */,
+				411233B41E929FD9004064FA /* Assets.xcassets in Resources */,
+				411233B21E929FD9004064FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4154863E1E86BDA800FAA8FA /* Sources */ = {
+		411233961E929FA8004064FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				415486571E86BDD900FAA8FA /* AZButton.swift in Sources */,
-				41E098CA1E88ED390017A53B /* AZStyle.swift in Sources */,
-				41E098C01E87B2A30017A53B /* AZPickerView.swift in Sources */,
-				4154865C1E86BDD900FAA8FA /* AZPopup.swift in Sources */,
-				41E098D91E892D530017A53B /* AZViewDelegate.swift in Sources */,
-				4154865A1E86BDD900FAA8FA /* AZCheckBoxTableViewCell.swift in Sources */,
-				4154865D1E86BDD900FAA8FA /* AZView.swift in Sources */,
-				4154865B1E86BDD900FAA8FA /* AZIndicatorShape.swift in Sources */,
-				41E098C41E87C6080017A53B /* AZPicker.swift in Sources */,
-				415486581E86BDD900FAA8FA /* AZCheckBox.swift in Sources */,
-				41E098C61E88D34E0017A53B /* AZHeaderSection.swift in Sources */,
-				41E098C21E87B46D0017A53B /* AZPickerViewDelegate.swift in Sources */,
-				415486591E86BDD900FAA8FA /* AZCheckBoxDataSource.swift in Sources */,
-				41E098C81E88D9C30017A53B /* AZLabel.swift in Sources */,
+				411233D11E92A29D004064FA /* AZBaseView.swift in Sources */,
+				41258CA11E93CC9F00F35AC9 /* UIColor+hex.swift in Sources */,
+				411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */,
+				41258C9C1E93C77C00F35AC9 /* AZStyle.swift in Sources */,
+				4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */,
+				417168D41E95089000E30160 /* AZImageView.swift in Sources */,
+				411233DC1E92BB3C004064FA /* AZConstraint.swift in Sources */,
+				4184C3A61E93DA8F00B46E9D /* AZPickerView.swift in Sources */,
+				41258CA71E93D09D00F35AC9 /* AZLabel.swift in Sources */,
+				4184C3A41E93DA6A00B46E9D /* AZPopupPickerView.swift in Sources */,
+				4184C3B01E942E7600B46E9D /* AZButton.swift in Sources */,
+				41258CA91E93D85400F35AC9 /* AZPickerViewDelegate.swift in Sources */,
+				413402BF1E948F6200F74175 /* AZCheckBoxDataSource.swift in Sources */,
+				411233D31E92A2B8004064FA /* AZView.swift in Sources */,
+				41258C9E1E93C84500F35AC9 /* AZAssets.swift in Sources */,
+				413402BE1E948F6200F74175 /* AZCheckBox.swift in Sources */,
+				417168E01E951FF400E30160 /* AZPopupDatePickerView.swift in Sources */,
+				41258CAB1E93D87900F35AC9 /* AZPicker.swift in Sources */,
+				4184C3AA1E941BC000B46E9D /* AZPopupViewDelegate.swift in Sources */,
+				413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */,
+				417168D21E9505F500E30160 /* AZTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41E098701E86C5BD0017A53B /* Sources */ = {
+		411233A61E929FD8004064FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41E098791E86C5BD0017A53B /* ViewController.swift in Sources */,
-				41E098771E86C5BD0017A53B /* AppDelegate.swift in Sources */,
+				411233AF1E929FD9004064FA /* ViewController.swift in Sources */,
+				411233AD1E929FD9004064FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		41E098891E86C62C0017A53B /* PBXTargetDependency */ = {
+		411233CC1E92A098004064FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 415486421E86BDA800FAA8FA /* AZViewer */;
-			targetProxy = 41E098881E86C62C0017A53B /* PBXContainerItemProxy */;
+			target = 4112339A1E929FA8004064FA /* AZViewer */;
+			targetProxy = 411233CB1E92A098004064FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		41E0987A1E86C5BD0017A53B /* Main.storyboard */ = {
+		411233B01E929FD9004064FA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				41E0987B1E86C5BD0017A53B /* Base */,
+				411233B11E929FD9004064FA /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		41E0987F1E86C5BD0017A53B /* LaunchScreen.storyboard */ = {
+		411233B51E929FD9004064FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				41E098801E86C5BD0017A53B /* Base */,
+				411233B61E929FD9004064FA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -375,7 +428,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		415486491E86BDA800FAA8FA /* Debug */ = {
+		411233A11E929FA8004064FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -428,7 +481,7 @@
 			};
 			name = Debug;
 		};
-		4154864A1E86BDA800FAA8FA /* Release */ = {
+		411233A21E929FA8004064FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -474,7 +527,7 @@
 			};
 			name = Release;
 		};
-		4154864C1E86BDA800FAA8FA /* Debug */ = {
+		411233A41E929FA8004064FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -496,7 +549,7 @@
 			};
 			name = Debug;
 		};
-		4154864D1E86BDA800FAA8FA /* Release */ = {
+		411233A51E929FA8004064FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -517,14 +570,15 @@
 			};
 			name = Release;
 		};
-		41E098841E86C5BD0017A53B /* Debug */ = {
+		411233BA1E929FD9004064FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X3XK83SQUW;
 				INFOPLIST_FILE = "AZViewer Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pro.zahedi.AZViewer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,14 +586,15 @@
 			};
 			name = Debug;
 		};
-		41E098851E86C5BD0017A53B /* Release */ = {
+		411233BB1E929FD9004064FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X3XK83SQUW;
 				INFOPLIST_FILE = "AZViewer Example/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pro.zahedi.AZViewer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -550,34 +605,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4154863D1E86BDA800FAA8FA /* Build configuration list for PBXProject "AZViewer" */ = {
+		411233951E929FA8004064FA /* Build configuration list for PBXProject "AZViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				415486491E86BDA800FAA8FA /* Debug */,
-				4154864A1E86BDA800FAA8FA /* Release */,
+				411233A11E929FA8004064FA /* Debug */,
+				411233A21E929FA8004064FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4154864B1E86BDA800FAA8FA /* Build configuration list for PBXNativeTarget "AZViewer" */ = {
+		411233A31E929FA8004064FA /* Build configuration list for PBXNativeTarget "AZViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4154864C1E86BDA800FAA8FA /* Debug */,
-				4154864D1E86BDA800FAA8FA /* Release */,
+				411233A41E929FA8004064FA /* Debug */,
+				411233A51E929FA8004064FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41E098831E86C5BD0017A53B /* Build configuration list for PBXNativeTarget "AZViewer Example" */ = {
+		411233B91E929FD9004064FA /* Build configuration list for PBXNativeTarget "AZViewer Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				41E098841E86C5BD0017A53B /* Debug */,
-				41E098851E86C5BD0017A53B /* Release */,
+				411233BA1E929FD9004064FA /* Debug */,
+				411233BB1E929FD9004064FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4154863A1E86BDA800FAA8FA /* Project object */;
+	rootObject = 411233921E929FA8004064FA /* Project object */;
 }

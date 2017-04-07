@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  AZViewer Example
 //
-//  Created by Ali Zahedi on 1/5/1396 AP.
+//  Created by Ali Zahedi on 1/14/1396 AP.
 //  Copyright © 1396 AP Ali Zahedi. All rights reserved.
 //
 
