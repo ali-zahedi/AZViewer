@@ -40,9 +40,39 @@ public class AZPopupDatePickerView: AZPopupPickerView{
     fileprivate var formatterGregorian: DateFormatter!
     fileprivate var formatterPersian: DateFormatter!
     fileprivate var calenderComponentOptions: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second]
-    fileprivate var years: [String] = []
-    fileprivate var months: [String] = []
-    fileprivate var day: [String] = []
+    fileprivate var calenderComponentMin: DateComponents!
+    fileprivate var calenderComponentMax: DateComponents!
+    // index
+    fileprivate var yearsIndexFormat: Int = 0
+    fileprivate var monthsIndexFormat: Int = 1
+    fileprivate var daysIndexFormat: Int = 2
+    // date
+    fileprivate var years: [(AnyObject, String)] = [] {
+        didSet{
+            self.data[self.yearsIndexFormat] = self.years
+        }
+    }
+    fileprivate var months: [(AnyObject, String)] = []{
+        didSet{
+            
+            // TODO: Check if monthindex format opposite of 1 do it work? or for years and days
+            if !(self.data.count > self.monthsIndexFormat) {
+                self.data.append([])
+            }
+            
+            self.data[self.monthsIndexFormat] = self.months
+        }
+    }
+    fileprivate var days: [(AnyObject, String)] = [] {
+        didSet{
+            
+            if !(self.data.count > self.daysIndexFormat) {
+                self.data.append([])
+            }
+            
+            self.data[self.daysIndexFormat] = self.days
+        }
+    }
     
     // override
     override public init(frame: CGRect) {
@@ -73,21 +103,6 @@ public class AZPopupDatePickerView: AZPopupPickerView{
         self.prepareFormatterPersian()
         self.generateRange()
     }
-    
-    // range
-    fileprivate func generateRange(){
-        
-        let cMin = self.formatterPersian.calendar.dateComponents(self.calenderComponentOptions, from: self.minimumDateTime)
-        let cMax = self.formatterPersian.calendar.dateComponents(self.calenderComponentOptions, from: self.maximumDateTime)
-        
-        guard let yearMin = cMin.year , let yearMax = cMax.year else{
-            NSLog("AZView date is invalide \(self.minimumDateTime) , \(self.maximumDateTime)")
-            return
-        }
-
-        // TODO: change number of day after set month
-        print("\(yearMin), \(yearMax)")
-    }
 }
 
 // prepare
@@ -111,6 +126,106 @@ extension AZPopupDatePickerView{
         self.formatterPersian.dateFormat = self.formatDate
         self.formatterPersian.calendar = Calendar(identifier: .persian)
         self.formatterPersian.dateFormat = self.style.sectionDatePickerViewFormatDate
-//        print("Converted date to Hijri = \(self.formatterGregorian.string(from: date))")
+        //        print("Converted date to Hijri = \(self.formatterGregorian.string(from: date))")
+    }
+}
+
+// generate range
+extension AZPopupDatePickerView{
+    // range
+    fileprivate func generateRange(){
+        
+        self.calenderComponentMin = self.formatterPersian.calendar.dateComponents(self.calenderComponentOptions, from: self.minimumDateTime)
+        self.calenderComponentMax = self.formatterPersian.calendar.dateComponents(self.calenderComponentOptions, from: self.maximumDateTime)
+        
+        guard  let _ = self.calenderComponentMin.year , let _ = self.calenderComponentMax.year else{
+            NSLog("AZView date is invalide \(self.minimumDateTime) , \(self.maximumDateTime)")
+            return
+        }
+        
+        // TODO: change number of day after set month
+        self.generateRangeYears()
+    }
+    
+    // year
+    fileprivate func generateRangeYears(){
+        
+        var years: [(AnyObject, String)] = []
+        
+        for year in self.calenderComponentMin.year!...self.calenderComponentMax.year!{
+            years.append((year as AnyObject, year.description))
+        }
+        
+        self.years = years
+    }
+    
+    // month
+    fileprivate func generateRangeMonths(yearTouple: (AnyObject, String)){
+        
+        let year: Int = Int(yearTouple.0 as! NSNumber)
+        var months: [(AnyObject, String)] = []
+        
+        if  year > self.calenderComponentMin.year! && year < self.calenderComponentMax.year! {
+            
+            for month in 1...12{
+                months.append((month as AnyObject, month.description))
+            }
+        }else if year == self.calenderComponentMin.year {
+            
+            for month in self.calenderComponentMin.month!...12{
+                months.append((month as AnyObject, month.description))
+            }
+        }else{
+            
+            for month in 1...self.calenderComponentMax.month!{
+                months.append((month as AnyObject, month.description))
+            }
+        }
+        
+        if self.months.count != months.count{
+            self.months = months
+        }
+    }
+    
+    // days
+    fileprivate func generateRangeDays(monthTouple: (AnyObject, String)){
+        
+        let month: Int = Int(monthTouple.0 as! NSNumber)
+        var days: [(AnyObject, String)] = []
+        if month < 7 {
+            for day in 1...31{
+                days.append((day as AnyObject, day.description))
+            }
+        }else if month >= 7 && month < 12 {
+            
+            for day in 1...30{
+                days.append((day as AnyObject, day.description))
+            }
+            
+        }else{
+            
+            // TODO: check years kabise
+            for day in 1...29{
+                days.append((day as AnyObject, day.description))
+            }
+        }
+        
+        if self.days.count != days.count{
+            self.days = days
+        }
+    }
+    
+}
+
+extension AZPopupDatePickerView{
+    
+    override public func aZPickerView(didSelectRow row: Int, inComponent component: Int) {
+        super.aZPickerView(didSelectRow: row, inComponent: component)
+        
+        if component == self.yearsIndexFormat {
+            self.generateRangeMonths(yearTouple: self.years[row])
+        }else if component == self.monthsIndexFormat {
+            self.generateRangeDays(monthTouple: self.months[row])
+        }
     }
 }

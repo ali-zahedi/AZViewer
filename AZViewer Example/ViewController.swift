@@ -37,7 +37,6 @@ class ViewController: UIViewController {
         self.pickerView.data = [[(12 as AnyObject, "آیتم ۱"), (13 as AnyObject, "ایتم دوم"), (14 as AnyObject, "آیتم 3")],[(1  as AnyObject, "آیتم"), (2 as AnyObject, "آیتم 5")], [(3 as AnyObject, "آیتم 3"), (6 as AnyObject, "آیتم 6")]]
         self.pickerView.separatorSection = " / "
         self.pickerView.selected(indexPath: IndexPath(row: 2, section: 0))
-//        self.pickerView.icon = UIImage(named: "calender")
         print("selected index: \(self.pickerView.index)")
     }
     
@@ -47,7 +46,7 @@ class ViewController: UIViewController {
 //        self.pickerView.delegate = self
         
         self.datePickerView.separatorSection = " / "
-        self.datePickerView.selected(indexPath: IndexPath(row: 2, section: 0))
+        self.datePickerView.selected(indexPath: IndexPath(row: 0, section: 0))
         
         // date
         let formatter = DateFormatter()
@@ -55,8 +54,7 @@ class ViewController: UIViewController {
         formatter.calendar = Calendar(identifier: .gregorian)
         self.datePickerView.minimumDateTime = formatter.date(from: "1990/12/10")!
         self.datePickerView.maximumDateTime = formatter.date(from: "2017/12/31")!
-//        self.datePickerView.minimumDateTime = Date(
-        //        self.pickerView.icon = UIImage(named: "calender")
+        self.datePickerView.icon = UIImage(named: "calender")
 //        print("selected index: \(self.datePickerView.index)")
     }
 
