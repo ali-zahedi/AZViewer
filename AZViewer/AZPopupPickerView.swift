@@ -159,7 +159,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         // show on input
         var string = ""
         
-        for i in (0...(self.data.count - 1)).reversed(){
+        for i in (0...(self.data.count - 1)){
             
             // check array range
             if let row = self.index[i],  self.data[i].count > row{
