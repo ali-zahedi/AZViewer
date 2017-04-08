@@ -1,0 +1,4 @@
+language: swift
+xcode_project: AZViewer.xcodeproj # path to your xcodeproj folder
+#xcode_scheme: MyNewProjectTests
+osx_image: xcode8
