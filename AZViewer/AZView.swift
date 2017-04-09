@@ -11,6 +11,7 @@ import Foundation
 public class AZView: AZBaseView{
     
     // MARK: Public
+    public var loader: AZLoader = AZLoader()
     
     // MARK: Internal
     
@@ -30,6 +31,7 @@ public class AZView: AZBaseView{
     // MARK: Function
     fileprivate func defaultInit(){
         
+        self.loader.parent(parent: self)
         for v in [] as [UIView] {
             v.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(v)

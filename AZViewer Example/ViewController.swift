@@ -29,7 +29,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // did appear
+    override func viewDidAppear(_ animated: Bool) {
+        let loader = AZLoader()
+        loader.isActive = true
+    }
+    
     // prepare picker view
     fileprivate func preparePickerView(){
         self.view.addSubview(self.pickerView)
@@ -37,6 +42,8 @@ class ViewController: UIViewController {
         self.pickerView.data = [[(12 as AnyObject, "آیتم ۱"), (13 as AnyObject, "ایتم دوم"), (14 as AnyObject, "آیتم 3")],[(1  as AnyObject, "آیتم"), (2 as AnyObject, "آیتم 5")], [(3 as AnyObject, "آیتم 3"), (6 as AnyObject, "آیتم 6")]]
         self.pickerView.separatorSection = " / "
         self.pickerView.selected(indexPath: IndexPath(row: 2, section: 0))
+        self.pickerView.loader.horizontalAlignment = .right
+        self.pickerView.loader.isActive = true
         print("selected index: \(self.pickerView.index)")
     }
     

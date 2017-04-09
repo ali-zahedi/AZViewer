@@ -22,6 +22,7 @@ public class AZStyle{
     // MARK: General
     public var sectionGeneralHeight: CGFloat = CGFloat(30)
     public var sectionGeneralConstant: CGFloat = CGFloat(8)
+    public var sectionGeneralCornerRadius: CGFloat = CGFloat(5)
     
     // MARK: Section Headers
     public var sectionHeaderHeight: CGFloat {
@@ -65,6 +66,12 @@ public class AZStyle{
     // MARK: Section Date Pickerview
     public var sectionDatePickerViewFormatDate: String = "yyyy/MM/dd"
     public var sectionDatePickerViewFormatTime: String = "HH:mm:ss"
+    
+    // MARK: Section Loader
+    public var sectionLoaderColor: UIColor = UIColor.white
+    public var sectionLoaderCornerRadius: CGFloat {
+        return self.sectionGeneralCornerRadius
+    }
     
     public let availableThemes = ["apple", "lightGray"]
     
