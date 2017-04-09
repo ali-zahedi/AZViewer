@@ -12,8 +12,8 @@ import AZViewer
 class ViewController: UIViewController {
 
     var pickerView: AZPopupPickerView = AZPopupPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 30))
-    
     var datePickerView: AZPopupDatePickerView = AZPopupDatePickerView(frame: CGRect(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 30))
+    var stepper: AZStepper = AZStepper(frame: CGRect(x: 30, y: 130, width: UIScreen.main.bounds.width / 4, height: 30))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         
         self.preparePickerView()
         self.prepareDatePickerView()
+        self.prepareStepper()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +66,15 @@ class ViewController: UIViewController {
 //        print("selected index: \(self.datePickerView.index)")
     }
 
+    
+    fileprivate func prepareStepper(){
+        self.view.addSubview(self.stepper)
+        //        self.stepper.minusBackgroundColor
+        //        self.stepper.minusIcon
+        //        self.stepper.minusIconColor
+        //        self.stepper.plusBackgroundColor
+        //        and so on...
+    }
 }
 
 extension ViewController: AZPopupViewDelegate{

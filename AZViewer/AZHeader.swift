@@ -93,7 +93,7 @@ extension AZHeader{
     
     // title
     fileprivate func prepareTitle(){
-        _ = self.titleLabel.aZConstraints.top(to: self).right(to: self, constant: -self.style.sectionGeneralConstant).left(to: self, multiplier: 0.7).bottom(to: self)
+        _ = self.titleLabel.aZConstraints.parent(parent: self).top().right(constant: -self.style.sectionGeneralConstant).left(multiplier: 0.7).bottom()
         self.titleLabel.textColor = self.style.sectionHeaderTitleColor
         self.titleLabel.font = self.style.sectionHeaderTitleFont
     }
@@ -101,7 +101,7 @@ extension AZHeader{
     // close
     fileprivate func prepareCloseButton(){
         let height = self.style.sectionHeaderHeight / 4
-        _ = self.closeButton.aZConstraints.top(to: self, constant: height).bottom(to: self, constant: -height).left(to: self, constant: self.style.sectionGeneralConstant).width(constant: height * 2)
+        _ = self.closeButton.aZConstraints.parent(parent: self).top(constant: height).bottom(constant: -height).left(constant: self.style.sectionGeneralConstant).width(constant: height * 2)
         self.closeButton.setImage(AZAssets.closeImage, for: .normal)
         
         self.closeButton.addTarget(self, action: #selector(cancelButtonAction(_:)), for: .touchUpInside)
@@ -111,7 +111,7 @@ extension AZHeader{
     fileprivate func prepareSuccessButton(){
         
         let height = self.style.sectionHeaderHeight / 4
-        _ = self.successButton.aZConstraints.top(to: self, constant: height).bottom(to: self, constant: -height).right(to: self, constant: -self.style.sectionGeneralConstant).width(constant: height * 2)
+        _ = self.successButton.aZConstraints.parent(parent: self).top(constant: height).bottom(constant: -height).right(constant: -self.style.sectionGeneralConstant).width(constant: height * 2)
         self.successButton.setImage(AZAssets.tickImage, for: .normal)
         
         self.successButton.addTarget(self, action: #selector(successButtonAction(_:)), for: .touchUpInside)

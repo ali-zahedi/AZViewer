@@ -73,6 +73,30 @@ public class AZStyle{
         return self.sectionGeneralCornerRadius
     }
     
+    // MARK: Section Stepper
+    public var sectionStepperPlusIconColor: UIColor = UIColor(hex: "ef6125")
+    public var sectionStepperPlusBackgroundColor: UIColor = UIColor(hex: "590a30")
+    public var sectionStepperMinusIconColor: UIColor {
+        get{
+            return self.sectionStepperPlusIconColor
+        }
+    }
+    public var sectionStepperMinusBackgroundColor: UIColor {
+        get{
+            return self.sectionStepperPlusBackgroundColor
+        }
+    }
+    public var sectionStepperInputBackgroundColor: UIColor = UIColor(hex: "90aa3c")
+    public var sectionStepperInputFont: UIFont {
+        get{
+            return self.sectionInputFont
+        }
+    }
+    public var sectionStepperCornerRadius: CGFloat {
+        return self.sectionGeneralCornerRadius
+    }
+    
+    // MARK: Theme
     public let availableThemes = ["apple", "lightGray"]
     
     public func loadTheme(){

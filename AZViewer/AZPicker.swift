@@ -57,7 +57,7 @@ extension AZPicker{
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         self.pickerView.showsSelectionIndicator = true
-        _ = self.pickerView.aZConstraints.parent(parent: self).top(to: self.headerSection, toAttribute: .bottom).right(to: self).left(to: self).bottom(to: self)
+        _ = self.pickerView.aZConstraints.parent(parent: self).top(to: self.headerSection, toAttribute: .bottom).right().left().bottom()
     }
     
 }

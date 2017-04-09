@@ -25,6 +25,7 @@
 		411233D31E92A2B8004064FA /* AZView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233D21E92A2B8004064FA /* AZView.swift */; };
 		411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233D91E92B9F6004064FA /* AZHeader.swift */; };
 		411233DC1E92BB3C004064FA /* AZConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233DB1E92BB3C004064FA /* AZConstraint.swift */; };
+		411C9EED1E9A703A00AC767B /* AZStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C9EEC1E9A703A00AC767B /* AZStepper.swift */; };
 		4123B43B1E9A526300DA5A6A /* AZLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4123B43A1E9A526300DA5A6A /* AZLoader.swift */; };
 		4123B43D1E9A547100DA5A6A /* AZIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4123B43C1E9A547100DA5A6A /* AZIndicatorShape.swift */; };
 		41258C9C1E93C77C00F35AC9 /* AZStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258C9B1E93C77C00F35AC9 /* AZStyle.swift */; };
@@ -91,6 +92,7 @@
 		411233D21E92A2B8004064FA /* AZView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZView.swift; sourceTree = "<group>"; };
 		411233D91E92B9F6004064FA /* AZHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZHeader.swift; sourceTree = "<group>"; };
 		411233DB1E92BB3C004064FA /* AZConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZConstraint.swift; sourceTree = "<group>"; };
+		411C9EEC1E9A703A00AC767B /* AZStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStepper.swift; sourceTree = "<group>"; };
 		4123B43A1E9A526300DA5A6A /* AZLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLoader.swift; sourceTree = "<group>"; };
 		4123B43C1E9A547100DA5A6A /* AZIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZIndicatorShape.swift; sourceTree = "<group>"; };
 		41258C9B1E93C77C00F35AC9 /* AZStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStyle.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				413402BA1E948F5500F74175 /* AZCheckBox */,
 				411233D41E92A5EB004064FA /* AZPickerView */,
 				4123B4391E9A4F7E00DA5A6A /* AZLoader */,
+				411C9EEC1E9A703A00AC767B /* AZStepper.swift */,
 				411233C81E92A064004064FA /* fonts */,
 			);
 			path = AZViewer;
@@ -379,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				411C9EED1E9A703A00AC767B /* AZStepper.swift in Sources */,
 				411233D11E92A29D004064FA /* AZBaseView.swift in Sources */,
 				41258CA11E93CC9F00F35AC9 /* UIColor+hex.swift in Sources */,
 				411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */,
