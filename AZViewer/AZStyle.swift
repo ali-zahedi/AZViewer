@@ -22,6 +22,7 @@ public class AZStyle{
     // MARK: General
     public var sectionGeneralHeight: CGFloat = CGFloat(30)
     public var sectionGeneralConstant: CGFloat = CGFloat(8)
+    public var sectionGeneralCornerRadius: CGFloat = CGFloat(5)
     
     // MARK: Section Headers
     public var sectionHeaderHeight: CGFloat {
@@ -66,6 +67,36 @@ public class AZStyle{
     public var sectionDatePickerViewFormatDate: String = "yyyy/MM/dd"
     public var sectionDatePickerViewFormatTime: String = "HH:mm:ss"
     
+    // MARK: Section Loader
+    public var sectionLoaderColor: UIColor = UIColor.white
+    public var sectionLoaderCornerRadius: CGFloat {
+        return self.sectionGeneralCornerRadius
+    }
+    
+    // MARK: Section Stepper
+    public var sectionStepperPlusIconColor: UIColor = UIColor(hex: "ef6125")
+    public var sectionStepperPlusBackgroundColor: UIColor = UIColor(hex: "590a30")
+    public var sectionStepperMinusIconColor: UIColor {
+        get{
+            return self.sectionStepperPlusIconColor
+        }
+    }
+    public var sectionStepperMinusBackgroundColor: UIColor {
+        get{
+            return self.sectionStepperPlusBackgroundColor
+        }
+    }
+    public var sectionStepperInputBackgroundColor: UIColor = UIColor(hex: "90aa3c")
+    public var sectionStepperInputFont: UIFont {
+        get{
+            return self.sectionInputFont
+        }
+    }
+    public var sectionStepperCornerRadius: CGFloat {
+        return self.sectionGeneralCornerRadius
+    }
+    
+    // MARK: Theme
     public let availableThemes = ["apple", "lightGray"]
     
     public func loadTheme(){

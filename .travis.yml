@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode8
+xcode_project: AZViewer.xcodeproj # path to your xcodeproj folder
+#xcode_scheme: MyNewProjectTests
+xcode_sdk: iphonesimulator8.4 #5

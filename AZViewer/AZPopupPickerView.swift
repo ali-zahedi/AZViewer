@@ -111,7 +111,7 @@ extension AZPopupPickerView{
         self.input.textAlignment = .center
         self.input.tintColor = UIColor.clear
         
-        _ = self.input.aZConstraints.parent(parent: self).top(to: self).right(to: self).left(to: self).bottom(to: self)
+        _ = self.input.aZConstraints.parent(parent: self).top().right().left().bottom()
         self.input.leftIcon = AZAssets.expandImage
     }
     
@@ -159,7 +159,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         // show on input
         var string = ""
         
-        for i in (0...(self.data.count - 1)).reversed(){
+        for i in (0...(self.data.count - 1)){
             
             // check array range
             if let row = self.index[i],  self.data[i].count > row{

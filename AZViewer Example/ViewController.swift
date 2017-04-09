@@ -12,8 +12,8 @@ import AZViewer
 class ViewController: UIViewController {
 
     var pickerView: AZPopupPickerView = AZPopupPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 30))
-    
     var datePickerView: AZPopupDatePickerView = AZPopupDatePickerView(frame: CGRect(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 30))
+    var stepper: AZStepper = AZStepper(frame: CGRect(x: 30, y: 130, width: UIScreen.main.bounds.width / 4, height: 30))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         
         self.preparePickerView()
         self.prepareDatePickerView()
+        self.prepareStepper()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +30,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // did appear
+    override func viewDidAppear(_ animated: Bool) {
+        let loader = AZLoader()
+        loader.isActive = true
+    }
+    
     // prepare picker view
     fileprivate func preparePickerView(){
         self.view.addSubview(self.pickerView)
@@ -37,6 +43,8 @@ class ViewController: UIViewController {
         self.pickerView.data = [[(12 as AnyObject, "آیتم ۱"), (13 as AnyObject, "ایتم دوم"), (14 as AnyObject, "آیتم 3")],[(1  as AnyObject, "آیتم"), (2 as AnyObject, "آیتم 5")], [(3 as AnyObject, "آیتم 3"), (6 as AnyObject, "آیتم 6")]]
         self.pickerView.separatorSection = " / "
         self.pickerView.selected(indexPath: IndexPath(row: 2, section: 0))
+        self.pickerView.loader.horizontalAlignment = .right
+        self.pickerView.loader.isActive = true
         print("selected index: \(self.pickerView.index)")
     }
     
@@ -58,6 +66,15 @@ class ViewController: UIViewController {
 //        print("selected index: \(self.datePickerView.index)")
     }
 
+    
+    fileprivate func prepareStepper(){
+        self.view.addSubview(self.stepper)
+        //        self.stepper.minusBackgroundColor
+        //        self.stepper.minusIcon
+        //        self.stepper.minusIconColor
+        //        self.stepper.plusBackgroundColor
+        //        and so on...
+    }
 }
 
 extension ViewController: AZPopupViewDelegate{
