@@ -11,7 +11,21 @@ import Foundation
 public class AZStepper: AZView {
     
     // MARK: Public
-    // plus icon
+    // input
+    public var minValue: Int = 1
+    public var maxValue: Int = Int.max
+    public var value: Int {
+        set{
+            if self.minValue < newValue && self.maxValue > newValue {
+                
+                self._value = newValue
+            }
+        }get{
+            
+            return self._value
+        }
+    }
+    // plus
     public var plusIcon: UIImage!{
         didSet{
             self.plusButton.setImage(self.plusIcon, for: .normal)
@@ -53,6 +67,11 @@ public class AZStepper: AZView {
     fileprivate var plusButton: AZButton = AZButton()
     fileprivate var minusButton: AZButton = AZButton()
     fileprivate var showNumberLabel: AZLabel = AZLabel()
+    fileprivate var _value: Int! {
+        didSet{
+            self.showNumberLabel.text = self.value.description
+        }
+    }
     
     // MARK: Init
     override public init(frame: CGRect) {
@@ -68,6 +87,7 @@ public class AZStepper: AZView {
     // MARK: Function
     fileprivate func defaulInit(){
         
+        self._value = self.minValue
         self.layer.cornerRadius = self.style.sectionStepperCornerRadius
         self.clipsToBounds = true
         
@@ -86,6 +106,15 @@ public class AZStepper: AZView {
         self.prepareInputLabel()
 
     }
+    
+    func tapPlusButton(_ sender: AZButton){
+        
+        self.value += 1
+    }
+    
+    func tapMinusButton(_ sender: AZButton){
+        self.value -= 1
+    }
 }
 
 // prepare
@@ -97,6 +126,7 @@ extension AZStepper{
         self.plusIconColor = self.style.sectionStepperPlusIconColor
         self.plusBackgroundColor = self.style.sectionStepperPlusBackgroundColor
         self.plusIcon = AZAssets.plusImage
+        self.plusButton.addTarget(self, action: #selector(tapPlusButton(_:)), for: .touchUpInside)
     }
     
     // minus
@@ -106,6 +136,7 @@ extension AZStepper{
         self.minusIconColor = self.style.sectionStepperMinusIconColor
         self.minusBackgroundColor = self.style.sectionStepperMinusBackgroundColor
         self.minusIcon = AZAssets.minusImage
+        self.minusButton.addTarget(self, action: #selector(tapMinusButton(_:)), for: .touchUpInside)
     }
     
     // input
@@ -114,6 +145,7 @@ extension AZStepper{
         
         self.showNumberLabel.backgroundColor = self.style.sectionStepperInputBackgroundColor
         self.showNumberLabel.font = self.style.sectionStepperInputFont
+        self.showNumberLabel.textAlignment = .center
     }
     
 }
