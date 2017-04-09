@@ -111,7 +111,7 @@ extension AZPopupPickerView{
         self.input.textAlignment = .center
         self.input.tintColor = UIColor.clear
         
-        _ = self.input.aZConstraints.parent(parent: self).top(to: self).right(to: self).left(to: self).bottom(to: self)
+        _ = self.input.aZConstraints.parent(parent: self).top().right().left().bottom()
         self.input.leftIcon = AZAssets.expandImage
     }
     

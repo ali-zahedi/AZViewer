@@ -100,7 +100,7 @@ extension AZPopupView{
     
     // header
     fileprivate func prepareHeader(){
-        _ = self.headerSection.aZConstraints.parent(parent: self).top(to: self).right(to: self).left(to: self).height(constant: self.style.sectionHeaderHeight)
+        _ = self.headerSection.aZConstraints.parent(parent: self).top().right().left().height(constant: self.style.sectionHeaderHeight)
         self.headerSection.delegate = self
     }
     
@@ -131,7 +131,7 @@ extension AZPopupView{
         view.addSubview(blurEffectView)
         self.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(self)
-        _ = self.aZConstraints.parent(parent: view).bottom(to: view).right(to: view, constant: -self.fillMode.widthMarginConstant()).left(to: view, constant: self.fillMode.widthMarginConstant())
+        _ = self.aZConstraints.parent(parent: view).bottom().right(constant: -self.fillMode.widthMarginConstant()).left(constant: self.fillMode.widthMarginConstant())
     }
 }
 
