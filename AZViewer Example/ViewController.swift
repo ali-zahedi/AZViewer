@@ -32,8 +32,10 @@ class ViewController: UIViewController {
 
     // did appear
     override func viewDidAppear(_ animated: Bool) {
-        let loader = AZLoader()
-        loader.isActive = true
+//        let loader = AZLoader()
+//        loader.isActive = true
+        // or 
+        AZLoader.shared.isActive = true
     }
     
     // prepare picker view
