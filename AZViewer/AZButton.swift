@@ -11,9 +11,9 @@ import UIKit
 public class AZButton: UIButton {
 
     // MARK: var
+    public var aZConstraints: AZConstraint!
     
     // MARK: Internal
-    internal var aZConstraints: AZConstraint!
     
     /*
      // Only override draw() if you perform custom drawing.

@@ -11,9 +11,9 @@ import Foundation
 open class AZBaseView: UIView{
     
     // MARK: Public
+    public var aZConstraints: AZConstraint!
     
     // MARK: Internal
-    internal var aZConstraints: AZConstraint!
     internal var style: AZStyle {
         return AZStyle.shared
     }

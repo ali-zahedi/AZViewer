@@ -10,10 +10,10 @@ import UIKit
 
 public class AZLabel: UILabel {
     
-    // MARK: var
+    // MARK: Public
+    public var aZConstraints: AZConstraint!
     
     // MARK: Internal
-    internal var aZConstraints: AZConstraint!    
     
     /*
      // Only override draw() if you perform custom drawing.
