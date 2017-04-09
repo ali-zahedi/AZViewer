@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AZView: AZBaseView{
+open class AZView: AZBaseView{
     
     // MARK: Public
     public var loader: AZLoader = AZLoader()
@@ -18,7 +18,7 @@ public class AZView: AZBaseView{
     // MARK: Private
     
     // MARK: Override
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
     }
