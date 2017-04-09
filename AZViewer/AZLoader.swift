@@ -101,6 +101,8 @@ extension AZLoader{
     
     // start loader
     fileprivate func startLoader(){
+        // released last blur for use shared
+        self.prepareBlurEffect()
         var view: UIView!
         var size: CGSize!
         
