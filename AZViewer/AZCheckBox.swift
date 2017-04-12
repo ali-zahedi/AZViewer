@@ -10,6 +10,7 @@ import Foundation
 
 public class AZCheckBox: AZView {
     
+    // MARK: Public
     public var hiddenEndSeparator: Bool = false
     
     public var data: AZCheckBoxDataSection = AZCheckBoxDataSection() {
@@ -18,9 +19,11 @@ public class AZCheckBox: AZView {
         }
     }
     
+    // MARK: Private
     fileprivate var tableView: UITableView!
     fileprivate static let cellReuseIdentifier: String = "CheckBoxTableViewCell"
     
+    // MARK: init
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
@@ -31,6 +34,7 @@ public class AZCheckBox: AZView {
         self.defaultInit()
     }
     
+    // MARK: function
     fileprivate func defaultInit(){
         
         self.prepareTableView()

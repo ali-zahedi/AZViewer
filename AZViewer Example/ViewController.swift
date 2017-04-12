@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     var datePickerView: AZPopupDatePickerView = AZPopupDatePickerView(frame: CGRect(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 30))
     var stepper: AZStepper = AZStepper(frame: CGRect(x: 30, y: 130, width: UIScreen.main.bounds.width / 4, height: 30))
     
+    var checkBoxView: AZCheckBox = AZCheckBox()
+    var radioButtonView: AZRadioButton = AZRadioButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
