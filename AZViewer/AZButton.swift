@@ -84,7 +84,7 @@ extension AZButton{
     fileprivate func addAnimationLoader(){
         
         self.superview?.addSubview(self.loaderMask)
-        self.removeFromSuperview()
+        self.isHidden = true
         
         let width: CGFloat = self.frame.height
         let center: CGFloat = self.center.x
@@ -104,8 +104,8 @@ extension AZButton{
         let center: CGFloat = self.center.x
         
         self.frame = self.loaderMask.frame
-        self.loaderMask.superview?.addSubview(self)
         self.loaderMask.removeFromSuperview()
+        self.isHidden = false
         
         // todo: get animation loader view and then process on the view
         self.animationLoader(width: width, center: center, view: self)

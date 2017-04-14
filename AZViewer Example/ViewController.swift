@@ -96,8 +96,10 @@ class ViewController: UIViewController {
         self.stopAnimationButton.backgroundColor = UIColor.red
         self.stopAnimationButton.setTitle("Stop Animation", for: .normal)
         self.stopAnimationButton.addTarget(self, action: #selector(tapOnStopAnimationButtonAction(_:)), for: .touchUpInside)
+        self.stopAnimationButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.stopAnimationButton)
         
+        _ = self.stopAnimationButton.aZConstraints.parent(parent: self.view).top(to: self.button, toAttribute: .bottom).right().left().height(constant: 50)
     }
     
     func tapOnStopAnimationButtonAction(_ sender: AZButton){
