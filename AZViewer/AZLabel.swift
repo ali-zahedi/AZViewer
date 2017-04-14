@@ -12,7 +12,7 @@ public class AZLabel: UILabel {
     
     // MARK: Public
     public var aZConstraints: AZConstraint!
-    
+    public var loader: AZLoader = AZLoader()
     // MARK: Internal
     
     /*
@@ -37,6 +37,7 @@ public class AZLabel: UILabel {
     
     // MARK: Function
     fileprivate func defaultInit(){
+        self.loader.parent(parent: self)
         self.aZConstraints = AZConstraint(view: self)
         self.textAlignment = .right
     }
