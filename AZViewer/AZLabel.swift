@@ -10,10 +10,10 @@ import UIKit
 
 public class AZLabel: UILabel {
     
-    // MARK: var
-    
+    // MARK: Public
+    public var aZConstraints: AZConstraint!
+    public var loader: AZLoader = AZLoader()
     // MARK: Internal
-    internal var aZConstraints: AZConstraint!    
     
     /*
      // Only override draw() if you perform custom drawing.
@@ -37,6 +37,7 @@ public class AZLabel: UILabel {
     
     // MARK: Function
     fileprivate func defaultInit(){
+        self.loader.parent(parent: self)
         self.aZConstraints = AZConstraint(view: self)
         self.textAlignment = .right
     }

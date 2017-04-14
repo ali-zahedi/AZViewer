@@ -8,12 +8,12 @@
 
 import Foundation
 
-public class AZBaseView: UIView{
+open class AZBaseView: UIView{
     
     // MARK: Public
+    public var aZConstraints: AZConstraint!
     
     // MARK: Internal
-    internal var aZConstraints: AZConstraint!
     internal var style: AZStyle {
         return AZStyle.shared
     }
@@ -21,7 +21,7 @@ public class AZBaseView: UIView{
     // MARK: Private
     
     // MARK: Override
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.defaultInit()
     }

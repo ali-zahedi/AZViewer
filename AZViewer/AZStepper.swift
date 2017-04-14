@@ -11,12 +11,14 @@ import Foundation
 public class AZStepper: AZView {
     
     // MARK: Public
+    public var delegate: AZStepperDelegate?
+    
     // input
     public var minValue: Int = 1
     public var maxValue: Int = Int.max
     public var value: Int {
         set{
-            if self.minValue < newValue && self.maxValue > newValue {
+            if self.minValue <= newValue && self.maxValue > newValue {
                 
                 self._value = newValue
             }
@@ -60,6 +62,23 @@ public class AZStepper: AZView {
     public var minusIconColor: UIColor!{
         didSet{
             self.minusButton.tintColor = self.minusIconColor
+        }
+    }
+    
+    // input 
+    public var inputBackgroundColor: UIColor! {
+        didSet{
+            self.showNumberLabel.backgroundColor = self.inputBackgroundColor
+        }
+    }
+    public var inputTextColor: UIColor!{
+        didSet{
+            self.showNumberLabel.textColor = self.inputTextColor
+        }
+    }
+    public var inputTextFont: UIFont! {
+        didSet{
+            self.showNumberLabel.font = self.inputTextFont
         }
     }
     
@@ -110,10 +129,12 @@ public class AZStepper: AZView {
     func tapPlusButton(_ sender: AZButton){
         
         self.value += 1
+        self.delegate?.aZStepper(changeValue: self.value)
     }
     
     func tapMinusButton(_ sender: AZButton){
         self.value -= 1
+        self.delegate?.aZStepper(changeValue: self.value)
     }
 }
 
@@ -143,8 +164,9 @@ extension AZStepper{
     fileprivate func prepareInputLabel(){
         _ = self.showNumberLabel.aZConstraints.parent(parent: self).top().right(to: self.plusButton, toAttribute: .left).left(to: self.minusButton, toAttribute: .right).height(to: self)
         
-        self.showNumberLabel.backgroundColor = self.style.sectionStepperInputBackgroundColor
-        self.showNumberLabel.font = self.style.sectionStepperInputFont
+        self.inputTextColor =  self.style.sectionStepperInputTextColor
+        self.inputBackgroundColor = self.style.sectionStepperInputBackgroundColor
+        self.inputTextFont = self.style.sectionStepperInputFont
         self.showNumberLabel.textAlignment = .center
     }
     

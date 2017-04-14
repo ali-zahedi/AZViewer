@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     var datePickerView: AZPopupDatePickerView = AZPopupDatePickerView(frame: CGRect(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 30))
     var stepper: AZStepper = AZStepper(frame: CGRect(x: 30, y: 130, width: UIScreen.main.bounds.width / 4, height: 30))
     
+    var checkBoxView: AZCheckBox = AZCheckBox()
+    var radioButtonView: AZRadioButton = AZRadioButton()
+    var button: AZButton = AZButton(frame: CGRect(x: 0, y: 170, width: UIScreen.main.bounds.width, height: 50))
+    var stopAnimationButton: AZButton = AZButton(frame: CGRect(x: 0, y: 230, width: UIScreen.main.bounds.width, height: 50))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +28,7 @@ class ViewController: UIViewController {
         self.preparePickerView()
         self.prepareDatePickerView()
         self.prepareStepper()
+        self.prepareButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,11 +77,37 @@ class ViewController: UIViewController {
     
     fileprivate func prepareStepper(){
         self.view.addSubview(self.stepper)
+        self.stepper.delegate = self
         //        self.stepper.minusBackgroundColor
         //        self.stepper.minusIcon
         //        self.stepper.minusIconColor
         //        self.stepper.plusBackgroundColor
         //        and so on...
+    }
+    
+    fileprivate func prepareButton(){
+        
+        self.button.backgroundColor = UIColor.orange
+        
+        self.button.setTitle("Button", for: .normal)
+        self.button.addTarget(self, action: #selector(self.tapOnButtonAction(_:)), for: .touchUpInside)
+        self.view.addSubview(self.button)
+        
+        self.stopAnimationButton.backgroundColor = UIColor.red
+        self.stopAnimationButton.setTitle("Stop Animation", for: .normal)
+        self.stopAnimationButton.addTarget(self, action: #selector(tapOnStopAnimationButtonAction(_:)), for: .touchUpInside)
+        self.stopAnimationButton.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.stopAnimationButton)
+        
+        _ = self.stopAnimationButton.aZConstraints.parent(parent: self.view).top(to: self.button, toAttribute: .bottom).right().left().height(constant: 50)
+    }
+    
+    func tapOnStopAnimationButtonAction(_ sender: AZButton){
+        self.button.loader = false
+    }
+    
+    func tapOnButtonAction(_ sender: AZButton){
+        sender.loader = true
     }
 }
 
@@ -87,5 +119,12 @@ extension ViewController: AZPopupViewDelegate{
     
     func cancelPopupView() {
         // nothing happend
+    }
+}
+
+// stepper delegate
+extension ViewController: AZStepperDelegate{
+    func aZStepper(changeValue: Int) {
+        print("change stepper value to : \(changeValue)")
     }
 }

@@ -36,6 +36,8 @@ class AZPicker: AZPopupView{
     // MARK: Function
     fileprivate func defaultInit(){
         
+        self.loader.parent(parent: self)
+        
         for v in [pickerView] as [UIView] {
             v.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(v)

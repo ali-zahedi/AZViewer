@@ -11,11 +11,11 @@ import UIKit
 public class AZImageView: UIImageView {
     
     // MARK: Public
+    public var aZConstraints: AZConstraint!
     
     // MARK: var
     
     // MARK: Internal
-    internal var aZConstraints: AZConstraint!
     
     // MARK: Private
     

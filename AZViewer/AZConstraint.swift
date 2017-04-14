@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AZConstraint: NSObject {
+public class AZConstraint: NSObject {
     
     // MARK: Public
     var parent: UIView?
@@ -25,7 +25,7 @@ class AZConstraint: NSObject {
     fileprivate var view: UIView!
     
     // MARK: Override
-    init(view: UIView) {
+    public init(view: UIView) {
         super.init()
         self.view = view
         self.defaultInit()
@@ -40,7 +40,7 @@ class AZConstraint: NSObject {
 
 extension AZConstraint{
     
-    func parent(parent: UIView) -> AZConstraint{
+    public func parent(parent: UIView) -> AZConstraint{
         
         self.parent = parent
         return self
@@ -51,7 +51,7 @@ extension AZConstraint{
 extension AZConstraint{
     
     // top
-    func top(to: UIView? = nil, toAttribute: NSLayoutAttribute = .top, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func top(to: UIView? = nil, toAttribute: NSLayoutAttribute = .top, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -65,7 +65,7 @@ extension AZConstraint{
     }
     
     // bottom
-    func bottom(to: UIView? = nil, toAttribute: NSLayoutAttribute = .bottom, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func bottom(to: UIView? = nil, toAttribute: NSLayoutAttribute = .bottom, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -80,7 +80,7 @@ extension AZConstraint{
     
     
     // right
-    func right(to: UIView? = nil, toAttribute: NSLayoutAttribute = .right, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func right(to: UIView? = nil, toAttribute: NSLayoutAttribute = .right, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -94,7 +94,7 @@ extension AZConstraint{
     }
     
     // left
-    func left(to: UIView? = nil, toAttribute: NSLayoutAttribute = .left, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func left(to: UIView? = nil, toAttribute: NSLayoutAttribute = .left, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -108,7 +108,7 @@ extension AZConstraint{
     }
     
     // width
-    func width(to: UIView? = nil, toAttribute: NSLayoutAttribute = .width, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func width(to: UIView? = nil, toAttribute: NSLayoutAttribute = .width, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to //?? self.parent
         
@@ -122,7 +122,7 @@ extension AZConstraint{
     }
     
     // height
-    func height(to: UIView? = nil, toAttribute: NSLayoutAttribute = .height, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func height(to: UIView? = nil, toAttribute: NSLayoutAttribute = .height, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to //?? self.parent
         
