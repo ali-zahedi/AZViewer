@@ -41,6 +41,24 @@ public class AZLoader: AZBaseView{
     
     public var color: UIColor = AZStyle.shared.sectionLoaderColor
     public var horizontalAlignment: AZLoaderHorizontalAlignment = .middle
+    
+    public override var backgroundColor: UIColor?{
+        didSet{
+            super.backgroundColor = self.backgroundColor
+            self.blurEffectView.backgroundColor = self.backgroundColor
+        }
+    }
+    public var cornerRadius: CGFloat!{
+        didSet{
+            self.blurEffectView.layer.cornerRadius = self.cornerRadius
+        }
+    }
+    public override var alpha: CGFloat{
+        didSet{
+            super.alpha = self.alpha
+            self.blurEffectView.alpha = alpha
+        }
+    }
     // MARK: Internal
     
     // MARK: Private
@@ -88,9 +106,10 @@ extension AZLoader{
     
     // blur effect
     fileprivate func prepareBlurEffect(){
-        self.blurEffectView = UIVisualEffectView(effect: self.style.sectionPopupBlurEffect)
-        self.blurEffectView.alpha = self.style.sectionPopupBlurAlpha
-        self.blurEffectView.layer.cornerRadius = AZStyle.shared.sectionGeneralCornerRadius
+        self.blurEffectView = UIVisualEffectView(effect: self.style.sectionLoaderBlurEffect)
+        self.backgroundColor = self.style.sectionLoaderBlurBackgroundColor
+        self.alpha = self.style.sectionLoaderBlurAlpha
+        self.cornerRadius = self.style.sectionLoaderCornerRadius
         self.blurEffectView.clipsToBounds = true
     }
     

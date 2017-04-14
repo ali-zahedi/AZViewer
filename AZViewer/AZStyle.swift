@@ -68,10 +68,14 @@ public class AZStyle{
     public var sectionDatePickerViewFormatTime: String = "HH:mm:ss"
     
     // MARK: Section Loader
-    public var sectionLoaderColor: UIColor = UIColor.white
+    public var sectionLoaderColor: UIColor = UIColor.black
     public var sectionLoaderCornerRadius: CGFloat {
         return self.sectionGeneralCornerRadius
     }
+    public var sectionLoaderBlurAlpha: CGFloat = CGFloat(0.75)
+    public var sectionLoaderBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+    public var sectionLoaderBlurBackgroundColor: UIColor = UIColor(hex: "efefef")
+    
     
     // MARK: Section Stepper
     public var sectionStepperPlusIconColor: UIColor = UIColor(hex: "ef6125")
