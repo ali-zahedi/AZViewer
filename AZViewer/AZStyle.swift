@@ -87,13 +87,14 @@ public class AZStyle{
         }
     }
     public var sectionStepperInputBackgroundColor: UIColor = UIColor(hex: "90aa3c")
+    public var sectionStepperInputTextColor: UIColor = UIColor.black
     public var sectionStepperInputFont: UIFont {
         get{
-            return self.sectionInputFont
+            return UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption2).pointSize)!
         }
     }
     public var sectionStepperCornerRadius: CGFloat {
-        return self.sectionGeneralCornerRadius
+        return CGFloat(3)
     }
     
     // MARK: Theme

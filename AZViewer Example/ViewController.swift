@@ -77,6 +77,7 @@ class ViewController: UIViewController {
     
     fileprivate func prepareStepper(){
         self.view.addSubview(self.stepper)
+        self.stepper.delegate = self
         //        self.stepper.minusBackgroundColor
         //        self.stepper.minusIcon
         //        self.stepper.minusIconColor
@@ -116,5 +117,12 @@ extension ViewController: AZPopupViewDelegate{
     
     func cancelPopupView() {
         // nothing happend
+    }
+}
+
+// stepper delegate
+extension ViewController: AZStepperDelegate{
+    func aZStepper(changeValue: Int) {
+        print("change stepper value to : \(changeValue)")
     }
 }
