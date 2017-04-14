@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     var checkBoxView: AZCheckBox = AZCheckBox()
     var radioButtonView: AZRadioButton = AZRadioButton()
+    var button: AZButton = AZButton(frame: CGRect(x: 0, y: 170, width: UIScreen.main.bounds.width, height: 50))
+    var stopAnimationButton: AZButton = AZButton(frame: CGRect(x: 0, y: 230, width: UIScreen.main.bounds.width, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
         self.preparePickerView()
         self.prepareDatePickerView()
         self.prepareStepper()
+        self.prepareButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,6 +82,29 @@ class ViewController: UIViewController {
         //        self.stepper.minusIconColor
         //        self.stepper.plusBackgroundColor
         //        and so on...
+    }
+    
+    fileprivate func prepareButton(){
+        
+        self.button.backgroundColor = UIColor.orange
+        
+        self.button.setTitle("Button", for: .normal)
+        self.button.addTarget(self, action: #selector(self.tapOnButtonAction(_:)), for: .touchUpInside)
+        self.view.addSubview(self.button)
+        
+        self.stopAnimationButton.backgroundColor = UIColor.red
+        self.stopAnimationButton.setTitle("Stop Animation", for: .normal)
+        self.stopAnimationButton.addTarget(self, action: #selector(tapOnStopAnimationButtonAction(_:)), for: .touchUpInside)
+        self.view.addSubview(self.stopAnimationButton)
+        
+    }
+    
+    func tapOnStopAnimationButtonAction(_ sender: AZButton){
+        self.button.loader = false
+    }
+    
+    func tapOnButtonAction(_ sender: AZButton){
+        sender.loader = true
     }
 }
 
