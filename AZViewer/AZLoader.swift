@@ -8,23 +8,6 @@
 
 import Foundation
 
-public enum AZLoaderHorizontalAlignment {
-    case right
-    case middle
-    case left
-    
-    func attribute() -> NSLayoutAttribute{
-        switch self {
-        case .right:
-            return .right
-        case .left:
-            return .left
-        case .middle:
-            return .centerX
-        }
-    }
-}
-
 public class AZLoader: AZBaseView{
     
     // MARK: Public
@@ -40,7 +23,7 @@ public class AZLoader: AZBaseView{
     }
     
     public var color: UIColor = AZStyle.shared.sectionLoaderColor
-    public var horizontalAlignment: AZLoaderHorizontalAlignment = .middle
+    public var horizontalAlignment: AZHorizontalAlignment = .middle
     
     public override var backgroundColor: UIColor?{
         didSet{
