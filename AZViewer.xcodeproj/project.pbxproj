@@ -25,6 +25,8 @@
 		411233D31E92A2B8004064FA /* AZView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233D21E92A2B8004064FA /* AZView.swift */; };
 		411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233D91E92B9F6004064FA /* AZHeader.swift */; };
 		411233DC1E92BB3C004064FA /* AZConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411233DB1E92BB3C004064FA /* AZConstraint.swift */; };
+		411991B21EA2488C0012BDB2 /* AZAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411991B11EA2488C0012BDB2 /* AZAlignment.swift */; };
+		411991B41EA24B090012BDB2 /* AZNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411991B31EA24B090012BDB2 /* AZNotification.swift */; };
 		411C9EED1E9A703A00AC767B /* AZStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411C9EEC1E9A703A00AC767B /* AZStepper.swift */; };
 		4123B43B1E9A526300DA5A6A /* AZLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4123B43A1E9A526300DA5A6A /* AZLoader.swift */; };
 		4123B43D1E9A547100DA5A6A /* AZIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4123B43C1E9A547100DA5A6A /* AZIndicatorShape.swift */; };
@@ -94,6 +96,8 @@
 		411233D21E92A2B8004064FA /* AZView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZView.swift; sourceTree = "<group>"; };
 		411233D91E92B9F6004064FA /* AZHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZHeader.swift; sourceTree = "<group>"; };
 		411233DB1E92BB3C004064FA /* AZConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZConstraint.swift; sourceTree = "<group>"; };
+		411991B11EA2488C0012BDB2 /* AZAlignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZAlignment.swift; sourceTree = "<group>"; };
+		411991B31EA24B090012BDB2 /* AZNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZNotification.swift; sourceTree = "<group>"; };
 		411C9EEC1E9A703A00AC767B /* AZStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStepper.swift; sourceTree = "<group>"; };
 		4123B43A1E9A526300DA5A6A /* AZLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLoader.swift; sourceTree = "<group>"; };
 		4123B43C1E9A547100DA5A6A /* AZIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZIndicatorShape.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				411233D41E92A5EB004064FA /* AZPickerView */,
 				4123B4391E9A4F7E00DA5A6A /* AZLoader */,
 				411C9EEC1E9A703A00AC767B /* AZStepper.swift */,
+				411991AE1EA247A20012BDB2 /* AZNotifications */,
 				415D59351EA0D92B00B2E5A0 /* AZStepperDelegate.swift */,
 				411233C81E92A064004064FA /* fonts */,
 			);
@@ -215,6 +220,14 @@
 			name = AZPickerView;
 			sourceTree = "<group>";
 		};
+		411991AE1EA247A20012BDB2 /* AZNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				411991B31EA24B090012BDB2 /* AZNotification.swift */,
+			);
+			name = AZNotifications;
+			sourceTree = "<group>";
+		};
 		4123B4391E9A4F7E00DA5A6A /* AZLoader */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +255,7 @@
 				417168D11E9505F500E30160 /* AZTextField.swift */,
 				417168D31E95089000E30160 /* AZImageView.swift */,
 				411233D91E92B9F6004064FA /* AZHeader.swift */,
+				411991B11EA2488C0012BDB2 /* AZAlignment.swift */,
 			);
 			name = Element;
 			sourceTree = "<group>";
@@ -393,6 +407,7 @@
 				411233D11E92A29D004064FA /* AZBaseView.swift in Sources */,
 				41258CA11E93CC9F00F35AC9 /* UIColor+hex.swift in Sources */,
 				411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */,
+				411991B41EA24B090012BDB2 /* AZNotification.swift in Sources */,
 				4123B43B1E9A526300DA5A6A /* AZLoader.swift in Sources */,
 				41258C9C1E93C77C00F35AC9 /* AZStyle.swift in Sources */,
 				4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */,
@@ -409,6 +424,7 @@
 				413402BE1E948F6200F74175 /* AZCheckBox.swift in Sources */,
 				417168E01E951FF400E30160 /* AZPopupDatePickerView.swift in Sources */,
 				41258CAB1E93D87900F35AC9 /* AZPicker.swift in Sources */,
+				411991B21EA2488C0012BDB2 /* AZAlignment.swift in Sources */,
 				4184C3AA1E941BC000B46E9D /* AZPopupViewDelegate.swift in Sources */,
 				4123B43D1E9A547100DA5A6A /* AZIndicatorShape.swift in Sources */,
 				413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */,
