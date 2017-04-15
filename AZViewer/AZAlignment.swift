@@ -24,3 +24,20 @@ public enum AZHorizontalAlignment {
         }
     }
 }
+
+public enum AZVerticalAlignment {
+    case top
+    case middle
+    case bottom
+    
+    func attribute() -> NSLayoutAttribute{
+        switch self {
+        case .top:
+            return .top
+        case .bottom:
+            return .bottom
+        case .middle:
+            return .centerY
+        }
+    }
+}
