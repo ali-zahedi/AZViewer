@@ -101,6 +101,29 @@ public class AZStyle{
         return CGFloat(3)
     }
     
+    // MARK: Section Notifications
+    public var sectionNotificationFont: UIFont {
+        get{
+            return UIFont(name: AZFontString.shared.bold, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
+        }
+    }
+    public var sectionNotificationBackgroundColor: UIColor = UIColor.black
+    public var sectionNotificationColor: UIColor = UIColor.white
+    public var sectionNotificationTintButtonColor: UIColor = UIColor.white
+    // type
+    public var sectionNotificationTypeInformationColor: UIColor = UIColor(hex: "00529B")
+    public var sectionNotificationTypeInformationBackgroundColor: UIColor = UIColor(hex: "BDE5F8")
+    public var sectionNotificationTypeSuccessColor: UIColor = UIColor(hex: "4F8A10")
+    public var sectionNotificationTypeSuccessBackgroundColor: UIColor = UIColor(hex: "DFF2BF")
+    public var sectionNotificationTypeWarningColor: UIColor = UIColor(hex: "9F6000")
+    public var sectionNotificationTypeWarningBackgroundColor: UIColor = UIColor(hex: "FEEFB3")
+    public var sectionNotificationTypeErrorColor: UIColor = UIColor(hex: "D8000C")
+    public var sectionNotificationTypeErrorBackgroundColor: UIColor = UIColor(hex: "FFBABA")
+    
+    public var sectionNotificationCornerRadius: CGFloat {
+        return self.sectionGeneralCornerRadius
+    }
+    
     // MARK: Theme
     public let availableThemes = ["apple", "lightGray"]
     

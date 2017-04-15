@@ -42,6 +42,7 @@ class ViewController: UIViewController {
 //        loader.isActive = true
         // or 
         AZLoader.shared.isActive = true
+        self.prepareNotification()
     }
     
     // prepare picker view
@@ -108,6 +109,11 @@ class ViewController: UIViewController {
     
     func tapOnButtonAction(_ sender: AZButton){
         sender.loader = true
+    }
+    
+    // notification
+    fileprivate func prepareNotification(){
+        AZNotification.shared.show(msg: "لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.", type: .success, hideAfterSeconds: 3)
     }
 }
 
