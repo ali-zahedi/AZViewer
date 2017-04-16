@@ -22,13 +22,13 @@ public class AZLabel: UILabel {
      // Drawing code
         super.draw(rect)
      }
-    */
+    *//*
     override public func drawText(in rect: CGRect) {
         let insets: UIEdgeInsets = UIEdgeInsets(top: 5.0, left: 0.0, bottom: 0.0, right: 0)
         super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
         
     }
-    
+    */
     // MARK: Init
     override public init(frame: CGRect) {
         super.init(frame: frame)

@@ -78,9 +78,9 @@ public class AZNotification{
     
     // MARK: Private
     fileprivate var style = AZStyle.shared
-    fileprivate var view: AZView = AZView()
-    fileprivate var content: AZLabel = AZLabel()
-    fileprivate var leftButton: AZButton = AZButton()
+    fileprivate var view: AZView!
+    fileprivate var content: AZLabel!
+    fileprivate var leftButton: AZButton!
     
     // MARK: Init
     //This prevents others from using the default '()' initializer for this class.
@@ -90,6 +90,10 @@ public class AZNotification{
     
     // MARK: Function
     fileprivate func defaultInit(){
+        
+        self.view = AZView()
+        self.content = AZLabel()
+        self.leftButton = AZButton()
         
         for v in [content, leftButton] as [UIView]{
             v.translatesAutoresizingMaskIntoConstraints = false
@@ -152,6 +156,7 @@ extension AZNotification{
     // public show
     public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 0, hideOnTap: Bool = false){
         
+        self.defaultInit()
         let type = type ?? .unknown
         var backgroundColor: UIColor = self.backgroundColor
         var color: UIColor = self.color
@@ -189,7 +194,7 @@ extension AZNotification{
         
         rootView.addSubview(self.view)
         _ = self.view.aZConstraints.parent(parent: rootView).top(constant: 20).right(constant: -8).left(constant: 8)
-
+        
         self.view.layoutIfNeeded()
         _ = self.view.aZConstraints.bottom(to: self.content, constant: 0)
         self.view.setNeedsLayout()
