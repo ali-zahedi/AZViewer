@@ -32,6 +32,8 @@ public class AZStyle{
     public var sectionHeaderTitleColor = UIColor.white
     public var sectionHeaderBackgroundColor = UIColor(hex: "FF5E3A")
     public var sectionHeaderAlpha: CGFloat = 1.0
+    public var sectionHeaderLeftButtonTintColor: UIColor = UIColor(hex: "bdc3c7")
+    public var sectionHeaderRightButtonTintColor: UIColor = UIColor(hex: "bdc3c7")
     
     // MARK: Section Table
     public var sectionTableHeightImage: CGFloat {
@@ -110,7 +112,7 @@ public class AZStyle{
     public var sectionNotificationBackgroundColor: UIColor = UIColor.black
     public var sectionNotificationColor: UIColor = UIColor.white
     public var sectionNotificationTintButtonColor: UIColor = UIColor.white
-    // type
+        // type
     public var sectionNotificationTypeInformationColor: UIColor = UIColor(hex: "00529B")
     public var sectionNotificationTypeInformationBackgroundColor: UIColor = UIColor(hex: "BDE5F8")
     public var sectionNotificationTypeSuccessColor: UIColor = UIColor(hex: "4F8A10")

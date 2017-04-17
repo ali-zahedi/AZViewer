@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AZPicker: AZPopupView{
+public class AZPicker: AZPopupView{
     
     // MARK: Var
     var data: [[(AnyObject, String)]] = [[]] {
@@ -28,7 +28,7 @@ class AZPicker: AZPopupView{
         self.defaultInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.defaultInit()
     }
@@ -45,7 +45,7 @@ class AZPicker: AZPopupView{
         
         self.preparePickerView()
         self.title = "عنوان اول"
-        self.headerSection.type = .success
+        self.header.type = .success
     }
     
 }
@@ -59,7 +59,7 @@ extension AZPicker{
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         self.pickerView.showsSelectionIndicator = true
-        _ = self.pickerView.aZConstraints.parent(parent: self).top(to: self.headerSection, toAttribute: .bottom).right().left().bottom()
+        _ = self.pickerView.aZConstraints.parent(parent: self).top(to: self.header, toAttribute: .bottom).right().left().bottom()
     }
     
 }

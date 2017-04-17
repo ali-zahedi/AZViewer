@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum AZHeaderType {
+public enum AZHeaderType {
     case title
     case success
 }
 
-class AZHeader: AZBaseView{
+public class AZHeader: AZBaseView{
     
     // MARK: Public
     public var title: String = ""{
@@ -32,6 +32,17 @@ class AZHeader: AZBaseView{
         }
     }
     
+    public var rightButtonTintColor: UIColor! {
+        didSet{
+            self.successButton.tintColor = self.rightButtonTintColor
+        }
+    }
+    
+    public var leftButtonTintColor: UIColor! {
+        didSet{
+            self.closeButton.tintColor = self.leftButtonTintColor
+        }
+    }
     // MARK: Internal
     internal var delegate: AZPopupViewDelegate?
     
@@ -103,6 +114,7 @@ extension AZHeader{
         let height = self.style.sectionHeaderHeight / 4
         _ = self.closeButton.aZConstraints.parent(parent: self).top(constant: height).bottom(constant: -height).left(constant: self.style.sectionGeneralConstant).width(constant: height * 2)
         self.closeButton.setImage(AZAssets.closeImage, for: .normal)
+        self.closeButton.tintColor = self.style.sectionHeaderLeftButtonTintColor
         
         self.closeButton.addTarget(self, action: #selector(cancelButtonAction(_:)), for: .touchUpInside)
     }
@@ -113,6 +125,7 @@ extension AZHeader{
         let height = self.style.sectionHeaderHeight / 4
         _ = self.successButton.aZConstraints.parent(parent: self).top(constant: height).bottom(constant: -height).right(constant: -self.style.sectionGeneralConstant).width(constant: height * 2)
         self.successButton.setImage(AZAssets.tickImage, for: .normal)
+        self.successButton.tintColor = self.style.sectionHeaderRightButtonTintColor
         
         self.successButton.addTarget(self, action: #selector(successButtonAction(_:)), for: .touchUpInside)
         
