@@ -36,7 +36,7 @@ public class AZNotification{
     
     // MARK: Public
     public static let shared = AZNotification()
-
+    
     // view
     public var backgroundColor: UIColor! {
         didSet{
@@ -111,8 +111,17 @@ public class AZNotification{
     }
     
     // close button action
-    @objc func leftButtonAction(_ sender: AnyObject){
-        self.remove()
+    @objc func leftButtonAction(_ sender: UIView){
+        var view: UIView = sender
+        
+        if sender is AZButton{
+            let btn = sender as! AZButton
+            if let v = btn.superview{
+                view = v
+            }
+        }
+        
+        self.remove(view: view)
     }
 }
 
@@ -162,7 +171,7 @@ extension AZNotification{
         var color: UIColor = self.color
         
         if type != .unknown{
-        
+            
             (backgroundColor, color) = type.color()
         }
         
@@ -186,7 +195,7 @@ extension AZNotification{
     
     // show notification
     fileprivate func show(){
-    
+        
         guard let rootView: UIView = UIApplication.shared.keyWindow else{
             NSLog("AZLoader can't find key window")
             return
@@ -200,26 +209,28 @@ extension AZNotification{
         self.view.setNeedsLayout()
         
         UIView.animate(withDuration: 1.2, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 4, options: [], animations: {
-        
+            
             self.view.layoutIfNeeded()
-
+            
             }, completion: nil)
         
     }
     
     // remove
-    public func remove(){
+    public func remove(view: UIView? = nil){
         
         var transform = CGAffineTransform.identity
         transform = transform.translatedBy(x: 300, y: -900)
         transform = transform.rotated(by: 360)
         
+        let viewRemove = view ?? self.view
+        
         UIView.animate(withDuration: 1.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 4, options: [], animations: {
             
-            self.view.transform = transform
+            viewRemove?.transform = transform
             
             }, completion: {(result) in
-                self.view.removeFromSuperview()})
+                viewRemove?.removeFromSuperview()})
         
         
     }
