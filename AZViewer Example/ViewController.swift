@@ -76,7 +76,8 @@ class ViewController: UIViewController {
         self.datePickerView.minimumDateTime = formatter.date(from: "1990/12/10")!
         self.datePickerView.maximumDateTime = formatter.date(from: "2017/12/31")!
         self.datePickerView.icon = UIImage(named: "calender")
-        //        print("selected index: \(self.datePickerView.index)")
+//        print("selected index: \(self.datePickerView.index)")
+        print(self.datePickerView.date)
     }
     
     

@@ -11,6 +11,26 @@ import Foundation
 public class AZPopupDatePickerView: AZPopupPickerView{
     
     // MARK: Public
+    public var date: Date {
+        
+        var string: String = ""
+        
+        for i in (0...(self.data.count - 1)){
+            
+            // check array range
+            if let row = self.index[i],  self.data[i].count > row{
+                
+                string += self.data[i][row].1 + "/"
+            }
+        }
+        
+        string = string.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        
+        // TODO: check and create date form format date !
+        let date: Date = self.formatterPersian.date(from: string)!
+        
+        return date
+    }
     
     // MARK: IBOutlet
     @IBInspectable public var formatDate: String = AZStyle.shared.sectionDatePickerViewFormatDate
