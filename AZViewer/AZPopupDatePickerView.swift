@@ -248,4 +248,29 @@ extension AZPopupDatePickerView{
             self.generateRangeDays(monthTouple: self.months[row])
         }
     }
+    
+    public func selected(date: Date) {
+        
+        let defaultDate: String = self.formatterPersian.string(from: date)
+        // TODO: Check seperator
+        let defaultDateArray = defaultDate.characters.split(separator: "/").map(String.init)
+        let year = defaultDateArray[0]
+        let month = defaultDateArray[1]
+        let day = defaultDateArray[2]
+        
+        func findIndexDate(indexDate: Int, compare: String){
+            for (index, d) in self.data[indexDate].enumerated(){
+                if d.1 == compare {
+                    self.selected(indexPath: IndexPath(row: index, section: indexDate))
+                    break
+                }
+            }
+        }
+        // year
+        findIndexDate(indexDate: 0, compare: year)
+        // month
+        findIndexDate(indexDate: 1, compare: month)
+        // day
+        findIndexDate(indexDate: 2, compare: day)
+    }
 }
