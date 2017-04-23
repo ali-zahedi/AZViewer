@@ -11,6 +11,7 @@ import Foundation
 public class AZPopupPickerView: AZView{
     
     // MARK: Public
+    public var popup: AZPicker = AZPicker()
     public var separatorSection: String = "/" {
         didSet{
             self.submitPopupView()
@@ -24,7 +25,7 @@ public class AZPopupPickerView: AZView{
     
     public var data: [[(AnyObject, String)]] = [[]] {
         didSet{
-            self.pickerView.data = self.data
+            self.popup.data = self.data
             // for restor after load dynamic another component
             let index = self._indexTemp
             self._index = [:]
@@ -56,7 +57,6 @@ public class AZPopupPickerView: AZView{
     // private
     fileprivate var _index: [Int: Int] = [:]
     fileprivate var _indexTemp: [Int: Int] = [:]
-    fileprivate var pickerView: AZPicker = AZPicker()
     fileprivate var input: AZTextField = AZTextField()
     
     // override
@@ -90,16 +90,16 @@ extension AZPopupPickerView{
     // TODO: Check
     fileprivate func preparePickerView(){
         
-        self.pickerView.delegate = self
-        self.pickerView.delegatePopupView = self
-        self.pickerView.translatesAutoresizingMaskIntoConstraints = true
+        self.popup.delegate = self
+        self.popup.delegatePopupView = self
+        self.popup.translatesAutoresizingMaskIntoConstraints = true
         
         let width: CGFloat = UIScreen.main.bounds.width
         let height: CGFloat = 120
         let position = CGPoint(x: 0, y: UIScreen.main.bounds.height - height)
         
-        self.pickerView.frame.size = CGSize(width: width, height: height)
-        self.pickerView.frame.origin =  position
+        self.popup.frame.size = CGSize(width: width, height: height)
+        self.popup.frame.origin =  position
         
     }
     
@@ -120,7 +120,7 @@ extension AZPopupPickerView{
         
         // check for load all data and then show
         if self.index.count == self.data.count {
-            self.pickerView.show()
+            self.popup.show()
         }else{
             NSLog("AZPicker View data doesn't load ")
         }
@@ -141,8 +141,8 @@ extension AZPopupPickerView: AZPickerViewDelegate {
     }
     
     fileprivate func selectedWithoutSubmit(indexPath: IndexPath){
-        self.pickerView.pickerView.selectRow(indexPath.row, inComponent: indexPath.section, animated: true)
-        self.pickerView.pickerView(self.pickerView.pickerView, didSelectRow: indexPath.row, inComponent: indexPath.section)
+        self.popup.pickerView.selectRow(indexPath.row, inComponent: indexPath.section, animated: true)
+        self.popup.pickerView(self.popup.pickerView, didSelectRow: indexPath.row, inComponent: indexPath.section)
     }
     
 }

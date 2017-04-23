@@ -16,7 +16,6 @@ extension AZRadioButton{
     
     // override table view selected
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        super.tableView(tableView, didSelectRowAt: indexPath)
         
         for (index, d) in self.data.value.enumerated(){
             
@@ -25,7 +24,7 @@ extension AZRadioButton{
             
                 if d.isActive == false{
                     
-                    d.isActive = true
+                    super.tableView(tableView, didSelectRowAt: indexPath)
                 }
                 continue
             }
@@ -33,7 +32,7 @@ extension AZRadioButton{
             // deactive other box
             if d.isActive {
                 
-                d.isActive = false
+                super.tableView(tableView, didSelectRowAt: IndexPath(row: index, section: indexPath.section))
             }
         }
     }

@@ -28,14 +28,14 @@ public class AZPopupView: AZView{
     // MARK: Public
     public var title: String = "" {
         didSet{
-            self.headerSection.title = self.title
+            self.header.title = self.title
         }
     }
+    public var header: AZHeader = AZHeader()
     
     // MARK: Internal
     internal var fillMode: AZPopupViewTypeFillMode = .margin
     internal var delegatePopupView: AZPopupViewDelegate?
-    internal var headerSection: AZHeader = AZHeader()
     
     // MARK: Private
     fileprivate var blurEffectView: UIVisualEffectView!
@@ -55,7 +55,7 @@ public class AZPopupView: AZView{
     // MARK: Function
     fileprivate func defaultInit(){
         
-        for v in [headerSection] as [UIView] {
+        for v in [header] as [UIView] {
             v.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(v)
         }
@@ -100,8 +100,8 @@ extension AZPopupView{
     
     // header
     fileprivate func prepareHeader(){
-        _ = self.headerSection.aZConstraints.parent(parent: self).top().right().left().height(constant: self.style.sectionHeaderHeight)
-        self.headerSection.delegate = self
+        _ = self.header.aZConstraints.parent(parent: self).top().right().left().height(constant: self.style.sectionHeaderHeight)
+        self.header.delegate = self
     }
     
     // blur effect

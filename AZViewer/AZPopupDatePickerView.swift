@@ -11,6 +11,26 @@ import Foundation
 public class AZPopupDatePickerView: AZPopupPickerView{
     
     // MARK: Public
+    public var date: Date {
+        
+        var string: String = ""
+        
+        for i in (0...(self.data.count - 1)){
+            
+            // check array range
+            if let row = self.index[i],  self.data[i].count > row{
+                
+                string += self.data[i][row].1 + "/"
+            }
+        }
+        
+        string = string.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        
+        // TODO: check and create date form format date !
+        let date: Date = self.formatterPersian.date(from: string)!
+        
+        return date
+    }
     
     // MARK: IBOutlet
     @IBInspectable public var formatDate: String = AZStyle.shared.sectionDatePickerViewFormatDate
@@ -227,5 +247,30 @@ extension AZPopupDatePickerView{
         }else if component == self.monthsIndexFormat {
             self.generateRangeDays(monthTouple: self.months[row])
         }
+    }
+    
+    public func selected(date: Date) {
+        
+        let defaultDate: String = self.formatterPersian.string(from: date)
+        // TODO: Check seperator
+        let defaultDateArray = defaultDate.characters.split(separator: "/").map(String.init)
+        let year = defaultDateArray[0]
+        let month = defaultDateArray[1]
+        let day = defaultDateArray[2]
+        
+        func findIndexDate(indexDate: Int, compare: String){
+            for (index, d) in self.data[indexDate].enumerated(){
+                if d.1 == compare {
+                    self.selected(indexPath: IndexPath(row: index, section: indexDate))
+                    break
+                }
+            }
+        }
+        // year
+        findIndexDate(indexDate: 0, compare: year)
+        // month
+        findIndexDate(indexDate: 1, compare: month)
+        // day
+        findIndexDate(indexDate: 2, compare: day)
     }
 }

@@ -10,15 +10,15 @@ import UIKit
 import AZViewer
 
 class ViewController: UIViewController {
-
+    
     var pickerView: AZPopupPickerView = AZPopupPickerView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 30))
     var datePickerView: AZPopupDatePickerView = AZPopupDatePickerView(frame: CGRect(x: 0, y: 80, width: UIScreen.main.bounds.width, height: 30))
     var stepper: AZStepper = AZStepper(frame: CGRect(x: 30, y: 130, width: UIScreen.main.bounds.width / 4, height: 30))
-    
-    var checkBoxView: AZCheckBox = AZCheckBox()
-    var radioButtonView: AZRadioButton = AZRadioButton()
     var button: AZButton = AZButton(frame: CGRect(x: 0, y: 170, width: UIScreen.main.bounds.width, height: 50))
     var stopAnimationButton: AZButton = AZButton(frame: CGRect(x: 0, y: 230, width: UIScreen.main.bounds.width, height: 50))
+    
+    var checkBoxView: AZCheckBox = AZCheckBox(frame: CGRect(x: 0, y: 290, width: UIScreen.main.bounds.width, height: 190))
+    var radioButtonView: AZRadioButton = AZRadioButton(frame: CGRect(x: 0, y: 490, width: UIScreen.main.bounds.width, height: 200))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +29,22 @@ class ViewController: UIViewController {
         self.prepareDatePickerView()
         self.prepareStepper()
         self.prepareButton()
+        self.prepareCheckBox()
+        self.prepareRadioButton()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // did appear
     override func viewDidAppear(_ animated: Bool) {
-//        let loader = AZLoader()
-//        loader.isActive = true
-        // or 
+        //        let loader = AZLoader()
+        //        loader.isActive = true
+        // or
         AZLoader.shared.isActive = true
+        self.prepareNotification()
     }
     
     // prepare picker view
@@ -50,16 +53,18 @@ class ViewController: UIViewController {
         self.pickerView.delegate = self
         self.pickerView.data = [[(12 as AnyObject, "آیتم ۱"), (13 as AnyObject, "ایتم دوم"), (14 as AnyObject, "آیتم 3")],[(1  as AnyObject, "آیتم"), (2 as AnyObject, "آیتم 5")], [(3 as AnyObject, "آیتم 3"), (6 as AnyObject, "آیتم 6")]]
         self.pickerView.separatorSection = " / "
+//        self.pickerView.popup.header.leftButtonTintColor
         self.pickerView.selected(indexPath: IndexPath(row: 2, section: 0))
         self.pickerView.loader.horizontalAlignment = .right
         self.pickerView.loader.isActive = true
         print("selected index: \(self.pickerView.index)")
+//        self.pickerView
     }
     
     // prepare date picker view
     fileprivate func prepareDatePickerView(){
         self.view.addSubview(self.datePickerView)
-//        self.pickerView.delegate = self
+        //        self.pickerView.delegate = self
         
         self.datePickerView.separatorSection = " / "
         self.datePickerView.selected(indexPath: IndexPath(row: 0, section: 0))
@@ -72,8 +77,9 @@ class ViewController: UIViewController {
         self.datePickerView.maximumDateTime = formatter.date(from: "2017/12/31")!
         self.datePickerView.icon = UIImage(named: "calender")
 //        print("selected index: \(self.datePickerView.index)")
+        print(self.datePickerView.date)
     }
-
+    
     
     fileprivate func prepareStepper(){
         self.view.addSubview(self.stepper)
@@ -108,6 +114,43 @@ class ViewController: UIViewController {
     
     func tapOnButtonAction(_ sender: AZButton){
         sender.loader = true
+    }
+    
+    // notification
+    fileprivate func prepareNotification(){
+        AZNotification.shared.show(msg: "لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.", type: .success, hideAfterSeconds: 3)
+    }
+    
+    // check box
+    fileprivate func prepareCheckBox(){
+        
+        self.view.addSubview(self.checkBoxView)
+        var source: [AZCheckBoxDataSource] = []
+        
+        source.append(AZCheckBoxDataSource(id: "1" as AnyObject, title: "title 1", isActive: false))
+        source.append(AZCheckBoxDataSource(id: "2" as AnyObject, title: "title 2", isActive: true))
+        source.append(AZCheckBoxDataSource(id: "3" as AnyObject, title: "title 3", isActive: false))
+        source.append(AZCheckBoxDataSource(id: "4" as AnyObject, title: "title 4", isActive: false))
+        
+        let section: AZCheckBoxDataSection = AZCheckBoxDataSection(value: source)
+     
+        self.checkBoxView.data = section
+    }
+    
+    // radio button
+    fileprivate func prepareRadioButton(){
+        
+        self.view.addSubview(self.radioButtonView)
+        var source: [AZCheckBoxDataSource] = []
+        
+        source.append(AZCheckBoxDataSource(id: "1" as AnyObject, title: "title 1", isActive: false))
+        source.append(AZCheckBoxDataSource(id: "2" as AnyObject, title: "title 2", isActive: true))
+        source.append(AZCheckBoxDataSource(id: "3" as AnyObject, title: "title 3", isActive: false))
+        source.append(AZCheckBoxDataSource(id: "4" as AnyObject, title: "title 4", isActive: false))
+        
+        let section: AZCheckBoxDataSection = AZCheckBoxDataSection(value: source)
+        
+        self.radioButtonView.data = section
     }
 }
 
