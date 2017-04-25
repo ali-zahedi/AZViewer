@@ -54,6 +54,23 @@ public class AZPopupPickerView: AZView{
     
     public var delegate: AZPopupViewDelegate?
     
+    public var titleFont: UIFont!{
+        didSet{
+            self.input.font  = self.titleFont
+        }
+    }
+    
+    public var pickerFont: UIFont!{
+        didSet{
+            self.popup.font = self.pickerFont
+        }
+    }
+    
+    public var pickerColor: UIColor!{
+        didSet{
+            self.popup.color = self.pickerColor
+        }
+    }
     // private
     fileprivate var _index: [Int: Int] = [:]
     fileprivate var _indexTemp: [Int: Int] = [:]
@@ -101,13 +118,15 @@ extension AZPopupPickerView{
         self.popup.frame.size = CGSize(width: width, height: height)
         self.popup.frame.origin =  position
         
+        self.pickerColor = self.style.sectionPickerViewItemColor
+        self.pickerFont = self.style.sectionPickerViewItemFont
     }
     
     // input
     fileprivate func prepareInputPickerView(){
         
         self.input.addTarget(self, action: #selector(inputPickerViewAction), for: .touchDown)
-        self.input.font = self.style.sectionInputFont
+        self.titleFont = self.style.sectionInputFont
         self.input.textAlignment = .center
         self.input.tintColor = UIColor.clear
         

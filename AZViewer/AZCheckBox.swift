@@ -18,6 +18,11 @@ public class AZCheckBox: AZView {
             self.tableView.reloadData()
         }
     }
+    public var font: UIFont = AZStyle.shared.sectionTableFontRow {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
     
     // MARK: Private
     fileprivate var tableView: UITableView!
@@ -76,6 +81,7 @@ extension AZCheckBox: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: AZCheckBox.cellReuseIdentifier, for: indexPath) as! AZCheckBoxTableViewCell
     
+        cell.titleFont = self.font
         cell.dataSource = self.data.value[indexPath.row]
         
         // hidden last row seperator

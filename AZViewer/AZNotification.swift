@@ -165,6 +165,7 @@ extension AZNotification{
     // public show
     public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 0, hideOnTap: Bool = false){
         
+        self.remove()
         self.defaultInit()
         let type = type ?? .unknown
         var backgroundColor: UIColor = self.backgroundColor

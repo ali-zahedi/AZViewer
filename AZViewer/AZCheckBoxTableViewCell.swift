@@ -11,6 +11,11 @@ import Foundation
 class AZCheckBoxTableViewCell: UITableViewCell {
     
     // MARK: Public
+    var titleFont: UIFont! {
+        didSet{
+            self.title.font = self.titleFont
+        }
+    }
     
     // MARK: Internal
     var dataSource: AZCheckBoxDataSource! {
@@ -82,7 +87,7 @@ class AZCheckBoxTableViewCell: UITableViewCell {
         NSLayoutConstraint(item: self.title, attribute: .height, relatedBy: .equal, toItem: self.checkBoxImageView, attribute: .height, multiplier: 5, constant: 0).isActive = true
         
         self.title.textAlignment = .right
-        self.title.font = self.style.sectionTableFontRow
+//        self.titleFont = self.style.sectionTableFontRow
         self.title.numberOfLines = 0
         
     }
