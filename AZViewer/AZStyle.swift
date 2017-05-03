@@ -51,7 +51,7 @@ public class AZStyle{
     
     // MARK: Section Popup
     public var sectionPopupBlurAlpha: CGFloat = CGFloat(0.75)
-    public var sectionPopupBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+    public var sectionPopupBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     public var sectionPopupCornerRadius: CGFloat = CGFloat(5)
     public var sectionPopupMarginMultiplier: CGFloat = CGFloat(0.10)
     public var sectionPopupBackgroundColor: UIColor = UIColor.white

@@ -136,14 +136,13 @@ extension AZPopupPickerView{
     
     // tap on input
     func inputPickerViewAction(){
-        
+        self.input.isEnabled = false
         // check for load all data and then show
         if self.index.count == self.data.count {
             self.popup.show()
         }else{
             NSLog("AZPicker View data doesn't load ")
         }
-        
     }
     
 }
@@ -171,7 +170,8 @@ extension AZPopupPickerView: AZPopupViewDelegate{
     
     // submit
     public func submitPopupView() {
-    
+        
+        self.input.isEnabled = true
         // set index
         self._index = self._indexTemp
         
@@ -197,6 +197,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
     // cancel
     public func cancelPopupView() {
         
+        self.input.isEnabled = true
         // reset index
         if self._index == self._indexTemp{
             
