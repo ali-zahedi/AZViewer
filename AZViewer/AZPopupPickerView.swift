@@ -74,7 +74,7 @@ public class AZPopupPickerView: AZView{
     // private
     fileprivate var _index: [Int: Int] = [:]
     fileprivate var _indexTemp: [Int: Int] = [:]
-    fileprivate var input: AZTextField = AZTextField()
+    fileprivate var input: AZLabelIcon = AZLabelIcon()
     
     // override
     override public init(frame: CGRect) {
@@ -125,24 +125,19 @@ extension AZPopupPickerView{
     // input
     fileprivate func prepareInputPickerView(){
         
-        self.input.addTarget(self, action: #selector(inputPickerViewAction), for: .touchDown)
+        //self.input.addTarget(self, action: #selector(inputPickerViewAction), for: .touchDown)
+        // add gesture
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(inputPickerViewAction(gr:)))
+        tap.delegate = self
+        self.input.addGestureRecognizer(tap)
+        self.input.isUserInteractionEnabled = true
+        
         self.titleFont = self.style.sectionInputFont
         self.input.textAlignment = .center
         self.input.tintColor = UIColor.clear
         
         _ = self.input.aZConstraints.parent(parent: self).top().right().left().bottom()
         self.input.leftIcon = AZAssets.expandImage
-    }
-    
-    // tap on input
-    func inputPickerViewAction(){
-        self.input.isEnabled = false
-        // check for load all data and then show
-        if self.index.count == self.data.count {
-            self.popup.show()
-        }else{
-            NSLog("AZPicker View data doesn't load ")
-        }
     }
     
 }
@@ -170,8 +165,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
     
     // submit
     public func submitPopupView() {
-        
-        self.input.isEnabled = true
+
         // set index
         self._index = self._indexTemp
         
@@ -197,7 +191,6 @@ extension AZPopupPickerView: AZPopupViewDelegate{
     // cancel
     public func cancelPopupView() {
         
-        self.input.isEnabled = true
         // reset index
         if self._index == self._indexTemp{
             
@@ -216,4 +209,19 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         // call delegate
         self.delegate?.cancelPopupView()
     }
+}
+
+// gesture recognizer
+extension AZPopupPickerView: UIGestureRecognizerDelegate{
+    
+    // tap on input
+    func inputPickerViewAction(gr:UITapGestureRecognizer){
+        // check for load all data and then show
+        if self.index.count == self.data.count {
+            self.popup.show()
+        }else{
+            NSLog("AZPicker View data doesn't load ")
+        }
+    }
+    
 }

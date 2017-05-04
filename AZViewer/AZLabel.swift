@@ -41,7 +41,7 @@ public class AZLabel: UILabel {
     }
     
     // MARK: Function
-    fileprivate func defaultInit(){
+    internal func defaultInit(){
         self.loader.parent(parent: self)
         self.aZConstraints = AZConstraint(view: self)
         self.textAlignment = .right
