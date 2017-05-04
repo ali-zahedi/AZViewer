@@ -123,6 +123,11 @@ public class AZNotification{
         
         self.remove(view: view)
     }
+    
+    // close button action
+    @objc func tapViewAction(_ sender: UIGestureRecognizer){
+        self.leftButtonAction(self.view)
+    }
 }
 
 // MARK: Prepare
@@ -133,6 +138,7 @@ extension AZNotification{
         
         self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.clipsToBounds = true
+        self.view.isUserInteractionEnabled = true
         
         self.cornerRadius = self.style.sectionNotificationCornerRadius
         self.backgroundColor = self.style.sectionNotificationBackgroundColor
@@ -148,6 +154,7 @@ extension AZNotification{
         self.content.numberOfLines = 0
         self.font = self.style.sectionNotificationFont
         self.color = self.style.sectionNotificationColor
+        self.content.isUserInteractionEnabled = true
     }
     
     // left button
@@ -189,7 +196,8 @@ extension AZNotification{
         }
         
         if hideOnTap {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.leftButtonAction(_:)))
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapViewAction(_:)))
+            self.content.addGestureRecognizer(tapGesture)
             self.view.addGestureRecognizer(tapGesture)
         }
     }
@@ -221,7 +229,7 @@ extension AZNotification{
     public func remove(view: UIView? = nil){
         
         var transform = CGAffineTransform.identity
-        transform = transform.translatedBy(x: 300, y: -900)
+        transform = transform.translatedBy(x: 300, y: -100)
         transform = transform.rotated(by: 360)
         
         let viewRemove = view ?? self.view
