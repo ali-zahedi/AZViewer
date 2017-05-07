@@ -18,6 +18,9 @@ class AZCheckBoxTableViewCell: UITableViewCell {
     }
     
     // MARK: Internal
+    var activeStyle: AZCheckBox.Style!
+    var diActiveStyle: AZCheckBox.Style!
+    
     var dataSource: AZCheckBoxDataSource! {
         didSet{
             self.updateUI()
@@ -73,8 +76,6 @@ class AZCheckBoxTableViewCell: UITableViewCell {
         NSLayoutConstraint(item: self.checkBoxImageView, attribute: .width, relatedBy: .equal, toItem: self.checkBoxImageView, attribute: .height, multiplier: 1, constant: 0).isActive = true
         
         self.checkBoxImageView.contentMode = .scaleAspectFit
-        self.checkBoxImageView.layer.cornerRadius = self.style.sectionTableHeightImage / 2
-        self.checkBoxImageView.image = AZAssets.tickImage
         
     }
     
@@ -100,18 +101,18 @@ class AZCheckBoxTableViewCell: UITableViewCell {
     
     public func setupAnimationActive(){
         
-        var color1: UIColor = self.style.sectionTableDeactiveCornerColor
-        var color2: UIColor = self.style.sectionTableDeactiveColor
-        
+        var style: AZCheckBox.Style = self.diActiveStyle
         if dataSource.isActive {
         
-            color1 = self.style.sectionTableActiveCornerColor
-            color2 = self.style.sectionTableActiveColor
+            style = self.activeStyle
         }
         
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: { 
-            self.checkBoxImageView.backgroundColor = color1
-            self.checkBoxImageView.tintColor = color2
+        self.checkBoxImageView.layer.cornerRadius = style.cornerRadius
+            
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+            self.checkBoxImageView.image = style.image
+            self.checkBoxImageView.backgroundColor = style.backgroundColor
+            self.checkBoxImageView.tintColor = style.tintColor
             }, completion: nil)
         
         

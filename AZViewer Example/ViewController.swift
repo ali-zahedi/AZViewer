@@ -135,6 +135,10 @@ class ViewController: UIViewController {
         let section: AZCheckBoxDataSection = AZCheckBoxDataSection(value: source)
      
         self.checkBoxView.data = section
+        
+        self.checkBoxView.activeStyle.tintColor = UIColor.black
+        self.checkBoxView.diActiveStyle.backgroundColor = UIColor.black
+        // and so on...
     }
     
     // radio button
