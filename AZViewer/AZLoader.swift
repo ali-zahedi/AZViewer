@@ -100,6 +100,8 @@ extension AZLoader{
     fileprivate func prepareBlurEffect(){
         self.blurEffectView = UIVisualEffectView(effect: self.style.sectionLoaderBlurEffect)
         self.blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+        self.blurEffectView.layer.cornerRadius = self.cornerRadius
+        self.blurEffectView.clipsToBounds = true
         self.view.addSubview(self.blurEffectView)
         
         NSLayoutConstraint(item: self.blurEffectView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 0).isActive = true
