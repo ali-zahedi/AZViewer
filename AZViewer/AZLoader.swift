@@ -25,27 +25,15 @@ public class AZLoader: AZBaseView{
     public var color: UIColor = AZStyle.shared.sectionLoaderColor
     public var horizontalAlignment: AZHorizontalAlignment = .middle
     
-    public override var backgroundColor: UIColor?{
-        didSet{
-            super.backgroundColor = self.backgroundColor
-            self.blurEffectView.backgroundColor = self.backgroundColor
-        }
-    }
-    public var cornerRadius: CGFloat!{
-        didSet{
-            self.blurEffectView.layer.cornerRadius = self.cornerRadius
-        }
-    }
-    public override var alpha: CGFloat{
-        didSet{
-            super.alpha = self.alpha
-            self.blurEffectView.alpha = alpha
-        }
-    }
+    // background color, alpha, corner radius
+    public var cornerRadius: CGFloat = AZStyle.shared.sectionLoaderCornerRadius
+    public var blurIsHidden: Bool = false
+    
     // MARK: Internal
     
     // MARK: Private
     fileprivate var parenView: UIView?
+    fileprivate var view: AZBaseView!
     fileprivate var blurEffectView: UIVisualEffectView!
     fileprivate var _isActive: Bool = false {
         didSet{
@@ -75,8 +63,13 @@ public class AZLoader: AZBaseView{
             self.addSubview(v)
         }
         
-        // prepare blur effect
-        self.prepareBlurEffect()
+        // prepare view
+        self.prepareView()
+        
+        // at the end
+        self.backgroundColor = self.style.sectionLoaderBlurBackgroundColor
+        self.alpha = self.style.sectionLoaderBlurAlpha
+        
     }
     
     public func parent(parent: UIView){
@@ -87,13 +80,36 @@ public class AZLoader: AZBaseView{
 // prepare
 extension AZLoader{
     
+    // view 
+    fileprivate func prepareView(){
+        self.view = AZBaseView()
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.backgroundColor = self.backgroundColor
+        self.view.alpha = self.alpha
+        self.view.layer.cornerRadius = self.cornerRadius
+        
+        // prepare blur effect
+        if self.blurIsHidden{
+            self.view.backgroundColor = UIColor.clear
+        }else{
+            self.prepareBlurEffect()
+        }
+    }
+    
     // blur effect
     fileprivate func prepareBlurEffect(){
         self.blurEffectView = UIVisualEffectView(effect: self.style.sectionLoaderBlurEffect)
-        self.backgroundColor = self.style.sectionLoaderBlurBackgroundColor
-        self.alpha = self.style.sectionLoaderBlurAlpha
-        self.cornerRadius = self.style.sectionLoaderCornerRadius
+        self.blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+        self.blurEffectView.layer.cornerRadius = self.cornerRadius
         self.blurEffectView.clipsToBounds = true
+        self.view.addSubview(self.blurEffectView)
+        
+        NSLayoutConstraint(item: self.blurEffectView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.blurEffectView, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.blurEffectView, attribute: .left, relatedBy: .equal, toItem: self.view, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.blurEffectView, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
 }
@@ -104,28 +120,27 @@ extension AZLoader{
     // start loader
     fileprivate func startLoader(){
         // released last blur for use shared
-        self.prepareBlurEffect()
-        var view: UIView!
+        self.prepareView()
+        var viewAppend: UIView!
         var size: CGSize!
         
         // find parent
         if let v = self.parenView{
-            view = v
+            viewAppend = v
         }else{
             // find master view
             guard let v: UIView = UIApplication.shared.keyWindow else{
                 NSLog("AZLoader can't find key window")
                 return
             }
-            view = v
+            viewAppend = v
         }
         
-        // 
-        self.blurEffectView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(blurEffectView)
+        //
+        viewAppend.addSubview(self.view)
         
         // find size 
-        let minSize = min(view.bounds.width, view.bounds.height)
+        let minSize = min(viewAppend.bounds.width, viewAppend.bounds.height)
         
         if minSize > 50 {
             size = CGSize(width: 50, height: 50)
@@ -133,23 +148,23 @@ extension AZLoader{
             size = CGSize(width: minSize, height: minSize)
         }
         
+        self.view.frame.size = size
+        
         // NSLayout
-        NSLayoutConstraint(item: self.blurEffectView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.blurEffectView, attribute: self.horizontalAlignment.attribute(), relatedBy: .equal, toItem: view, attribute: self.horizontalAlignment.attribute(), multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.blurEffectView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: size.height).isActive = true
-        NSLayoutConstraint(item: self.blurEffectView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: size.width).isActive = true
+        
+        NSLayoutConstraint(item: self.view, attribute: .centerY, relatedBy: .equal, toItem: viewAppend, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.view, attribute: self.horizontalAlignment.attribute(), relatedBy: .equal, toItem: viewAppend, attribute: self.horizontalAlignment.attribute(), multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: size.height).isActive = true
+        NSLayoutConstraint(item: self.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: size.width).isActive = true
 
         
-        self.blurEffectView.frame.size = size
-        self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        self.setUpAnimation(in: self.blurEffectView.layer, size: size)
+        self.setUpAnimation(in: self.view.layer, size: size)
     }
     
     // end loader
     fileprivate func endLoader(){
-        self.blurEffectView.removeFromSuperview()
-        self.removeAnimation(sender: self.blurEffectView)
+        self.view.removeFromSuperview()
+        self.removeAnimation(sender: self.view)
     }
     
     // remove loader animation

@@ -54,10 +54,27 @@ public class AZPopupPickerView: AZView{
     
     public var delegate: AZPopupViewDelegate?
     
+    public var titleFont: UIFont!{
+        didSet{
+            self.input.font  = self.titleFont
+        }
+    }
+    
+    public var pickerFont: UIFont!{
+        didSet{
+            self.popup.font = self.pickerFont
+        }
+    }
+    
+    public var pickerColor: UIColor!{
+        didSet{
+            self.popup.color = self.pickerColor
+        }
+    }
     // private
     fileprivate var _index: [Int: Int] = [:]
     fileprivate var _indexTemp: [Int: Int] = [:]
-    fileprivate var input: AZTextField = AZTextField()
+    fileprivate var input: AZLabelIcon = AZLabelIcon()
     
     // override
     override public init(frame: CGRect) {
@@ -101,30 +118,26 @@ extension AZPopupPickerView{
         self.popup.frame.size = CGSize(width: width, height: height)
         self.popup.frame.origin =  position
         
+        self.pickerColor = self.style.sectionPickerViewItemColor
+        self.pickerFont = self.style.sectionPickerViewItemFont
     }
     
     // input
     fileprivate func prepareInputPickerView(){
         
-        self.input.addTarget(self, action: #selector(inputPickerViewAction), for: .touchDown)
-        self.input.font = self.style.sectionInputFont
+        //self.input.addTarget(self, action: #selector(inputPickerViewAction), for: .touchDown)
+        // add gesture
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(inputPickerViewAction(gr:)))
+        tap.delegate = self
+        self.input.addGestureRecognizer(tap)
+        self.input.isUserInteractionEnabled = true
+        
+        self.titleFont = self.style.sectionInputFont
         self.input.textAlignment = .center
         self.input.tintColor = UIColor.clear
         
         _ = self.input.aZConstraints.parent(parent: self).top().right().left().bottom()
         self.input.leftIcon = AZAssets.expandImage
-    }
-    
-    // tap on input
-    func inputPickerViewAction(){
-        
-        // check for load all data and then show
-        if self.index.count == self.data.count {
-            self.popup.show()
-        }else{
-            NSLog("AZPicker View data doesn't load ")
-        }
-        
     }
     
 }
@@ -152,7 +165,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
     
     // submit
     public func submitPopupView() {
-    
+
         // set index
         self._index = self._indexTemp
         
@@ -196,4 +209,19 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         // call delegate
         self.delegate?.cancelPopupView()
     }
+}
+
+// gesture recognizer
+extension AZPopupPickerView: UIGestureRecognizerDelegate{
+    
+    // tap on input
+    func inputPickerViewAction(gr:UITapGestureRecognizer){
+        // check for load all data and then show
+        if self.index.count == self.data.count {
+            self.popup.show()
+        }else{
+            NSLog("AZPicker View data doesn't load ")
+        }
+    }
+    
 }

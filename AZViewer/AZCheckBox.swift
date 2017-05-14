@@ -18,6 +18,24 @@ public class AZCheckBox: AZView {
             self.tableView.reloadData()
         }
     }
+    public var font: UIFont = AZStyle.shared.sectionTableFontRow {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
+    
+    // selected
+    public struct Style{
+        
+        public var tintColor: UIColor
+        public var backgroundColor: UIColor
+        public var image: UIImage
+        public var cornerRadius: CGFloat
+        
+    }
+    
+    public var activeStyle: AZCheckBox.Style!
+    public var diActiveStyle: AZCheckBox.Style!
     
     // MARK: Private
     fileprivate var tableView: UITableView!
@@ -36,6 +54,10 @@ public class AZCheckBox: AZView {
     
     // MARK: function
     fileprivate func defaultInit(){
+        
+        self.diActiveStyle = Style(tintColor: self.style.sectionTableDeactiveColor, backgroundColor: self.style.sectionTableDeactiveCornerColor, image: AZAssets.tickImage, cornerRadius:self.style.sectionTableHeightImage / 2)
+        
+        self.activeStyle = Style(tintColor: self.style.sectionTableActiveColor, backgroundColor: self.style.sectionTableActiveCornerColor, image: AZAssets.tickImage, cornerRadius:self.style.sectionTableHeightImage / 2)
         
         self.prepareTableView()
     }
@@ -75,7 +97,10 @@ extension AZCheckBox: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: AZCheckBox.cellReuseIdentifier, for: indexPath) as! AZCheckBoxTableViewCell
-    
+        cell.activeStyle = self.activeStyle
+        cell.diActiveStyle = self.diActiveStyle
+        
+        cell.titleFont = self.font
         cell.dataSource = self.data.value[indexPath.row]
         
         // hidden last row seperator

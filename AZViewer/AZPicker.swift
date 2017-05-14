@@ -19,6 +19,16 @@ public class AZPicker: AZPopupView{
     
     var delegate: AZPickerViewDelegate?
     var pickerView: AZPickerView = AZPickerView()
+    var font: UIFont!{
+        didSet{
+            self.pickerView.reloadAllComponents()
+        }
+    }
+    var color: UIColor!{
+        didSet{
+            self.pickerView.reloadAllComponents()
+        }
+    }
     
     // private
     
@@ -46,6 +56,8 @@ public class AZPicker: AZPopupView{
         self.preparePickerView()
         self.title = "عنوان اول"
         self.header.type = .success
+        self.font = self.style.sectionPickerViewItemFont
+        self.color = self.style.sectionPickerViewItemColor
     }
     
 }
@@ -91,8 +103,8 @@ extension AZPicker: UIPickerViewDelegate{
             label = UILabel()
         }
         
-        label?.font = self.style.sectionPickerViewItemFont
-        label?.textColor = self.style.sectionPickerViewItemColor
+        label?.font = self.font
+        label?.textColor = self.color
         label?.textAlignment = .center
         label?.text = self.data[component][row].1
         return label!

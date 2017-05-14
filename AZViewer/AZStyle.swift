@@ -51,7 +51,7 @@ public class AZStyle{
     
     // MARK: Section Popup
     public var sectionPopupBlurAlpha: CGFloat = CGFloat(0.75)
-    public var sectionPopupBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+    public var sectionPopupBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
     public var sectionPopupCornerRadius: CGFloat = CGFloat(5)
     public var sectionPopupMarginMultiplier: CGFloat = CGFloat(0.10)
     public var sectionPopupBackgroundColor: UIColor = UIColor.white
@@ -66,7 +66,7 @@ public class AZStyle{
     public var sectionPickerViewItemColor: UIColor = UIColor.black
     
     // MARK: Section Date Pickerview
-    public var sectionDatePickerViewFormatDate: String = "yyyy/MM/dd"
+    public var sectionDatePickerViewFormatDate: String = "yyyy/M/dd"
     public var sectionDatePickerViewFormatTime: String = "HH:mm:ss"
     
     // MARK: Section Loader
@@ -78,6 +78,9 @@ public class AZStyle{
     public var sectionLoaderBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
     public var sectionLoaderBlurBackgroundColor: UIColor = UIColor(hex: "efefef")
     
+    // MARK: Section Refresh Control
+    public var sectionRefreshControlFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote).pointSize)!
+    public var sectionRefreshControlColor: UIColor = UIColor.black
     
     // MARK: Section Stepper
     public var sectionStepperPlusIconColor: UIColor = UIColor(hex: "ef6125")
