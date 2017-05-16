@@ -12,6 +12,15 @@ public class AZCheckBox: AZView {
     
     // MARK: Public
     public var hiddenEndSeparator: Bool = false
+    public var hiddenSeparator: Bool = false {
+        didSet{
+            if self.hiddenSeparator{
+                self.tableView.separatorStyle = .none
+            }else{
+                self.tableView.separatorStyle = .singleLine
+            }
+        }
+    }
     
     public var data: AZCheckBoxDataSection = AZCheckBoxDataSection() {
         didSet{
@@ -106,7 +115,7 @@ extension AZCheckBox: UITableViewDataSource {
         // hidden last row seperator
         if indexPath.row == self.data.value.count - 1 && self.hiddenEndSeparator{
             
-            cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, tableView.bounds.width);
+            cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, tableView.bounds.width * 1000);
         }
         
         return cell
