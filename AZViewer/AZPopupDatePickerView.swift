@@ -93,7 +93,7 @@ public class AZPopupDatePickerView: AZPopupPickerView{
             // check array range
             if let row = self.index[i],  self.data[i].count > row{
                 
-                string += self.data[i][row].1 + "/"
+                string += self.data[i][row].0.description + "/"
             }
         }
         

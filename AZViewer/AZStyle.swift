@@ -66,7 +66,7 @@ public class AZStyle{
     public var sectionPickerViewItemColor: UIColor = UIColor.black
     
     // MARK: Section Date Pickerview
-    public var sectionDatePickerViewFormatDate: String = "yyyy/MMMM/dd"
+    public var sectionDatePickerViewFormatDate: String = "yyyy/mm/dd"
     public var sectionDatePickerViewFormatTime: String = "HH:mm:ss"
     
     // MARK: Section Loader
