@@ -170,35 +170,37 @@ extension AZNotification{
 extension AZNotification{
     
     // public show
-    public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 0, hideOnTap: Bool = false){
+    public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 0, hideOnTap: Bool = false, delay: Double = 0){
         
-        self.view.removeFromSuperview()
-        self.defaultInit()
-        let type = type ?? .unknown
-        var backgroundColor: UIColor = self.backgroundColor
-        var color: UIColor = self.color
-        
-        if type != .unknown{
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            self.view.removeFromSuperview()
+            self.defaultInit()
+            let type = type ?? .unknown
+            var backgroundColor: UIColor = self.backgroundColor
+            var color: UIColor = self.color
             
-            (backgroundColor, color) = type.color()
-        }
-        
-        self.view.backgroundColor = backgroundColor
-        self.content.textColor = color
-        self.content.text = msg
-        
-        self.show()
-        
-        if hideAfterSeconds > 0.5 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + hideAfterSeconds) {
-                self.remove()
+            if type != .unknown{
+                
+                (backgroundColor, color) = type.color()
             }
-        }
-        
-        if hideOnTap {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapViewAction(_:)))
-            self.content.addGestureRecognizer(tapGesture)
-            self.view.addGestureRecognizer(tapGesture)
+            
+            self.view.backgroundColor = backgroundColor
+            self.content.textColor = color
+            self.content.text = msg
+            
+            self.show()
+            
+            if hideAfterSeconds > 0.5 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + hideAfterSeconds) {
+                    self.remove()
+                }
+            }
+            
+            if hideOnTap {
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapViewAction(_:)))
+                self.content.addGestureRecognizer(tapGesture)
+                self.view.addGestureRecognizer(tapGesture)
+            }
         }
     }
     
