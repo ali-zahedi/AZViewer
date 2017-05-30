@@ -11,13 +11,15 @@ import Foundation
 public class AZConstraint: NSObject {
     
     // MARK: Public
-    var parent: UIView?
-    var top: NSLayoutConstraint?
-    var bottom: NSLayoutConstraint?
-    var left: NSLayoutConstraint?
-    var right: NSLayoutConstraint?
-    var width: NSLayoutConstraint?
-    var height: NSLayoutConstraint?
+    public var parent: UIView?
+    public var top: NSLayoutConstraint?
+    public var bottom: NSLayoutConstraint?
+    public var left: NSLayoutConstraint?
+    public var right: NSLayoutConstraint?
+    public var centerX: NSLayoutConstraint?
+    public var centerY: NSLayoutConstraint?
+    public var width: NSLayoutConstraint?
+    public var height: NSLayoutConstraint?
     
     // MARK: Internal
     
@@ -102,6 +104,34 @@ extension AZConstraint{
         
         self.left = constraint
         self.left?.isActive = active
+        
+        return self
+        
+    }
+    
+    // centerY
+    public func centerY(to: UIView? = nil, toAttribute: NSLayoutAttribute = .centerY, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+        
+        let toItem = to ?? self.parent
+        
+        let constraint = NSLayoutConstraint(item: self.view, attribute: .centerY, relatedBy: .equal, toItem: toItem, attribute: toAttribute, multiplier: multiplier, constant: constant)
+        
+        self.centerY = constraint
+        self.centerY?.isActive = active
+        
+        return self
+        
+    }
+    
+    // centerX
+    public func centerX(to: UIView? = nil, toAttribute: NSLayoutAttribute = .centerX, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+        
+        let toItem = to ?? self.parent
+        
+        let constraint = NSLayoutConstraint(item: self.view, attribute: .centerX, relatedBy: .equal, toItem: toItem, attribute: toAttribute, multiplier: multiplier, constant: constant)
+        
+        self.centerX = constraint
+        self.centerX?.isActive = active
         
         return self
         
