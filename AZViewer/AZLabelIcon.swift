@@ -11,7 +11,7 @@ import Foundation
 public class AZLabelIcon: AZLabel {
 
     // MARK: IBInspectable
-    @IBInspectable var leftIcon: UIImage? {
+    @IBInspectable public var leftIcon: UIImage? {
         didSet {
             updateView()
         }
