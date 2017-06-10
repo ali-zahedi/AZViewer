@@ -104,15 +104,15 @@ extension AZHeader{
     
     // title
     fileprivate func prepareTitle(){
-        _ = self.titleLabel.aZConstraints.parent(parent: self).top().right(constant: -self.style.sectionGeneralConstant).left(multiplier: 0.7).bottom()
+        _ = self.titleLabel.aZConstraints.parent(parent: self).centerY().right(constant: -self.style.sectionGeneralConstant).left(multiplier: 0.7)
         self.titleLabel.textColor = self.style.sectionHeaderTitleColor
         self.titleLabel.font = self.style.sectionHeaderTitleFont
     }
     
     // close
     fileprivate func prepareCloseButton(){
-        let height = self.style.sectionHeaderHeight / 4
-        _ = self.closeButton.aZConstraints.parent(parent: self).top(constant: height).bottom(constant: -height).left(constant: self.style.sectionGeneralConstant).width(constant: height * 2)
+        let height = self.style.sectionHeaderHeight * 0.65
+        _ = self.closeButton.aZConstraints.parent(parent: self).centerY().left(constant: self.style.sectionGeneralConstant).width(constant: height).height(to: self.closeButton, toAttribute: .width)
         self.closeButton.setImage(AZAssets.closeImage, for: .normal)
         self.closeButton.tintColor = self.style.sectionHeaderLeftButtonTintColor
         
@@ -122,8 +122,8 @@ extension AZHeader{
     // success
     fileprivate func prepareSuccessButton(){
         
-        let height = self.style.sectionHeaderHeight / 4
-        _ = self.successButton.aZConstraints.parent(parent: self).top(constant: height).bottom(constant: -height).right(constant: -self.style.sectionGeneralConstant).width(constant: height * 2)
+        let height = self.style.sectionHeaderHeight * 0.65
+        _ = self.successButton.aZConstraints.parent(parent: self).centerY().right(constant: -self.style.sectionGeneralConstant).width(constant: height).height(to: self.closeButton, toAttribute: .width)
         self.successButton.setImage(AZAssets.tickImage, for: .normal)
         self.successButton.tintColor = self.style.sectionHeaderRightButtonTintColor
         
