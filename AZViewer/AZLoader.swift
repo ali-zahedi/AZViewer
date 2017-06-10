@@ -142,9 +142,11 @@ extension AZLoader{
         // find size 
         let minSize = min(viewAppend.bounds.width, viewAppend.bounds.height)
         
-        if minSize > 50 {
+        if minSize > 50 || minSize == 0  {
+            
             size = CGSize(width: 50, height: 50)
         }else{
+            
             size = CGSize(width: minSize, height: minSize)
         }
         
