@@ -41,6 +41,8 @@
 		413402BF1E948F6200F74175 /* AZCheckBoxDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */; };
 		413402C01E948F6200F74175 /* AZCheckBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */; };
 		413B0A4F1EC1F585002CD9EC /* AZRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413B0A4E1EC1F585002CD9EC /* AZRefreshControl.swift */; };
+		415390831EEBF76700BCA8C0 /* AZImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415390821EEBF76700BCA8C0 /* AZImageLoader.swift */; };
+		415390851EEBF79A00BCA8C0 /* AZDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415390841EEBF79A00BCA8C0 /* AZDevice.swift */; };
 		415D59361EA0D92B00B2E5A0 /* AZStepperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415D59351EA0D92B00B2E5A0 /* AZStepperDelegate.swift */; };
 		4166A0BA1EBBA24700E1B0D1 /* AZLabelIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166A0B91EBBA24700E1B0D1 /* AZLabelIcon.swift */; };
 		417168D21E9505F500E30160 /* AZTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417168D11E9505F500E30160 /* AZTextField.swift */; };
@@ -114,6 +116,8 @@
 		413402BC1E948F6200F74175 /* AZCheckBoxDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxDataSource.swift; sourceTree = "<group>"; };
 		413402BD1E948F6200F74175 /* AZCheckBoxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZCheckBoxTableViewCell.swift; sourceTree = "<group>"; };
 		413B0A4E1EC1F585002CD9EC /* AZRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZRefreshControl.swift; sourceTree = "<group>"; };
+		415390821EEBF76700BCA8C0 /* AZImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZImageLoader.swift; sourceTree = "<group>"; };
+		415390841EEBF79A00BCA8C0 /* AZDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDevice.swift; sourceTree = "<group>"; };
 		415D59351EA0D92B00B2E5A0 /* AZStepperDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStepperDelegate.swift; sourceTree = "<group>"; };
 		4166A0B91EBBA24700E1B0D1 /* AZLabelIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLabelIcon.swift; sourceTree = "<group>"; };
 		417168D11E9505F500E30160 /* AZTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTextField.swift; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */,
 				4184C3AF1E942E7600B46E9D /* AZButton.swift */,
 				413B0A4E1EC1F585002CD9EC /* AZRefreshControl.swift */,
+				415390841EEBF79A00BCA8C0 /* AZDevice.swift */,
+				415390821EEBF76700BCA8C0 /* AZImageLoader.swift */,
 				417168D11E9505F500E30160 /* AZTextField.swift */,
 				417168D31E95089000E30160 /* AZImageView.swift */,
 				411233D91E92B9F6004064FA /* AZHeader.swift */,
@@ -413,6 +419,7 @@
 				411233D11E92A29D004064FA /* AZBaseView.swift in Sources */,
 				41258CA11E93CC9F00F35AC9 /* UIColor+hex.swift in Sources */,
 				411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */,
+				415390831EEBF76700BCA8C0 /* AZImageLoader.swift in Sources */,
 				411991B41EA24B090012BDB2 /* AZNotification.swift in Sources */,
 				4123B43B1E9A526300DA5A6A /* AZLoader.swift in Sources */,
 				41258C9C1E93C77C00F35AC9 /* AZStyle.swift in Sources */,
@@ -427,6 +434,7 @@
 				41258CA91E93D85400F35AC9 /* AZPickerViewDelegate.swift in Sources */,
 				413402BF1E948F6200F74175 /* AZCheckBoxDataSource.swift in Sources */,
 				411233D31E92A2B8004064FA /* AZView.swift in Sources */,
+				415390851EEBF79A00BCA8C0 /* AZDevice.swift in Sources */,
 				41258C9E1E93C84500F35AC9 /* AZAssets.swift in Sources */,
 				413B0A4F1EC1F585002CD9EC /* AZRefreshControl.swift in Sources */,
 				413402BE1E948F6200F74175 /* AZCheckBox.swift in Sources */,
