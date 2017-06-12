@@ -177,9 +177,9 @@ extension AZButton{
         rotateAnimation.keyTimes = scaleAnimation.keyTimes
         rotateAnimation.timingFunctions = [timingFunction, timingFunction]
         if !reverse {
-            rotateAnimation.values = [0, M_PI, 2 * M_PI]
+            rotateAnimation.values = [0, Double.pi, 2 * Double.pi]
         } else {
-            rotateAnimation.values = [0, -M_PI, -2 * M_PI]
+            rotateAnimation.values = [0, -Double.pi, -2 * Double.pi]
         }
         rotateAnimation.duration = duration
         
