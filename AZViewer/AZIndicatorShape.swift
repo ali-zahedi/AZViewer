@@ -26,14 +26,14 @@ enum AZIndicatorShape{
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
                         startAngle: 0,
-                        endAngle: CGFloat(2 * Double.pi),
+                        endAngle: CGFloat(2 * M_PI),
                         clockwise: false)
             layer.fillColor = color.cgColor
         case .ring:
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
                         startAngle: 0,
-                        endAngle: CGFloat(2 * Double.pi),
+                        endAngle: CGFloat(2 * M_PI),
                         clockwise: false)
             layer.fillColor = nil
             layer.strokeColor = color.cgColor
@@ -41,17 +41,17 @@ enum AZIndicatorShape{
         case .ringTwoHalfVertical:
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
-                        startAngle: CGFloat(-3 * Double.pi),
-                        endAngle: CGFloat(-Double.pi),
+                        startAngle: CGFloat(-3 * (Double.pi / 4)),
+                        endAngle: CGFloat(-(Double.pi / 4)),
                         clockwise: true)
             path.move(
-                to: CGPoint(x: size.width / 2 - size.width / 2 * CGFloat(cos(Double.pi)),
-                            y: size.height / 2 + size.height / 2 * CGFloat(sin(Double.pi)))
+                to: CGPoint(x: size.width / 2 - size.width / 2 * CGFloat(cos((Double.pi / 4))),
+                            y: size.height / 2 + size.height / 2 * CGFloat(sin((Double.pi / 4))))
             )
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
-                        startAngle: CGFloat(-5 * Double.pi),
-                        endAngle: CGFloat(-7 * Double.pi),
+                        startAngle: CGFloat(-5 * (Double.pi / 4)),
+                        endAngle: CGFloat(-7 * (Double.pi / 4)),
                         clockwise: false)
             layer.fillColor = nil
             layer.strokeColor = color.cgColor
@@ -59,17 +59,17 @@ enum AZIndicatorShape{
         case .ringTwoHalfHorizontal:
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
-                        startAngle: CGFloat(3 * Double.pi),
-                        endAngle: CGFloat(5 * Double.pi),
+                        startAngle: CGFloat(3 * (Double.pi / 4)),
+                        endAngle: CGFloat(5 * (Double.pi / 4)),
                         clockwise: true)
             path.move(
-                to: CGPoint(x: size.width / 2 + size.width / 2 * CGFloat(cos(Double.pi)),
-                            y: size.height / 2 - size.height / 2 * CGFloat(sin(Double.pi)))
+                to: CGPoint(x: size.width / 2 + size.width / 2 * CGFloat(cos((Double.pi / 4))),
+                            y: size.height / 2 - size.height / 2 * CGFloat(sin((Double.pi / 4))))
             )
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
-                        startAngle: CGFloat(-Double.pi),
-                        endAngle: CGFloat(Double.pi),
+                        startAngle: CGFloat(-(Double.pi / 4)),
+                        endAngle: CGFloat((Double.pi / 4)),
                         clockwise: true)
             layer.fillColor = nil
             layer.strokeColor = color.cgColor
