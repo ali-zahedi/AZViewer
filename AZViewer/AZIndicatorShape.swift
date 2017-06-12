@@ -26,14 +26,14 @@ enum AZIndicatorShape{
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
                         startAngle: 0,
-                        endAngle: CGFloat(2 * M_PI),
+                        endAngle: CGFloat(2 * (Double.pi)),
                         clockwise: false)
             layer.fillColor = color.cgColor
         case .ring:
             path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                         radius: size.width / 2,
                         startAngle: 0,
-                        endAngle: CGFloat(2 * M_PI),
+                        endAngle: CGFloat(2 * (Double.pi)),
                         clockwise: false)
             layer.fillColor = nil
             layer.strokeColor = color.cgColor
