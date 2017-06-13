@@ -61,6 +61,15 @@ public class AZStyle{
     public var sectionInputIconColor: UIColor = UIColor(hex: "e4e4e4")
     public var sectionInputLeftPadding: CGFloat = CGFloat(3)
     
+    // MARK: Section Segment Control
+    public var sectionSegmentControlFont: UIFont {
+        return self.sectionTableFontRow
+    }
+    public var sectionSegmentContrlTitleColor: UIColor = .white
+    public var sectionSegmentContrlTintColor: UIColor {
+        return self.sectionStepperPlusIconColor
+    }
+    
     // MARK: Section Picker View
     public var sectionPickerViewItemFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
     public var sectionPickerViewItemColor: UIColor = UIColor.black
