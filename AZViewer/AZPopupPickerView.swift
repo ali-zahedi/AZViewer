@@ -172,6 +172,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         // show on input
         var string = ""
         
+        if self.data.count > 0 {
         for i in (0...(self.data.count - 1)){
             
             // check array range
@@ -186,6 +187,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         
         // call delegate
         self.delegate?.submitPopupView()
+        }
     }
     
     // cancel
