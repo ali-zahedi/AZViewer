@@ -26,6 +26,7 @@ public class AZPopupPickerView: AZView{
     public var data: [[(AnyObject, String)]] = [[]] {
         didSet{
             self.popup.data = self.data
+            self.input.text = ""
             // for restor after load dynamic another component
             let index = self._indexTemp
             self._index = [:]
