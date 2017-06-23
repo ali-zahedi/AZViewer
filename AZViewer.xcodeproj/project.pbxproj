@@ -32,7 +32,7 @@
 		4123B43D1E9A547100DA5A6A /* AZIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4123B43C1E9A547100DA5A6A /* AZIndicatorShape.swift */; };
 		41258C9C1E93C77C00F35AC9 /* AZStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258C9B1E93C77C00F35AC9 /* AZStyle.swift */; };
 		41258C9E1E93C84500F35AC9 /* AZAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258C9D1E93C84500F35AC9 /* AZAssets.swift */; };
-		41258CA11E93CC9F00F35AC9 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA01E93CC9F00F35AC9 /* UIColor+hex.swift */; };
+		41258CA11E93CC9F00F35AC9 /* AZColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA01E93CC9F00F35AC9 /* AZColor.swift */; };
 		41258CA71E93D09D00F35AC9 /* AZLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA61E93D09D00F35AC9 /* AZLabel.swift */; };
 		41258CA91E93D85400F35AC9 /* AZPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CA81E93D85400F35AC9 /* AZPickerViewDelegate.swift */; };
 		41258CAB1E93D87900F35AC9 /* AZPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41258CAA1E93D87900F35AC9 /* AZPicker.swift */; };
@@ -55,6 +55,7 @@
 		4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */; };
 		4184C3AA1E941BC000B46E9D /* AZPopupViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3A91E941BC000B46E9D /* AZPopupViewDelegate.swift */; };
 		4184C3B01E942E7600B46E9D /* AZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4184C3AF1E942E7600B46E9D /* AZButton.swift */; };
+		4194C60B1EFD12A8004A5613 /* AZAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4194C60A1EFD12A8004A5613 /* AZAvatarImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,7 +110,7 @@
 		4123B43C1E9A547100DA5A6A /* AZIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZIndicatorShape.swift; sourceTree = "<group>"; };
 		41258C9B1E93C77C00F35AC9 /* AZStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZStyle.swift; sourceTree = "<group>"; };
 		41258C9D1E93C84500F35AC9 /* AZAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZAssets.swift; sourceTree = "<group>"; };
-		41258CA01E93CC9F00F35AC9 /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		41258CA01E93CC9F00F35AC9 /* AZColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZColor.swift; sourceTree = "<group>"; };
 		41258CA61E93D09D00F35AC9 /* AZLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZLabel.swift; sourceTree = "<group>"; };
 		41258CA81E93D85400F35AC9 /* AZPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPickerViewDelegate.swift; sourceTree = "<group>"; };
 		41258CAA1E93D87900F35AC9 /* AZPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPicker.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		4184C3A71E93F8AA00B46E9D /* AZPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupView.swift; sourceTree = "<group>"; };
 		4184C3A91E941BC000B46E9D /* AZPopupViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPopupViewDelegate.swift; sourceTree = "<group>"; };
 		4184C3AF1E942E7600B46E9D /* AZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZButton.swift; sourceTree = "<group>"; };
+		4194C60A1EFD12A8004A5613 /* AZAvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZAvatarImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 		41258CA21E93D02A00F35AC9 /* Element */ = {
 			isa = PBXGroup;
 			children = (
+				41258CA01E93CC9F00F35AC9 /* AZColor.swift */,
 				41258CA61E93D09D00F35AC9 /* AZLabel.swift */,
 				4166A0B91EBBA24700E1B0D1 /* AZLabelIcon.swift */,
 				4184C3A51E93DA8F00B46E9D /* AZPickerView.swift */,
@@ -274,6 +277,7 @@
 				411991B11EA2488C0012BDB2 /* AZAlignment.swift */,
 				4155C1311EEFA62E00B2E1E2 /* AZSegmentControl.swift */,
 				4155C1471EEFC46F00B2E1E2 /* AZScrollView.swift */,
+				4194C60A1EFD12A8004A5613 /* AZAvatarImageView.swift */,
 			);
 			name = Element;
 			sourceTree = "<group>";
@@ -281,7 +285,6 @@
 		41258CA31E93D05800F35AC9 /* Extension Master Class */ = {
 			isa = PBXGroup;
 			children = (
-				41258CA01E93CC9F00F35AC9 /* UIColor+hex.swift */,
 			);
 			name = "Extension Master Class";
 			sourceTree = "<group>";
@@ -423,7 +426,7 @@
 				411C9EED1E9A703A00AC767B /* AZStepper.swift in Sources */,
 				415D59361EA0D92B00B2E5A0 /* AZStepperDelegate.swift in Sources */,
 				411233D11E92A29D004064FA /* AZBaseView.swift in Sources */,
-				41258CA11E93CC9F00F35AC9 /* UIColor+hex.swift in Sources */,
+				41258CA11E93CC9F00F35AC9 /* AZColor.swift in Sources */,
 				411233DA1E92B9F6004064FA /* AZHeader.swift in Sources */,
 				415390831EEBF76700BCA8C0 /* AZImageLoader.swift in Sources */,
 				411991B41EA24B090012BDB2 /* AZNotification.swift in Sources */,
@@ -434,6 +437,7 @@
 				4155C1321EEFA62E00B2E1E2 /* AZSegmentControl.swift in Sources */,
 				417168D41E95089000E30160 /* AZImageView.swift in Sources */,
 				411233DC1E92BB3C004064FA /* AZConstraint.swift in Sources */,
+				4194C60B1EFD12A8004A5613 /* AZAvatarImageView.swift in Sources */,
 				4184C3A61E93DA8F00B46E9D /* AZPickerView.swift in Sources */,
 				41258CA71E93D09D00F35AC9 /* AZLabel.swift in Sources */,
 				4166A0BA1EBBA24700E1B0D1 /* AZLabelIcon.swift in Sources */,

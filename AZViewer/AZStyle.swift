@@ -30,24 +30,24 @@ public class AZStyle{
     }
     public var sectionHeaderTitleFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote).pointSize)!
     public var sectionHeaderTitleColor = UIColor.white
-    public var sectionHeaderBackgroundColor = UIColor(hex: "FF5E3A")
+    public var sectionHeaderBackgroundColor = AZColor(hex: "FF5E3A")
     public var sectionHeaderAlpha: CGFloat = 1.0
-    public var sectionHeaderLeftButtonTintColor: UIColor = UIColor(hex: "bdc3c7")
-    public var sectionHeaderRightButtonTintColor: UIColor = UIColor(hex: "bdc3c7")
+    public var sectionHeaderLeftButtonTintColor: UIColor = AZColor(hex: "bdc3c7")
+    public var sectionHeaderRightButtonTintColor: UIColor = AZColor(hex: "bdc3c7")
     
     // MARK: Section Table
     public var sectionTableHeightImage: CGFloat {
         return self.sectionGeneralHeight
     }
-    public var sectionTableDeactiveCornerColor: UIColor = UIColor(hex: "e4e4e4")
-    public var sectionTableDeactiveColor: UIColor = UIColor(hex: "c3c3c3")
-    public var sectionTableActiveCornerColor: UIColor = UIColor(hex: "04970a")
-    public var sectionTableActiveColor: UIColor = UIColor(hex: "ffffff")
+    public var sectionTableDeactiveCornerColor: UIColor = AZColor(hex: "e4e4e4")
+    public var sectionTableDeactiveColor: UIColor = AZColor(hex: "c3c3c3")
+    public var sectionTableActiveCornerColor: UIColor = AZColor(hex: "04970a")
+    public var sectionTableActiveColor: UIColor = AZColor(hex: "ffffff")
     public var sectionTableFontRow: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
     
     // MARK: Section View
-    public var sectionViewBackgroundColor: UIColor = UIColor(hex: "f8f7f4")
-    public var sectionViewSeperatorColor: UIColor = UIColor(hex: "e8e6e1")
+    public var sectionViewBackgroundColor: UIColor = AZColor(hex: "f8f7f4")
+    public var sectionViewSeperatorColor: UIColor = AZColor(hex: "e8e6e1")
     
     // MARK: Section Popup
     public var sectionPopupBlurAlpha: CGFloat = CGFloat(0.75)
@@ -58,7 +58,7 @@ public class AZStyle{
     
     // MARK: Section Input
     public var sectionInputFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize)!
-    public var sectionInputIconColor: UIColor = UIColor(hex: "e4e4e4")
+    public var sectionInputIconColor: UIColor = AZColor(hex: "e4e4e4")
     public var sectionInputLeftPadding: CGFloat = CGFloat(3)
     
     // MARK: Section Segment Control
@@ -72,7 +72,12 @@ public class AZStyle{
     
     // MARK: Section Picker View
     public var sectionPickerViewItemFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
-    public var sectionPickerViewItemColor: UIColor = UIColor.black
+    public var sectionPickerViewItemColor: UIColor = AZColor.black
+    
+    // MARK: Section AvatarView
+    public var sectionAvatarViewFont: UIFont {
+        return self.sectionPickerViewItemFont
+    }
     
     // MARK: Section Date Pickerview
     public var sectionDatePickerViewFormatDate: String = "yyyy/mm/dd"
@@ -85,15 +90,15 @@ public class AZStyle{
     }
     public var sectionLoaderBlurAlpha: CGFloat = CGFloat(0.75)
     public var sectionLoaderBlurEffect: UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-    public var sectionLoaderBlurBackgroundColor: UIColor = UIColor(hex: "efefef")
+    public var sectionLoaderBlurBackgroundColor: UIColor = AZColor(hex: "efefef")
     
     // MARK: Section Refresh Control
     public var sectionRefreshControlFont: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote).pointSize)!
     public var sectionRefreshControlColor: UIColor = UIColor.black
     
     // MARK: Section Stepper
-    public var sectionStepperPlusIconColor: UIColor = UIColor(hex: "ef6125")
-    public var sectionStepperPlusBackgroundColor: UIColor = UIColor(hex: "590a30")
+    public var sectionStepperPlusIconColor: UIColor = AZColor(hex: "ef6125")
+    public var sectionStepperPlusBackgroundColor: UIColor = AZColor(hex: "590a30")
     public var sectionStepperMinusIconColor: UIColor {
         get{
             return self.sectionStepperPlusIconColor
@@ -104,7 +109,7 @@ public class AZStyle{
             return self.sectionStepperPlusBackgroundColor
         }
     }
-    public var sectionStepperInputBackgroundColor: UIColor = UIColor(hex: "90aa3c")
+    public var sectionStepperInputBackgroundColor: UIColor = AZColor(hex: "90aa3c")
     public var sectionStepperInputTextColor: UIColor = UIColor.black
     public var sectionStepperInputFont: UIFont {
         get{
@@ -125,14 +130,14 @@ public class AZStyle{
     public var sectionNotificationColor: UIColor = UIColor.white
     public var sectionNotificationTintButtonColor: UIColor = UIColor.white
         // type
-    public var sectionNotificationTypeInformationColor: UIColor = UIColor(hex: "00529B")
-    public var sectionNotificationTypeInformationBackgroundColor: UIColor = UIColor(hex: "BDE5F8")
-    public var sectionNotificationTypeSuccessColor: UIColor = UIColor(hex: "4F8A10")
-    public var sectionNotificationTypeSuccessBackgroundColor: UIColor = UIColor(hex: "DFF2BF")
-    public var sectionNotificationTypeWarningColor: UIColor = UIColor(hex: "9F6000")
-    public var sectionNotificationTypeWarningBackgroundColor: UIColor = UIColor(hex: "FEEFB3")
-    public var sectionNotificationTypeErrorColor: UIColor = UIColor(hex: "D8000C")
-    public var sectionNotificationTypeErrorBackgroundColor: UIColor = UIColor(hex: "FFBABA")
+    public var sectionNotificationTypeInformationColor: UIColor = AZColor(hex: "00529B")
+    public var sectionNotificationTypeInformationBackgroundColor: UIColor = AZColor(hex: "BDE5F8")
+    public var sectionNotificationTypeSuccessColor: UIColor = AZColor(hex: "4F8A10")
+    public var sectionNotificationTypeSuccessBackgroundColor: UIColor = AZColor(hex: "DFF2BF")
+    public var sectionNotificationTypeWarningColor: UIColor = AZColor(hex: "9F6000")
+    public var sectionNotificationTypeWarningBackgroundColor: UIColor = AZColor(hex: "FEEFB3")
+    public var sectionNotificationTypeErrorColor: UIColor = AZColor(hex: "D8000C")
+    public var sectionNotificationTypeErrorBackgroundColor: UIColor = AZColor(hex: "FFBABA")
     
     public var sectionNotificationCornerRadius: CGFloat {
         return self.sectionGeneralCornerRadius
