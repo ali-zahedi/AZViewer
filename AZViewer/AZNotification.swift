@@ -170,7 +170,7 @@ extension AZNotification{
 extension AZNotification{
     
     // public show
-    public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 0, hideOnTap: Bool = false, delay: Double = 0){
+    public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 5.0, hideOnTap: Bool = true, delay: Double = 0){
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.view.removeFromSuperview()
