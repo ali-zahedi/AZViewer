@@ -132,12 +132,12 @@ public class AZStyle{
         // type
     public var sectionNotificationTypeInformationColor: UIColor = AZColor(hex: "00529B")
     public var sectionNotificationTypeInformationBackgroundColor: UIColor = AZColor(hex: "BDE5F8")
-    public var sectionNotificationTypeSuccessColor: UIColor = AZColor(hex: "4F8A10")
-    public var sectionNotificationTypeSuccessBackgroundColor: UIColor = AZColor(hex: "DFF2BF")
+    public var sectionNotificationTypeSuccessColor: UIColor = .white//AZColor(hex: "4F8A10")
+    public var sectionNotificationTypeSuccessBackgroundColor: UIColor = AZColor(hex: "25D366")
     public var sectionNotificationTypeWarningColor: UIColor = AZColor(hex: "9F6000")
     public var sectionNotificationTypeWarningBackgroundColor: UIColor = AZColor(hex: "FEEFB3")
-    public var sectionNotificationTypeErrorColor: UIColor = AZColor(hex: "D8000C")
-    public var sectionNotificationTypeErrorBackgroundColor: UIColor = AZColor(hex: "FFBABA")
+    public var sectionNotificationTypeErrorColor: UIColor = .white //AZColor(hex: "D8000C")
+    public var sectionNotificationTypeErrorBackgroundColor: UIColor = AZColor(hex: "f44336")
     
     public var sectionNotificationCornerRadius: CGFloat {
         return self.sectionGeneralCornerRadius

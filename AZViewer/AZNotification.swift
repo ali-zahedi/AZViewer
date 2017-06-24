@@ -148,7 +148,7 @@ extension AZNotification{
     
     // content
     fileprivate func prepareContent(){
-        _ = self.content.aZConstraints.parent(parent: self.view).top(constant: 8).right(constant: -16).left(constant: 32)
+        _ = self.content.aZConstraints.parent(parent: self.view).top(constant: 16).right(constant: -16).left(constant: 32)
         self.content.textAlignment = .center
         self.content.lineBreakMode = .byWordWrapping
         self.content.numberOfLines = 0
@@ -216,7 +216,7 @@ extension AZNotification{
         _ = self.view.aZConstraints.parent(parent: rootView).top(constant: 20).right(constant: -8).left(constant: 8)
         
         self.view.layoutIfNeeded()
-        _ = self.view.aZConstraints.bottom(to: self.content, constant: 0)
+        _ = self.view.aZConstraints.bottom(to: self.content, constant: 16)
         self.view.setNeedsLayout()
         
         UIView.animate(withDuration: 1.2, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 4, options: [], animations: {
