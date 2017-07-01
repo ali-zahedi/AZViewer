@@ -8,9 +8,15 @@
 
 import Foundation
 
+public protocol AZCheckBoxDelegate{
+    
+    func aZCheckBox(_ aZCheckBox: AZCheckBox, _ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+}
+
 public class AZCheckBox: AZView {
     
     // MARK: Public
+    public var delegate: AZCheckBoxDelegate?
     public var hiddenEndSeparator: Bool = false
     public var hiddenSeparator: Bool = false {
         didSet{
@@ -142,6 +148,7 @@ extension AZCheckBox: UITableViewDelegate{
         
         cell.dataSource.isActive = !cell.dataSource.isActive
         cell.setupAnimationActive()
+        self.delegate?.aZCheckBox(self, tableView, didSelectRowAt: indexPath)
     }
     
 }
