@@ -127,6 +127,7 @@ class ViewController: UIViewController {
     // check box
     fileprivate func prepareCheckBox(){
         
+        self.checkBoxView.delegate = self
         self.view.addSubview(self.checkBoxView)
         var source: [AZCheckBoxDataSource] = []
         
@@ -147,6 +148,7 @@ class ViewController: UIViewController {
     // radio button
     fileprivate func prepareRadioButton(){
         
+        self.radioButtonView.delegate = self
         self.view.addSubview(self.radioButtonView)
         var source: [AZCheckBoxDataSource] = []
         
@@ -186,5 +188,12 @@ extension ViewController: AZPopupViewDelegate{
 extension ViewController: AZStepperDelegate{
     func aZStepper(changeValue: Int) {
         print("change stepper value to : \(changeValue)")
+    }
+}
+
+// checkbox and radio button box delegate
+extension ViewController: AZCheckBoxDelegate{
+    func aZCheckBox(_ aZCheckBox: AZCheckBox, _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
     }
 }
