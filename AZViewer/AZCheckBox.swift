@@ -95,6 +95,20 @@ public class AZCheckBox: AZView {
         NSLayoutConstraint(item: self.tableView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0).isActive = true
         
     }
+    
+    // MARK: Public
+    // selct row in table
+    public func select(indexPath: IndexPath){
+        self.tableView(self.tableView, didSelectRowAt: indexPath)
+    }
+    
+    // select all row 
+    public func selectAll(){
+    
+        for row in 0..<self.data.value.count {
+            self.select(indexPath: IndexPath(row: row, section: 0))
+        }
+    }
 }
 
 extension AZCheckBox: UITableViewDataSource {
