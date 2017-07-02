@@ -97,16 +97,37 @@ public class AZCheckBox: AZView {
     }
     
     // MARK: Public
-    // selct row in table
-    public func select(indexPath: IndexPath){
-        self.tableView(self.tableView, didSelectRowAt: indexPath)
+    fileprivate func tableViewRow(row: Int){
+        self.tableView(self.tableView, didSelectRowAt: IndexPath(row: row, section: 0))
+    }
+    
+    // select row in table
+    public func select(row: Int){
+        
+        self.data.value[row].isActive = false
+        self.tableViewRow(row: row)
     }
     
     // select all row 
     public func selectAll(){
     
         for row in 0..<self.data.value.count {
-            self.select(indexPath: IndexPath(row: row, section: 0))
+            self.select(row: row)
+        }
+    }
+    
+    // deselect
+    public func deSelect(row: Int){
+        
+        self.data.value[row].isActive = true
+        self.tableViewRow(row: row)
+    }
+    
+    // deselect all row
+    public func deSelectAll(){
+        
+        for row in 0..<self.data.value.count {
+            self.deSelect(row: row)
         }
     }
 }
