@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var stepper: AZStepper = AZStepper(frame: CGRect(x: 30, y: 130, width: UIScreen.main.bounds.width / 4, height: 30))
     var button: AZButton = AZButton(frame: CGRect(x: 0, y: 170, width: UIScreen.main.bounds.width, height: 50))
     var stopAnimationButton: AZButton = AZButton(frame: CGRect(x: 0, y: 230, width: UIScreen.main.bounds.width, height: 50))
+    var textField: AZTextField = AZTextField(frame: CGRect(x: 0, y: 270, width: UIScreen.main.bounds.width, height: 50))
     
     var checkBoxView: AZCheckBox = AZCheckBox(frame: CGRect(x: 0, y: 290, width: UIScreen.main.bounds.width, height: 190))
     var radioButtonView: AZRadioButton = AZRadioButton(frame: CGRect(x: 0, y: 490, width: UIScreen.main.bounds.width, height: 150))
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
         self.prepareCheckBox()
         self.prepareRadioButton()
         self.prepareAvatarView()
+        self.prepareTextField()
     }
     
     override func didReceiveMemoryWarning() {
@@ -168,6 +170,16 @@ class ViewController: UIViewController {
         self.view.addSubview(self.avatarViewCirlcle)
         self.view.addSubview(self.avatarView)
         self.avatarView.text =  "علی زاهدی"
+    }
+    
+    // text field
+    fileprivate func prepareTextField(){
+        
+//        self.textField.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.textField)
+        self.textField.backgroundColor = UIColor.gray
+        self.textField.text = "متن تستی"
+        self.textField.textAlignment = .right
     }
 }
 
