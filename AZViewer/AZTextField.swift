@@ -9,7 +9,7 @@
 import UIKit
 
 public class AZTextField: UITextField {
-
+    
     // MARK: IBInspectable
     @IBInspectable var leftIcon: UIImage? {
         didSet {
@@ -56,9 +56,10 @@ public class AZTextField: UITextField {
         self.aZConstraints = AZConstraint(view: self)
         
         for _ in [] as [UIView]{
-
+            
         }
         
+        self.addDoneButtonOnKeyboard()
     }
     
     
@@ -86,6 +87,32 @@ public class AZTextField: UITextField {
         
         // Placeholder text color
         attributedPlaceholder = NSAttributedString(string: placeholder != nil ?  placeholder! : "", attributes:[NSForegroundColorAttributeName: color])
+    }
+    
+    fileprivate func addDoneButtonOnKeyboard()
+    {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x:0, y:0, width:320, height:50))
+        doneToolbar.barStyle = UIBarStyle.default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "تایید", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneButtonAction))
+        
+        done.setTitleTextAttributes([NSFontAttributeName: AZStyle.shared.sectionInputFont], for: .normal)
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.inputAccessoryView = doneToolbar
+        
+    }
+    
+    public func doneButtonAction(){
+        
+        self.resignFirstResponder()
     }
     
 }
