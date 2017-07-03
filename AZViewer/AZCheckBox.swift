@@ -8,9 +8,15 @@
 
 import Foundation
 
+public protocol AZCheckBoxDelegate{
+    
+    func aZCheckBox(_ aZCheckBox: AZCheckBox, _ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+}
+
 public class AZCheckBox: AZView {
     
     // MARK: Public
+    public var delegate: AZCheckBoxDelegate?
     public var hiddenEndSeparator: Bool = false
     public var hiddenSeparator: Bool = false {
         didSet{
@@ -89,6 +95,41 @@ public class AZCheckBox: AZView {
         NSLayoutConstraint(item: self.tableView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0).isActive = true
         
     }
+    
+    // MARK: Public
+    fileprivate func tableViewRow(row: Int){
+        self.tableView(self.tableView, didSelectRowAt: IndexPath(row: row, section: 0))
+    }
+    
+    // select row in table
+    public func select(row: Int){
+        
+        self.data.value[row].isActive = false
+        self.tableViewRow(row: row)
+    }
+    
+    // select all row 
+    public func selectAll(){
+    
+        for row in 0..<self.data.value.count {
+            self.select(row: row)
+        }
+    }
+    
+    // deselect
+    public func deSelect(row: Int){
+        
+        self.data.value[row].isActive = true
+        self.tableViewRow(row: row)
+    }
+    
+    // deselect all row
+    public func deSelectAll(){
+        
+        for row in 0..<self.data.value.count {
+            self.deSelect(row: row)
+        }
+    }
 }
 
 extension AZCheckBox: UITableViewDataSource {
@@ -142,6 +183,7 @@ extension AZCheckBox: UITableViewDelegate{
         
         cell.dataSource.isActive = !cell.dataSource.isActive
         cell.setupAnimationActive()
+        self.delegate?.aZCheckBox(self, tableView, didSelectRowAt: indexPath)
     }
     
 }
