@@ -28,7 +28,16 @@ public class AZHeader: AZBaseView{
             let hiddenTitle: Bool = self.type == .success ? true : false
             
             self.successButton.isHidden = !hiddenTitle
-            self.titleLabel.isHidden = hiddenTitle
+            
+            self.titleLabel.aZConstraints.right?.isActive = false
+            
+            if hiddenTitle {
+                
+                _ = self.titleLabel.aZConstraints.right(to: self.successButton, toAttribute: .left,constant: -self.style.sectionGeneralConstant)
+            }else{
+                
+                _ = self.titleLabel.aZConstraints.right(constant: -self.style.sectionGeneralConstant)
+            }
         }
     }
     
