@@ -25,9 +25,7 @@ public class AZStyle{
     public var sectionGeneralCornerRadius: CGFloat = CGFloat(5)
     
     // MARK: Section Headers
-    public var sectionHeaderHeight: CGFloat {
-        return sectionGeneralHeight
-    }
+    public var sectionHeaderHeight: CGFloat = CGFloat(40)
     public var sectionHeaderTitleFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote).pointSize)!
     public var sectionHeaderTitleColor = UIColor.white
     public var sectionHeaderBackgroundColor = AZColor(hex: "FF5E3A")
