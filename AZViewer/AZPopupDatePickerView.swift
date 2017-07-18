@@ -187,7 +187,6 @@ public class AZPopupDatePickerView: AZPopupPickerView{
         }
         
         self.updateUI()
-        
     }
     
     // update ui
