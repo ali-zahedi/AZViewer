@@ -11,7 +11,7 @@ import Foundation
 public class AZConstraint: NSObject {
     
     // MARK: Public
-    public var parent: UIView?
+    public var parent: Any?
     public var top: NSLayoutConstraint?
     public var bottom: NSLayoutConstraint?
     public var left: NSLayoutConstraint?
@@ -24,10 +24,10 @@ public class AZConstraint: NSObject {
     // MARK: Internal
     
     // MARK: Private
-    fileprivate var view: UIView!
+    fileprivate var view: Any!
     
     // MARK: Override
-    public init(view: UIView) {
+    public init(view: Any) {
         super.init()
         self.view = view
         self.defaultInit()
@@ -53,7 +53,7 @@ extension AZConstraint{
 extension AZConstraint{
     
     // top
-    public func top(to: UIView? = nil, toAttribute: NSLayoutAttribute = .top, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func top(to: Any? = nil, toAttribute: NSLayoutAttribute = .top, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -67,7 +67,7 @@ extension AZConstraint{
     }
     
     // bottom
-    public func bottom(to: UIView? = nil, toAttribute: NSLayoutAttribute = .bottom, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func bottom(to: Any? = nil, toAttribute: NSLayoutAttribute = .bottom, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -82,7 +82,7 @@ extension AZConstraint{
     
     
     // right
-    public func right(to: UIView? = nil, toAttribute: NSLayoutAttribute = .right, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func right(to: Any? = nil, toAttribute: NSLayoutAttribute = .right, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -96,7 +96,7 @@ extension AZConstraint{
     }
     
     // left
-    public func left(to: UIView? = nil, toAttribute: NSLayoutAttribute = .left, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func left(to: Any? = nil, toAttribute: NSLayoutAttribute = .left, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -110,7 +110,7 @@ extension AZConstraint{
     }
     
     // centerY
-    public func centerY(to: UIView? = nil, toAttribute: NSLayoutAttribute = .centerY, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func centerY(to: Any? = nil, toAttribute: NSLayoutAttribute = .centerY, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -124,7 +124,7 @@ extension AZConstraint{
     }
     
     // centerX
-    public func centerX(to: UIView? = nil, toAttribute: NSLayoutAttribute = .centerX, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func centerX(to: Any? = nil, toAttribute: NSLayoutAttribute = .centerX, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to ?? self.parent
         
@@ -138,7 +138,7 @@ extension AZConstraint{
     }
     
     // width
-    public func width(to: UIView? = nil, toAttribute: NSLayoutAttribute = .width, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func width(to: Any? = nil, toAttribute: NSLayoutAttribute = .width, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to //?? self.parent
         
@@ -152,7 +152,7 @@ extension AZConstraint{
     }
     
     // height
-    public func height(to: UIView? = nil, toAttribute: NSLayoutAttribute = .height, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
+    public func height(to: Any? = nil, toAttribute: NSLayoutAttribute = .height, multiplier: CGFloat = 1, constant: CGFloat = 0, active: Bool = true) -> AZConstraint{
         
         let toItem = to //?? self.parent
         

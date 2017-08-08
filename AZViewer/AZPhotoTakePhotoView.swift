@@ -33,6 +33,7 @@ class AZPhotoTakePhotoView: AZView{
     
     // MARK: Private
     // preview
+    fileprivate var videoLayer: AVCaptureVideoPreviewLayer?
     fileprivate var previewView: AZView = AZView()
     // take photo
     fileprivate var bottomView: AZView = AZView()
@@ -71,15 +72,12 @@ class AZPhotoTakePhotoView: AZView{
         self.preparepAVFundation()
     }
     
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        
-        let videoLayer = AVCaptureVideoPreviewLayer(session: self.session)
-        videoLayer?.bounds = CGRect(x: 0, y: 0, width: 400, height: 400)//self.previewView.aZConstraints.width?.constant
-        videoLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        self.previewView.layer.addSublayer(videoLayer!)
+    func resetSize(){
+        self.videoLayer = AVCaptureVideoPreviewLayer(session: self.session)
+        self.videoLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        self.videoLayer?.frame = self.previewView.frame
+        self.previewView.layer.addSublayer(self.videoLayer!)
     }
-    
 }
 
 // prepare
@@ -89,6 +87,7 @@ extension AZPhotoTakePhotoView{
     fileprivate func preparePreviewView(){
         _ = self.previewView.aZConstraints.parent(parent: self).top().left().right().height(to: self, multiplier: 0.8)
         self.previewView.backgroundColor = .black
+        
     }
     
     // bottom view
@@ -118,6 +117,7 @@ extension AZPhotoTakePhotoView{
     // image view
     fileprivate func prepareImageView(){
         _ = self.imageView.aZConstraints.parent(parent: self.bottomView).left().centerY().height(to: self.bottomView, multiplier: 0.9).width(to: self.imageView, toAttribute: .height)
+        self.imageView.contentMode = .scaleAspectFit
     }
     
     // AVFundation
@@ -125,7 +125,7 @@ extension AZPhotoTakePhotoView{
         
         self.session = AVCaptureSession()
         
-        guard let session = self.session else { return }
+        guard let _ = self.session else { return }
         
         for device in AVCaptureDevice.devices() {
             

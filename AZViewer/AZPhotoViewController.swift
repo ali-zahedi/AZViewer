@@ -106,6 +106,11 @@ public class AZPhotoViewController: UIViewController {
         
         self.view.backgroundColor = self.style.sectionViewBackgroundColor
     }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.takePhotoView.resetSize()
+    }
 }
 
 // prepare
