@@ -50,6 +50,17 @@ class ViewController: UIViewController {
         // or
         AZLoader.shared.isActive = true
         self.prepareNotification()
+        
+        // Show Fusuma
+        let fusuma = AZPhotoViewController()
+        //
+        //        fusuma.delegate = self
+        //        fusuma.cropHeightRatio = 0.6
+        //        fusuma.defaultMode     = .library
+        //        fusuma.allowMultipleSelection = true
+        //        fusumaSavesImage = true
+        //
+        self.present(fusuma, animated: true, completion: nil)
     }
     
     // prepare picker view

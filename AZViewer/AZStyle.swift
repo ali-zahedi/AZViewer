@@ -18,12 +18,16 @@ public class AZStyle{
     public static let shared = AZStyle()
     private init() {} //This prevents others from using the default '()' initializer for this class.
     
+    // MARK: Shortcut
+    public var statusBarHeight: CGFloat {
+        return UIApplication.shared.statusBarFrame.height
+    }
     
     // MARK: General
     public var sectionGeneralHeight: CGFloat = CGFloat(30)
     public var sectionGeneralConstant: CGFloat = CGFloat(8)
     public var sectionGeneralCornerRadius: CGFloat = CGFloat(5)
-    
+
     // MARK: Section Headers
     public var sectionHeaderHeight: CGFloat = CGFloat(40)
     public var sectionHeaderTitleFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.footnote).pointSize)!
@@ -46,6 +50,22 @@ public class AZStyle{
     // MARK: Section View
     public var sectionViewBackgroundColor: UIColor = AZColor(hex: "f8f7f4")
     public var sectionViewSeperatorColor: UIColor = AZColor(hex: "e8e6e1")
+    
+    // MARK: Section photo controller
+    public var sectionPhotoViewControllerBottomBarColor: UIColor = AZColor(hex: "e8e6e1")
+    public var sectionPhotoViewControllerBottomBarHeight: CGFloat = CGFloat(40)
+    public var sectionPhotoViewControllerBottomBarButtonColor: UIColor = .white
+    public var sectionPhotoViewControllerBottomBarButtonActiveColor: UIColor = .black
+    public var sectionPhotoViewControllerTitleLibrary: String = "گالری تصاویر"
+    public var sectionPhotoViewControllerFontLibrary: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
+    public var sectionPhotoViewControllerTitleTakePhoto: String = "دوربین"
+    public var sectionPhotoViewControllerFontTakePhoto: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
+    public var sectionPhotoViewControllerTitleTakeVideo: String = "فیلم"
+    public var sectionPhotoViewControllerFontTakeVideo: UIFont = UIFont(name: AZFontString.shared.regular, size: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1).pointSize)!
+    public var sectionPhotoViewControllerTakePhotoBottomViewColor: UIColor = AZColor(hex: "f8f7f4")
+    public var sectionPhotoViewControllerTakePhotoImage: UIImage = AZAssets.shutterImage
+    public var sectionPhotoViewControllerTakePhotoImageTintColor: UIColor = AZColor(hex: "fffff")
+    public var sectionPhotoViewControllerImageSelectedTintColor: UIColor = AZColor(hex: "e8e6e1")
     
     // MARK: Section Popup
     public var sectionPopupBlurAlpha: CGFloat = CGFloat(0.75)
