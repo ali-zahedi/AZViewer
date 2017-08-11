@@ -148,7 +148,7 @@ extension AZNotification{
     
     // content
     fileprivate func prepareContent(){
-        _ = self.content.aZConstraints.parent(parent: self.view).top(constant: 8).right(constant: -16).left(constant: 32)
+        _ = self.content.aZConstraints.parent(parent: self.view).top(constant: 16).right(constant: -16).left(constant: 32)
         self.content.textAlignment = .center
         self.content.lineBreakMode = .byWordWrapping
         self.content.numberOfLines = 0
@@ -170,35 +170,37 @@ extension AZNotification{
 extension AZNotification{
     
     // public show
-    public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 0, hideOnTap: Bool = false){
+    public func show(msg: String, type: AZNotificationType? = nil, hideAfterSeconds: Double = 5.0, hideOnTap: Bool = true, delay: Double = 0){
         
-        self.view.removeFromSuperview()
-        self.defaultInit()
-        let type = type ?? .unknown
-        var backgroundColor: UIColor = self.backgroundColor
-        var color: UIColor = self.color
-        
-        if type != .unknown{
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            self.view.removeFromSuperview()
+            self.defaultInit()
+            let type = type ?? .unknown
+            var backgroundColor: UIColor = self.backgroundColor
+            var color: UIColor = self.color
             
-            (backgroundColor, color) = type.color()
-        }
-        
-        self.view.backgroundColor = backgroundColor
-        self.content.textColor = color
-        self.content.text = msg
-        
-        self.show()
-        
-        if hideAfterSeconds > 0.5 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + hideAfterSeconds) {
-                self.remove()
+            if type != .unknown{
+                
+                (backgroundColor, color) = type.color()
             }
-        }
-        
-        if hideOnTap {
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapViewAction(_:)))
-            self.content.addGestureRecognizer(tapGesture)
-            self.view.addGestureRecognizer(tapGesture)
+            
+            self.view.backgroundColor = backgroundColor
+            self.content.textColor = color
+            self.content.text = msg
+            
+            self.show()
+            
+            if hideAfterSeconds > 0.5 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + hideAfterSeconds) {
+                    self.remove()
+                }
+            }
+            
+            if hideOnTap {
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapViewAction(_:)))
+                self.content.addGestureRecognizer(tapGesture)
+                self.view.addGestureRecognizer(tapGesture)
+            }
         }
     }
     
@@ -214,7 +216,7 @@ extension AZNotification{
         _ = self.view.aZConstraints.parent(parent: rootView).top(constant: 20).right(constant: -8).left(constant: 8)
         
         self.view.layoutIfNeeded()
-        _ = self.view.aZConstraints.bottom(to: self.content, constant: 0)
+        _ = self.view.aZConstraints.bottom(to: self.content, constant: 16)
         self.view.setNeedsLayout()
         
         UIView.animate(withDuration: 1.2, delay: 0.2, usingSpringWithDamping: 1, initialSpringVelocity: 4, options: [], animations: {

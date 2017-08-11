@@ -142,9 +142,11 @@ extension AZLoader{
         // find size 
         let minSize = min(viewAppend.bounds.width, viewAppend.bounds.height)
         
-        if minSize > 50 {
+        if minSize > 50 || minSize == 0  {
+            
             size = CGSize(width: 50, height: 50)
         }else{
+            
             size = CGSize(width: minSize, height: minSize)
         }
         
@@ -209,9 +211,9 @@ extension AZLoader{
         rotateAnimation.keyTimes = scaleAnimation.keyTimes
         rotateAnimation.timingFunctions = [timingFunction, timingFunction]
         if !reverse {
-            rotateAnimation.values = [0, M_PI, 2 * M_PI]
+            rotateAnimation.values = [0, Double.pi, 2 * Double.pi]
         } else {
-            rotateAnimation.values = [0, -M_PI, -2 * M_PI]
+            rotateAnimation.values = [0, -Double.pi, -2 * Double.pi]
         }
         rotateAnimation.duration = duration
         

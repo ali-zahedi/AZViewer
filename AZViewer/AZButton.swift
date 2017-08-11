@@ -75,6 +75,16 @@ extension AZButton {
         self.removeAnimationButton(sender: self.loaderMask)
         self.removeAnimationLoader()
     }
+
+    public func setBackground(color: UIColor, forState: UIControlState) {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.setBackgroundImage(colorImage, for: forState)
+    }
 }
 
 // animation
@@ -167,9 +177,9 @@ extension AZButton{
         rotateAnimation.keyTimes = scaleAnimation.keyTimes
         rotateAnimation.timingFunctions = [timingFunction, timingFunction]
         if !reverse {
-            rotateAnimation.values = [0, M_PI, 2 * M_PI]
+            rotateAnimation.values = [0, Double.pi, 2 * Double.pi]
         } else {
-            rotateAnimation.values = [0, -M_PI, -2 * M_PI]
+            rotateAnimation.values = [0, -Double.pi, -2 * Double.pi]
         }
         rotateAnimation.duration = duration
         

@@ -11,7 +11,7 @@ import Foundation
 public class AZLabelIcon: AZLabel {
 
     // MARK: IBInspectable
-    @IBInspectable var leftIcon: UIImage? {
+    @IBInspectable public var leftIcon: UIImage? {
         didSet {
             updateView()
         }
@@ -67,6 +67,6 @@ extension AZLabelIcon{
     
     fileprivate func prepareLeftImageView(){
         self.leftImageView.contentMode = .scaleAspectFit
-        _ = self.leftImageView.aZConstraints.parent(parent: self).top().left(constant: self.leftPadding).width(constant: 20).height(to: self.leftImageView, toAttribute: .width)
+        _ = self.leftImageView.aZConstraints.parent(parent: self).centerY().left(constant: self.leftPadding).width(constant: 20).height(to: self.leftImageView, toAttribute: .width)
     }
 }

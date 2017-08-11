@@ -8,6 +8,79 @@
 
 import Foundation
 
+public enum Month: CustomStringConvertible {
+    public static let count: Int = 12
+    case temp
+    case farvardin
+    case ordibehesh
+    case khordad
+    case tir
+    case mordad
+    case shahrivar
+    case mehr
+    case aban
+    case azar
+    case dey
+    case bahman
+    case esfand
+    
+    public var description: String {
+        
+        switch self {
+        case .temp: return "temp"
+        case .farvardin: return "فروردین"
+        case .ordibehesh: return "اردیبهشت"
+        case .khordad: return "خرداد"
+        case .tir: return "تیر"
+        case .mordad: return "مرداد"
+        case .shahrivar: return "شهریور"
+        case .mehr: return "مهر"
+        case .aban: return "آبان"
+        case .azar: return "آذر"
+        case .dey: return "دی"
+        case .bahman: return "بهمن"
+        case .esfand: return "اسفند"
+        }
+    }
+    
+    public var int: Int{
+        switch self {
+        case .temp: return 0
+        case .farvardin: return 1
+        case .ordibehesh: return 2
+        case .khordad: return 3
+        case .tir: return 4
+        case .mordad: return 5
+        case .shahrivar: return 6
+        case .mehr: return 7
+        case .aban: return 8
+        case .azar: return 9
+        case .dey: return 10
+        case .bahman: return 11
+        case .esfand: return 12
+        }
+    }
+    
+    public static func fromInt(number: Int) -> Month{
+        switch number{
+        case 1: return .farvardin
+        case 2: return .ordibehesh
+        case 3: return .khordad
+        case 4: return .tir
+        case 5: return .mordad
+        case 6: return .shahrivar
+        case 7: return .mehr
+        case 8: return .aban
+        case 9: return .azar
+        case 10: return .dey
+        case 11: return .bahman
+        case 12: return .esfand
+        default: return .esfand
+        }
+    }
+}
+
+
 public class AZPopupDatePickerView: AZPopupPickerView{
     
     // MARK: Public
@@ -20,7 +93,7 @@ public class AZPopupDatePickerView: AZPopupPickerView{
             // check array range
             if let row = self.index[i],  self.data[i].count > row{
                 
-                string += self.data[i][row].1 + "/"
+                string += self.data[i][row].0.description + "/"
             }
         }
         
@@ -114,7 +187,6 @@ public class AZPopupDatePickerView: AZPopupPickerView{
         }
         
         self.updateUI()
-        
     }
     
     // update ui
@@ -145,6 +217,7 @@ extension AZPopupDatePickerView{
         // TODO: how to check formatter for time and date
         self.formatterPersian.dateFormat = self.formatDate
         self.formatterPersian.calendar = Calendar(identifier: .persian)
+        //        self.formatterPersian.locale = Locale(identifier:"fa_IR")
         self.formatterPersian.dateFormat = self.style.sectionDatePickerViewFormatDate
         //        print("Converted date to Hijri = \(self.formatterGregorian.string(from: date))")
     }
@@ -187,18 +260,21 @@ extension AZPopupDatePickerView{
         
         if  year > self.calenderComponentMin.year! && year < self.calenderComponentMax.year! {
             
-            for month in 1...12{
-                months.append((month as AnyObject, month.description))
+            for month in 1...Month.count{
+                let m = Month.fromInt(number: month)
+                months.append((m.int as AnyObject, m.description))
             }
         }else if year == self.calenderComponentMin.year {
             
-            for month in self.calenderComponentMin.month!...12{
-                months.append((month as AnyObject, month.description))
+            for month in self.calenderComponentMin.month!...Month.count{
+                let m = Month.fromInt(number: month)
+                months.append((m.int as AnyObject, m.description))
             }
         }else{
             
             for month in 1...self.calenderComponentMax.month!{
-                months.append((month as AnyObject, month.description))
+                let m = Month.fromInt(number: month)
+                months.append((m.int as AnyObject, m.description))
             }
         }
         
@@ -210,13 +286,13 @@ extension AZPopupDatePickerView{
     // days
     fileprivate func generateRangeDays(monthTouple: (AnyObject, String)){
         
-        let month: Int = Int(monthTouple.0 as! NSNumber)
+        let month: Month = Month.fromInt(number: Int(monthTouple.0 as! NSNumber))
         var days: [(AnyObject, String)] = []
-        if month < 7 {
+        if month.int < 7 {
             for day in 1...31{
                 days.append((day as AnyObject, day.description))
             }
-        }else if month >= 7 && month < 12 {
+        }else if month.int >= 7 && month.int < 12 {
             
             for day in 1...30{
                 days.append((day as AnyObject, day.description))

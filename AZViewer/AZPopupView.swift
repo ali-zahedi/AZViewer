@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AZPopupViewTypeFillMode {
+public enum AZPopupViewTypeFillMode {
     case fill
     case margin
     
@@ -23,6 +23,24 @@ enum AZPopupViewTypeFillMode {
     }
 }
 
+public enum AZPopupViewAlignment {
+    case top
+    case center
+    case bottom
+    
+    func alignment(constraint: AZConstraint) -> AZConstraint{
+        switch self {
+        case .top:
+            return constraint.top()
+        case .center:
+            return constraint.centerY()
+        case .bottom:
+            return constraint.bottom()
+            
+        }
+    }
+}
+
 public class AZPopupView: AZView{
     
     // MARK: Public
@@ -32,10 +50,12 @@ public class AZPopupView: AZView{
         }
     }
     public var header: AZHeader = AZHeader()
+    public var view: AZBaseView = AZBaseView()
+    public var fillMode: AZPopupViewTypeFillMode = .margin
+    public var alignment: AZPopupViewAlignment = .bottom
+    public var delegatePopupView: AZPopupViewDelegate?
     
     // MARK: Internal
-    internal var fillMode: AZPopupViewTypeFillMode = .margin
-    internal var delegatePopupView: AZPopupViewDelegate?
     
     // MARK: Private
     fileprivate var blurEffectView: UIVisualEffectView!
@@ -55,7 +75,7 @@ public class AZPopupView: AZView{
     // MARK: Function
     fileprivate func defaultInit(){
         
-        for v in [header] as [UIView] {
+        for v in [view, header] as [UIView] {
             v.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(v)
         }
@@ -66,6 +86,9 @@ public class AZPopupView: AZView{
         
         // prepare header
         self.prepareHeader()
+        
+        // prepare view
+        self.prepareView()
         
         // prepare blur effect
         self.prepareBlurEffect()
@@ -104,6 +127,11 @@ extension AZPopupView{
         self.header.delegate = self
     }
     
+    // view
+    fileprivate func prepareView(){
+        _ = self.view.aZConstraints.parent(parent: self).top(to: self.header, toAttribute: .bottom).right().left()
+    }
+    
     // blur effect
     fileprivate func prepareBlurEffect(){
         self.blurEffectView = UIVisualEffectView(effect: self.style.sectionPopupBlurEffect)
@@ -131,7 +159,12 @@ extension AZPopupView{
         view.addSubview(blurEffectView)
         self.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(self)
-        _ = self.aZConstraints.parent(parent: view).bottom().right(constant: -self.fillMode.widthMarginConstant()).left(constant: self.fillMode.widthMarginConstant())
+        
+        let constraint = self.aZConstraints.parent(parent: view).right(constant: -self.fillMode.widthMarginConstant()).left(constant: self.fillMode.widthMarginConstant())
+            
+        _ = self.alignment.alignment(constraint: constraint)
+        
+        _ = self.aZConstraints.bottom(to: self.view)
     }
 }
 

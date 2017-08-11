@@ -26,6 +26,7 @@ public class AZPopupPickerView: AZView{
     public var data: [[(AnyObject, String)]] = [[]] {
         didSet{
             self.popup.data = self.data
+            self.input.text = ""
             // for restor after load dynamic another component
             let index = self._indexTemp
             self._index = [:]
@@ -71,10 +72,12 @@ public class AZPopupPickerView: AZView{
             self.popup.color = self.pickerColor
         }
     }
+    // internal 
+    internal var input: AZLabelIcon = AZLabelIcon()
+    
     // private
     fileprivate var _index: [Int: Int] = [:]
     fileprivate var _indexTemp: [Int: Int] = [:]
-    fileprivate var input: AZLabelIcon = AZLabelIcon()
     
     // override
     override public init(frame: CGRect) {
@@ -172,7 +175,8 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         // show on input
         var string = ""
         
-        for i in (0...(self.data.count - 1)){
+        if self.data.count > 0 {
+        for i in (0...(self.data.count - 1)).reversed(){
             
             // check array range
             if let row = self.index[i],  self.data[i].count > row{
@@ -186,6 +190,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         
         // call delegate
         self.delegate?.submitPopupView()
+        }
     }
     
     // cancel

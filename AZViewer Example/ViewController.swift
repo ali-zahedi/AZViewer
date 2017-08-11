@@ -16,9 +16,12 @@ class ViewController: UIViewController {
     var stepper: AZStepper = AZStepper(frame: CGRect(x: 30, y: 130, width: UIScreen.main.bounds.width / 4, height: 30))
     var button: AZButton = AZButton(frame: CGRect(x: 0, y: 170, width: UIScreen.main.bounds.width, height: 50))
     var stopAnimationButton: AZButton = AZButton(frame: CGRect(x: 0, y: 230, width: UIScreen.main.bounds.width, height: 50))
+    var textField: AZTextField = AZTextField(frame: CGRect(x: 0, y: 270, width: UIScreen.main.bounds.width, height: 50))
     
     var checkBoxView: AZCheckBox = AZCheckBox(frame: CGRect(x: 0, y: 290, width: UIScreen.main.bounds.width, height: 190))
-    var radioButtonView: AZRadioButton = AZRadioButton(frame: CGRect(x: 0, y: 490, width: UIScreen.main.bounds.width, height: 200))
+    var radioButtonView: AZRadioButton = AZRadioButton(frame: CGRect(x: 0, y: 490, width: UIScreen.main.bounds.width, height: 150))
+    var avatarView: AZAvatarView = AZAvatarView(frame: CGRect(x: 60, y: 40, width: 50, height: 50))
+    var avatarViewCirlcle: AZAvatarView = AZAvatarView(text: "م ق", isCircle: true, frame: CGRect(x: 0, y: 40, width: 50, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,8 @@ class ViewController: UIViewController {
         self.prepareButton()
         self.prepareCheckBox()
         self.prepareRadioButton()
+        self.prepareAvatarView()
+        self.prepareTextField()
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,6 +50,17 @@ class ViewController: UIViewController {
         // or
         AZLoader.shared.isActive = true
         self.prepareNotification()
+        
+        // Show Fusuma
+        let fusuma = AZPhotoViewController()
+        //
+        //        fusuma.delegate = self
+        //        fusuma.cropHeightRatio = 0.6
+        //        fusuma.defaultMode     = .library
+        //        fusuma.allowMultipleSelection = true
+        //        fusumaSavesImage = true
+        //
+        self.present(fusuma, animated: true, completion: nil)
     }
     
     // prepare picker view
@@ -118,12 +134,13 @@ class ViewController: UIViewController {
     
     // notification
     fileprivate func prepareNotification(){
-        AZNotification.shared.show(msg: "لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.", type: .success, hideAfterSeconds: 3)
+        AZNotification.shared.show(msg: "لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود.", type: .success, hideAfterSeconds: 30)
     }
     
     // check box
     fileprivate func prepareCheckBox(){
         
+        self.checkBoxView.delegate = self
         self.view.addSubview(self.checkBoxView)
         var source: [AZCheckBoxDataSource] = []
         
@@ -144,6 +161,7 @@ class ViewController: UIViewController {
     // radio button
     fileprivate func prepareRadioButton(){
         
+        self.radioButtonView.delegate = self
         self.view.addSubview(self.radioButtonView)
         var source: [AZCheckBoxDataSource] = []
         
@@ -155,6 +173,26 @@ class ViewController: UIViewController {
         let section: AZCheckBoxDataSection = AZCheckBoxDataSection(value: source)
         
         self.radioButtonView.data = section
+    }
+    
+    // avatar view
+    fileprivate func prepareAvatarView(){
+        //self.avatarView = AZAvatarView(text: "علی زاهدی")
+        //self.avatarView = AZAvatarView(url: "http://....jpg")
+        //self.avatarView = AZAvatarView(image: UIImage())
+        self.view.addSubview(self.avatarViewCirlcle)
+        self.view.addSubview(self.avatarView)
+        self.avatarView.text =  "علی زاهدی"
+    }
+    
+    // text field
+    fileprivate func prepareTextField(){
+        
+//        self.textField.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.textField)
+        self.textField.backgroundColor = UIColor.gray
+        self.textField.text = "متن تستی"
+        self.textField.textAlignment = .right
     }
 }
 
@@ -173,5 +211,12 @@ extension ViewController: AZPopupViewDelegate{
 extension ViewController: AZStepperDelegate{
     func aZStepper(changeValue: Int) {
         print("change stepper value to : \(changeValue)")
+    }
+}
+
+// checkbox and radio button box delegate
+extension ViewController: AZCheckBoxDelegate{
+    func aZCheckBox(_ aZCheckBox: AZCheckBox, _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
     }
 }
