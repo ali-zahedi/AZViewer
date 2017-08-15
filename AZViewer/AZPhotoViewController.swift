@@ -10,7 +10,7 @@ import UIKit
 
 public protocol AZPhotoDelegate{
     
-    func submitPhoto(image: UIImage)
+    func submitPhoto(image: UIImage?)
     
     func cancel()
 }
@@ -307,14 +307,7 @@ extension AZPhotoViewController: AZPopupViewDelegate{
     
     public func submitPopupView() {
         
-        guard let image = self.images.first else {
-            
-            self.delegate?.submitPhoto(image: UIImage())
-            self.dismiss(animated: true, completion: nil)
-            return
-        }
-        
-        self.delegate?.submitPhoto(image: image)
+        self.delegate?.submitPhoto(image: self.images.first)
         self.dismiss(animated: true, completion: nil)
     }
 }
