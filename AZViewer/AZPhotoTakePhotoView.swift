@@ -9,6 +9,11 @@
 import Foundation
 import AVFoundation
 
+protocol AZPhotoTakePhotoDelegate{
+    
+    func take(_ image: UIImage)
+}
+
 class AZPhotoTakePhotoView: AZView{
     
     // MARK: Public
@@ -30,6 +35,7 @@ class AZPhotoTakePhotoView: AZView{
         }
     }
 //    weak var delegate: FSCameraViewDelegate? = nil
+    var delegate: AZPhotoTakePhotoDelegate?
     
     // MARK: Private
     // preview
@@ -236,6 +242,7 @@ extension AZPhotoTakePhotoView{
                 }
 
                 self.imageView.image = image
+                self.delegate?.take(image)
 //                DispatchQueue.main.async(execute: { () -> Void in
 //                    
 //                    let image = fusumaCropImage ? UIImage(cgImage: imageRef, scale: sw/iw, orientation: image.imageOrientation) : image

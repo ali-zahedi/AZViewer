@@ -12,7 +12,6 @@ import Photos
 class AZPhotoCollectionView: AZView {
     
     // MARK: Public
-    //    public var delegate: ProductCollectionViewDelegate?
     
     // MARK: Internal
     static var spacing: CGFloat{
