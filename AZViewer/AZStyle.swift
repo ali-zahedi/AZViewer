@@ -9,11 +9,7 @@
 import Foundation
 
 public class AZStyle{
-    
-    fileprivate struct Style {
-        static let shared = AZStyle()
-    }
-    
+        
     // MARK: Public
     public static let shared = AZStyle()
     private init() {} //This prevents others from using the default '()' initializer for this class.
