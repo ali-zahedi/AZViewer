@@ -8,6 +8,13 @@
 
 import UIKit
 
+public protocol AZPhotoDelegate{
+    
+    func submitPhoto(image: UIImage?)
+    
+    func cancel()
+}
+
 public class AZPhotoViewController: UIViewController {
     
     // MARK: Public
@@ -43,6 +50,9 @@ public class AZPhotoViewController: UIViewController {
         }
     }
     
+    public var delegate: AZPhotoDelegate?
+    public var images: [UIImage] = []
+    
     // MARK: Private
     fileprivate var style: AZStyle = AZStyle.shared
     fileprivate var statusBar: AZView = AZView()
@@ -53,7 +63,7 @@ public class AZPhotoViewController: UIViewController {
     fileprivate var imageView: AZImageView = AZImageView()
     fileprivate var collectionView: AZPhotoCollectionView = AZPhotoCollectionView()
     fileprivate var takePhotoView: AZPhotoTakePhotoView = AZPhotoTakePhotoView()
-    
+
     // MARK: Internal
     
     override public func viewDidLoad() {
@@ -126,6 +136,8 @@ extension AZPhotoViewController{
     // header
     fileprivate func prepareHeader(){
         _ = self.header.aZConstraints.parent(parent: self.view).top(constant: self.style.statusBarHeight).right().left().height(constant: self.style.sectionHeaderHeight)
+        self.header.type = AZHeaderType.success
+        self.header.delegate = self
     }
     
     // image view
@@ -146,6 +158,7 @@ extension AZPhotoViewController{
     fileprivate func prepareTakePhotoView(){
         
         _ = self.takePhotoView.aZConstraints.parent(parent: self.view).top(to: self.header, toAttribute: .bottom).left().right().bottom(to: self.bottomBar, toAttribute: .top)
+        self.takePhotoView.delegate = self
     }
     
     // bottom bar
@@ -270,5 +283,31 @@ extension AZPhotoViewController: AZPhotoViewDelegate{
     
     func aZPhotoView(didDeselect index: Int, image: AZModelPhoto) {
         
+    }
+}
+
+// take photo delegate
+extension AZPhotoViewController: AZPhotoTakePhotoDelegate{
+
+    func take(_ image: UIImage) {
+        
+        self.images = [image]
+    }
+}
+
+
+// header delegate
+extension AZPhotoViewController: AZPopupViewDelegate{
+    
+    public func cancelPopupView() {
+        
+        self.delegate?.cancel()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    public func submitPopupView() {
+        
+        self.delegate?.submitPhoto(image: self.images.first)
+        self.dismiss(animated: true, completion: nil)
     }
 }
