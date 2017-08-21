@@ -237,6 +237,7 @@ extension AZPhotoViewController{
     
     // reset all button
     fileprivate func resetButton(_ sender: AZButton){
+        self.images = []
         self.resetColor(sender)
         self.showLibrary(false)
         self.showTakePhoto(false)
@@ -279,6 +280,7 @@ extension AZPhotoViewController: AZPhotoViewDelegate{
     func aZPhotoView(didSelected index: Int, image: AZModelPhoto) {
         
         self.imageView.image = image.image
+        self.images.append(image.image)
     }
     
     func aZPhotoView(didDeselect index: Int, image: AZModelPhoto) {
