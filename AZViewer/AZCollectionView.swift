@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AZCollectionView: UICollectionView {
+open class AZCollectionView: UICollectionView {
 
     // MARK: Public
     public var aZConstraints: AZConstraint!

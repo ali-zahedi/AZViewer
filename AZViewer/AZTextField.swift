@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AZTextField: UITextField {
+open class AZTextField: UITextField {
     
     // MARK: IBInspectable
     @IBInspectable var leftIcon: UIImage? {
@@ -64,7 +64,7 @@ public class AZTextField: UITextField {
     
     
     // Provides left padding for images
-    override public func leftViewRect(forBounds bounds: CGRect) -> CGRect {
+    override open func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
         textRect.origin.x += leftPadding
         return textRect
