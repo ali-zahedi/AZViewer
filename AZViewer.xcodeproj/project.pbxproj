@@ -65,6 +65,7 @@
 		41C71A031F23763C008E040B /* AZPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C71A021F23763C008E040B /* AZPhotoCollectionViewCell.swift */; };
 		41C71A1B1F237BF3008E040B /* AZModelPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C71A1A1F237BF3008E040B /* AZModelPhoto.swift */; };
 		41DD54411F30994D0096B426 /* AZPhotoTakePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD54401F30994D0096B426 /* AZPhotoTakePhotoView.swift */; };
+		B12C2D361F529513006AF8EB /* AZGeradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12C2D351F529513006AF8EB /* AZGeradientColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		41C71A021F23763C008E040B /* AZPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		41C71A1A1F237BF3008E040B /* AZModelPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZModelPhoto.swift; sourceTree = "<group>"; };
 		41DD54401F30994D0096B426 /* AZPhotoTakePhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPhotoTakePhotoView.swift; sourceTree = "<group>"; };
+		B12C2D351F529513006AF8EB /* AZGeradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZGeradientColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 		41258CA21E93D02A00F35AC9 /* Element */ = {
 			isa = PBXGroup;
 			children = (
+				B12C2D351F529513006AF8EB /* AZGeradientColor.swift */,
 				41258CA01E93CC9F00F35AC9 /* AZColor.swift */,
 				41258CA61E93D09D00F35AC9 /* AZLabel.swift */,
 				4166A0B91EBBA24700E1B0D1 /* AZLabelIcon.swift */,
@@ -488,6 +491,7 @@
 				4101A8771F12580600477FAB /* AZContatc.swift in Sources */,
 				4184C3A81E93F8AA00B46E9D /* AZPopupView.swift in Sources */,
 				4155C1481EEFC46F00B2E1E2 /* AZScrollView.swift in Sources */,
+				B12C2D361F529513006AF8EB /* AZGeradientColor.swift in Sources */,
 				4155C1321EEFA62E00B2E1E2 /* AZSegmentControl.swift in Sources */,
 				417168D41E95089000E30160 /* AZImageView.swift in Sources */,
 				41DD54411F30994D0096B426 /* AZPhotoTakePhotoView.swift in Sources */,
