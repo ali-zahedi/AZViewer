@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AZImageView: UIImageView {
+open class AZImageView: UIImageView {
     
     // MARK: Public
     public var aZConstraints: AZConstraint!
