@@ -64,6 +64,7 @@
 		41C71A011F237627008E040B /* AZPhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C71A001F237627008E040B /* AZPhotoCollectionView.swift */; };
 		41C71A031F23763C008E040B /* AZPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C71A021F23763C008E040B /* AZPhotoCollectionViewCell.swift */; };
 		41C71A1B1F237BF3008E040B /* AZModelPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C71A1A1F237BF3008E040B /* AZModelPhoto.swift */; };
+		41DC00E21F553D0D0036556D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DC00E11F553D0D0036556D /* String.swift */; };
 		41DD54411F30994D0096B426 /* AZPhotoTakePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD54401F30994D0096B426 /* AZPhotoTakePhotoView.swift */; };
 		B12C2D361F529513006AF8EB /* AZGeradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12C2D351F529513006AF8EB /* AZGeradientColor.swift */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,7 @@
 		41C71A001F237627008E040B /* AZPhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPhotoCollectionView.swift; sourceTree = "<group>"; };
 		41C71A021F23763C008E040B /* AZPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		41C71A1A1F237BF3008E040B /* AZModelPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZModelPhoto.swift; sourceTree = "<group>"; };
+		41DC00E11F553D0D0036556D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		41DD54401F30994D0096B426 /* AZPhotoTakePhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZPhotoTakePhotoView.swift; sourceTree = "<group>"; };
 		B12C2D351F529513006AF8EB /* AZGeradientColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZGeradientColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +311,7 @@
 		41258CA31E93D05800F35AC9 /* Extension Master Class */ = {
 			isa = PBXGroup;
 			children = (
+				41DC00E11F553D0D0036556D /* String.swift */,
 			);
 			name = "Extension Master Class";
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			files = (
 				411C9EED1E9A703A00AC767B /* AZStepper.swift in Sources */,
 				415D59361EA0D92B00B2E5A0 /* AZStepperDelegate.swift in Sources */,
+				41DC00E21F553D0D0036556D /* String.swift in Sources */,
 				411233D11E92A29D004064FA /* AZBaseView.swift in Sources */,
 				41258CA11E93CC9F00F35AC9 /* AZColor.swift in Sources */,
 				41C719FD1F23753C008E040B /* AZCollectionView.swift in Sources */,
