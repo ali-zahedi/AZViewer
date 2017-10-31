@@ -12,6 +12,7 @@ public class AZPopupPickerView: AZView{
     
     // MARK: Public
     public var popup: AZPicker = AZPicker()
+    public var dataSource: AZPopupPickerViewDataSource?
     public var separatorSection: String = "/" {
         didSet{
             self.submitPopupView()
@@ -190,6 +191,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         
         // call delegate
         self.delegate?.submitPopupView()
+        self.dataSource?.pickerView(self, true)
         }
     }
     
@@ -213,6 +215,7 @@ extension AZPopupPickerView: AZPopupViewDelegate{
         
         // call delegate
         self.delegate?.cancelPopupView()
+        self.dataSource?.pickerView(self, false)
     }
 }
 

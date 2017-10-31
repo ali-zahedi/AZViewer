@@ -11,3 +11,7 @@ import Foundation
 public protocol AZPickerViewDelegate {
     func aZPickerView(didSelectRow row: Int, inComponent component: Int)
 }
+
+public protocol AZPopupPickerViewDataSource{
+    func pickerView(_ pickerView: AZPopupPickerView, _ submit: Bool)
+}
