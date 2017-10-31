@@ -17,7 +17,7 @@ public class AZLabelIcon: AZLabel {
         }
     }
     @IBInspectable var leftPadding: CGFloat = AZStyle.shared.sectionInputLeftPadding
-    @IBInspectable var color: UIColor = AZStyle.shared.sectionInputIconColor {
+    @IBInspectable public var color: UIColor = AZStyle.shared.sectionInputIconColor {
         didSet {
             updateView()
         }
